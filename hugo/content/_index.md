@@ -18,6 +18,11 @@ menu.
 <p>Try the search box in the top-left corner and look for <i>ggplot2</i>.</p>
 </div>
 
+# Check the source
+
+_GitHub [repository](https://github.com/FCACollin/Portfolio),
+check directory `hugo`._
+
 The user simply edits the `content` folder with markdown files, adds 
 figures, docs, or other elements in the `static folder and run the
 command `hugo` to render the webpage in the `public` folder.
