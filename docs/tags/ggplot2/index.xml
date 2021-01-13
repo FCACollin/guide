@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ggplot2 on My New Hugo Site</title>
+    <title>Ggplot2 on Portfolio</title>
     <link>/tags/ggplot2.html</link>
-    <description>Recent content in Ggplot2 on My New Hugo Site</description>
+    <description>Recent content in Ggplot2 on Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
@@ -12,10 +12,10 @@
     
     <item>
       <title>ROC Curves</title>
-      <link>/catalog/roc_01/roc_01.html</link>
+      <link>/r_content/roc_01/roc_01.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/catalog/roc_01/roc_01.html</guid>
+      <guid>/r_content/roc_01/roc_01.html</guid>
       <description>&lt;p&gt;&lt;em&gt;2021-01-11, FCA Collin (update 2021-01-12)&lt;/em&gt;&lt;/p&gt;
 
 &lt;hr /&gt;</description>

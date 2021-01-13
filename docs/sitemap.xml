@@ -3,21 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/catalog/roc_01/roc_01.html</loc>
+    <loc>/r_content/roc_01/roc_01.html</loc>
   </url>
   
   <url>
-    <loc>/basics/01_basics.html</loc>
+    <loc>/quickstart.html</loc>
   </url>
   
   <url>
-    <loc>/basics.html</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/catalog.html</loc>
-    <priority>0</priority>
+    <loc>/r_content.html</loc>
   </url>
   
   <url>
@@ -37,7 +31,6 @@
   
   <url>
     <loc>/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
