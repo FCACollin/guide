@@ -225,20 +225,20 @@ The minimal ROC representation is simply a line plot representing the
 sensitivity as a function of the false alarm rate, for one or the other
 model.
 
-    {
-      ggplot(
-        data = dtaplot,
-        mapping = aes(
-          x = FalseAlarm,
-          y = Sensitivity,
-          color = Diag
-        )
-        ) + geom_line(
-        lwd = 1
-        ) + facet_grid(
-        . ~ Diag
-      )
-    }
+```r
+ggplot(
+data = dtaplot,
+mapping = aes(
+  x = FalseAlarm,
+  y = Sensitivity,
+  color = Diag
+)
+) + geom_line(
+lwd = 1
+) + facet_grid(
+. ~ Diag
+)
+```
 
 ![](img/figure_01-1.png)
 

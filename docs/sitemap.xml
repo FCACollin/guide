@@ -3,6 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/faq/r_package/errors_01.html</loc>
+  </url>
+  
+  <url>
     <loc>/r_content/roc_01/roc_01.html</loc>
   </url>
   
@@ -15,7 +19,21 @@
   </url>
   
   <url>
+    <loc>/faq.html</loc>
+  </url>
+  
+  <url>
     <loc>/categories.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/debug.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/error.html</loc>
     <priority>0</priority>
   </url>
   
@@ -40,6 +58,11 @@
   
   <url>
     <loc>/tags.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/warning.html</loc>
     <priority>0</priority>
   </url>
   

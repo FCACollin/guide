@@ -11,6 +11,24 @@
     
     
     <item>
+      <title>Debug</title>
+      <link>/tags/debug.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/debug.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Error</title>
+      <link>/tags/error.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/error.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Ggplot2</title>
       <link>/tags/ggplot2.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -34,6 +52,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/tags/roc.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Warning</title>
+      <link>/tags/warning.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/warning.html</guid>
       <description></description>
     </item>
     
