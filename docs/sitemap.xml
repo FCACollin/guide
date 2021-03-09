@@ -3,6 +3,14 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/standard/lifecycle/lcycle_01.html</loc>
+  </url>
+  
+  <url>
+    <loc>/faq/git/git_01.html</loc>
+  </url>
+  
+  <url>
     <loc>/faq/r_package/errors_01.html</loc>
   </url>
   
@@ -16,6 +24,10 @@
   
   <url>
     <loc>/r_content.html</loc>
+  </url>
+  
+  <url>
+    <loc>/standard.html</loc>
   </url>
   
   <url>
@@ -49,6 +61,11 @@
   
   <url>
     <loc>/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/lifecycle.html</loc>
+    <priority>0</priority>
   </url>
   
   <url>
