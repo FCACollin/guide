@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Learn Theme for Hugo on Portfolio</title>
+    <title>Guide on Portfolio</title>
     <link>/</link>
-    <description>Recent content in Learn Theme for Hugo on Portfolio</description>
+    <description>Recent content in Guide on Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
@@ -17,6 +17,8 @@
       
       <guid>/standard/lifecycle/lcycle_01.html</guid>
       <description>&lt;p&gt;&lt;em&gt;2021-03-09, FCA Collin&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Presentation of lifecycle status and shields used in production&lt;/em&gt;&lt;/p&gt;
 
 &lt;hr /&gt;</description>
     </item>

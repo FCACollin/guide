@@ -19,10 +19,6 @@
   </url>
   
   <url>
-    <loc>/quickstart.html</loc>
-  </url>
-  
-  <url>
     <loc>/r_content.html</loc>
   </url>
   
@@ -60,7 +56,17 @@
   </url>
   
   <url>
+    <loc>/tags/guide.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/hugo.html</loc>
+    <priority>0</priority>
   </url>
   
   <url>

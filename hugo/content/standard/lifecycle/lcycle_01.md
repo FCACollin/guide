@@ -9,11 +9,12 @@ weight: '-210309'
 
 *2021-03-09, FCA Collin*
 
+
+_Presentation of lifecycle status and shields used in production_
+
 ------------------------------------------------------------------------
 
 <!--more-->
-Introduction of Lifecycle in production
-=======================================
 
 ## Document Edition
 
