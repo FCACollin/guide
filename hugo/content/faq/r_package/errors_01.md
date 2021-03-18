@@ -25,3 +25,17 @@ Errors and Warnings with R
 - Problem: I am use to copy my example at the end of the function documentation,
   somtimes I forget to add the `@examples` tag.
 - Correction: add `@examples` before the example.
+
+
+### Namespace problems
+
+Examples
+
+```
+In loadNamespace(i, c(lib.loc, .libPaths()), versionCheck = vI[[i]]) :
+  there is no package called ‘ggplot’
+```
+
+Resolution:
+
+Delete the namespace file and generate documentation.
