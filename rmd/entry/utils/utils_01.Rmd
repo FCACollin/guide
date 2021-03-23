@@ -1,0 +1,84 @@
+---
+title: "Utils"
+subtitle: ""
+author: "FCA Collin, Ph.D."
+date: "`r format(Sys.Date(), '%A, %B %d, %Y')`"
+weight: -210311
+---
+
+_2021-03-19, FCA Collin_
+
+---
+
+<!--more-->
+```{r setup_knitr, echo = FALSE, message = FALSE, warning = FALSE}
+fig.height <- 5;
+fig.width <- 16/9 * fig.height;
+knitr::opts_chunk$set(
+  fig.width  = fig.width,
+  fig.height = fig.height,
+  dev = c('png', 'pdf', 'svg'),
+  fig.path = "img/"
+)
+```
+
+## Dummy var
+
+```{r}
+#' Dummy Variable
+#'
+#' Decompose a factor-coercible variable into dummy variables.
+#' 
+#' @param x (`atomic`)
+#' @export
+#' @source <https://fcacollin.github.io/guide/utils_01/utils_01.html>
+#' @md
+#' @examples
+#' # Use case data.frame.
+#' head(iris)
+#' head(dummy_var(iris$Species))
+#' iris$sp <- dummy_var(iris$Species)
+#' head(iris)
+#' 
+#' # With logical.
+#' dummy_var(c(TRUE, FALSE))
+#' 
+#' # With character.
+#' dummy_var(c("cat", "cat", "dog", "corgi", "corgi"))
+#' 
+dummy_var <- function(x) {
+  stopifnot(is.atomic(x))
+  if (!is.factor(x)) {
+    x <- as.factor(x)
+  }
+  x <- droplevels(x)
+  y <- stats::model.matrix(~ x + 0)
+  colnames(y) <- levels(x)
+  as.data.frame(y)
+}
+
+```
+
+```{r}
+# Use case data.frame.
+head(iris)
+head(dummy_var(iris$Species))
+iris$sp <- dummy_var(iris$Species)
+head(iris)
+
+# With logical.
+dummy_var(c(TRUE, FALSE))
+
+# With character.
+dummy_var(c("cat", "cat", "dog", "corgi", "corgi"))
+
+```
+
+
+##
+
+```{r}
+sessionInfo()
+```
+
+[modeline]: # ( vim: set foldlevel=0 spell spelllang=en_gb: ) 
