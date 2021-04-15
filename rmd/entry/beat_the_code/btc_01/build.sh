@@ -60,8 +60,8 @@ pandoc -i $SRC.md                         \
   -o $DESTHGO
 
 cp -r img output/hugo/ 
-rm -r ../../../hugo/content/r_content/$SRC
-cp -r output/hugo ../../../hugo/content/r_content/$SRC
+rm -r ../../../../hugo/content/r_content/btc/$SRC
+cp -r output/hugo ../../../../hugo/content/r_content/btc/$SRC
 
 # Clear -----------------------------------------------------------------------
 rm $SRC.md

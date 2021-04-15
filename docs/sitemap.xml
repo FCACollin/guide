@@ -3,7 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/r_content/btc_01/btc_01.html</loc>
+    <loc>/r_content/btc/btc_02/btc_02.html</loc>
+  </url>
+  
+  <url>
+    <loc>/r_content/btc/btc_01/btc_01.html</loc>
   </url>
   
   <url>
@@ -24,6 +28,10 @@
   
   <url>
     <loc>/r_content/roc_01/roc_01.html</loc>
+  </url>
+  
+  <url>
+    <loc>/r_content/btc.html</loc>
   </url>
   
   <url>
