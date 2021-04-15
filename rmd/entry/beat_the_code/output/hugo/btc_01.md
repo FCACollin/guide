@@ -1,6 +1,6 @@
 ---
 author: 'FCA Collin, Ph.D.'
-date: 'Thursday, March 18, 2021'
+date: 'Thursday, April 15, 2021'
 title: Beat The Code
 weight: '-210311'
 ---
@@ -81,14 +81,18 @@ approaches to address statistical problems.
 Filter and Select
 -----------------
 
-    library(tidyverse)
+``` r
+library(tidyverse)
+```
 
 Tidyerse Non-Standard Evaluation:
 
-    iris %>%
-      filter(Species == "setosa") %>%
-      select(Sepal.Width, Sepal.Length) %>%
-      head
+``` r
+iris %>%
+  filter(Species == "setosa") %>%
+  select(Sepal.Width, Sepal.Length) %>%
+  head
+```
 
     ##   Sepal.Width Sepal.Length
     ## 1         3.5          5.1
@@ -100,12 +104,14 @@ Tidyerse Non-Standard Evaluation:
 
 Base Non-Standard Evaluation:
 
-    sel <- subset(
-      iris,
-      subset = Species == "setosa",
-      select = c(Sepal.Width, Sepal.Length)
-    )
-    head(sel)
+``` r
+sel <- subset(
+  iris,
+  subset = Species == "setosa",
+  select = c(Sepal.Width, Sepal.Length)
+)
+head(sel)
+```
 
     ##   Sepal.Width Sepal.Length
     ## 1         3.5          5.1
@@ -117,11 +123,13 @@ Base Non-Standard Evaluation:
 
 Base `data.frame` accessors:
 
-    sel <- iris[
-      iris$Species == "setosa",
-      c("Sepal.Width", "Sepal.Length")
-      ]
-    head(sel)
+``` r
+sel <- iris[
+  iris$Species == "setosa",
+  c("Sepal.Width", "Sepal.Length")
+  ]
+head(sel)
+```
 
     ##   Sepal.Width Sepal.Length
     ## 1         3.5          5.1
@@ -134,9 +142,13 @@ Base `data.frame` accessors:
 Mutate
 ------
 
-    df[df$age > 90, ] <- NA
+``` r
+df[df$age > 90, ] <- NA
+```
 
-    sessionInfo()
+``` r
+sessionInfo()
+```
 
     ## R version 4.0.4 (2021-02-15)
     ## Platform: x86_64-pc-linux-gnu (64-bit)
@@ -164,7 +176,7 @@ Mutate
     ## 
     ## loaded via a namespace (and not attached):
     ##  [1] tidyselect_1.1.0  xfun_0.22         haven_2.3.1       colorspace_2.0-0 
-    ##  [5] vctrs_0.3.6       generics_0.1.0    htmltools_0.5.1.1 yaml_2.2.1       
+    ##  [5] vctrs_0.3.7       generics_0.1.0    htmltools_0.5.1.1 yaml_2.2.1       
     ##  [9] utf8_1.2.1        rlang_0.4.10      pillar_1.5.1      withr_2.4.1      
     ## [13] glue_1.4.2        DBI_1.1.1         dbplyr_2.0.0      modelr_0.1.8     
     ## [17] readxl_1.3.1      lifecycle_1.0.0   munsell_0.5.0     gtable_0.3.0     

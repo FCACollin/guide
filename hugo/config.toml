@@ -7,6 +7,13 @@ theme = "hugo-theme-learn"
 relativeURLs = true
 uglyURLs = true
 pluralizelisttitles = false
+pygmentsUseClasses = true
+pygmentsCodefences = true
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark.renderer]
+    unsafe = true
 
 # For search functionality
 [outputs]
@@ -43,5 +50,5 @@ home = [ "HTML", "RSS", "JSON"]
   # Change default color scheme with a variant one. Can be "red", "blue", "green".
   themeVariant = "blue"
   # Provide a list of custom css files to load relative from the `static/` folder in the site root.
-  custom_css = ["css/foo.css", "css/bar.css"]
+  custom_css = ["css/foo.css", "css/bar.css", "css/highlight.css"]
   chapter = false

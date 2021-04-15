@@ -53,7 +53,7 @@ pandoc $SRC.md                            \
 pandoc -i $SRC.md                         \
   --filter pandoc-citeproc                \
  	--default-image-extension=png           \
-  -t markdown_strict+yaml_metadata_block  \
+  -t markdown_strict+yaml_metadata_block+backtick_code_blocks+fenced_code_blocks+pipe_tables+native_divs  \
   --title-prefix                          \
   --standalone                            \
   --listings                              \

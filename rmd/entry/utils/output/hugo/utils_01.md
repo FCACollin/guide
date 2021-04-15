@@ -1,6 +1,6 @@
 ---
 author: 'FCA Collin, Ph.D.'
-date: 'Friday, March 19, 2021'
+date: 'Thursday, April 15, 2021'
 title: Utils
 weight: '-210311'
 ---
@@ -13,40 +13,44 @@ weight: '-210311'
 Dummy var
 ---------
 
-    #' Dummy Variable
-    #'
-    #' Decompose a factor-coercible variable into dummy variables.
-    #' 
-    #' @param x (`atomic`)
-    #' @export
-    #' @source <https://fcacollin.github.io/guide/utils_01/utils_01.html>
-    #' @md
-    #' @examples
-    #' # Use case data.frame.
-    #' head(iris)
-    #' head(dummy_var(iris$Species))
-    #' iris$sp <- dummy_var(iris$Species)
-    #' head(iris)
-    #' 
-    #' # With logical.
-    #' dummy_var(c(TRUE, FALSE))
-    #' 
-    #' # With character.
-    #' dummy_var(c("cat", "cat", "dog", "corgi", "corgi"))
-    #' 
-    dummy_var <- function(x) {
-      stopifnot(is.atomic(x))
-      if (!is.factor(x)) {
-        x <- as.factor(x)
-      }
-      x <- droplevels(x)
-      y <- stats::model.matrix(~ x + 0)
-      colnames(y) <- levels(x)
-      as.data.frame(y)
-    }
+``` r
+#' Dummy Variable
+#'
+#' Decompose a factor-coercible variable into dummy variables.
+#' 
+#' @param x (`atomic`)
+#' @export
+#' @source <https://fcacollin.github.io/guide/utils_01/utils_01.html>
+#' @md
+#' @examples
+#' # Use case data.frame.
+#' head(iris)
+#' head(dummy_var(iris$Species))
+#' iris$sp <- dummy_var(iris$Species)
+#' head(iris)
+#' 
+#' # With logical.
+#' dummy_var(c(TRUE, FALSE))
+#' 
+#' # With character.
+#' dummy_var(c("cat", "cat", "dog", "corgi", "corgi"))
+#' 
+dummy_var <- function(x) {
+  stopifnot(is.atomic(x))
+  if (!is.factor(x)) {
+    x <- as.factor(x)
+  }
+  x <- droplevels(x)
+  y <- stats::model.matrix(~ x + 0)
+  colnames(y) <- levels(x)
+  as.data.frame(y)
+}
+```
 
-    # Use case data.frame.
-    head(iris)
+``` r
+# Use case data.frame.
+head(iris)
+```
 
     ##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
     ## 1          5.1         3.5          1.4         0.2  setosa
@@ -56,7 +60,9 @@ Dummy var
     ## 5          5.0         3.6          1.4         0.2  setosa
     ## 6          5.4         3.9          1.7         0.4  setosa
 
-    head(dummy_var(iris$Species))
+``` r
+head(dummy_var(iris$Species))
+```
 
     ##   setosa versicolor virginica
     ## 1      1          0         0
@@ -66,8 +72,10 @@ Dummy var
     ## 5      1          0         0
     ## 6      1          0         0
 
-    iris$sp <- dummy_var(iris$Species)
-    head(iris)
+``` r
+iris$sp <- dummy_var(iris$Species)
+head(iris)
+```
 
     ##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species sp.setosa
     ## 1          5.1         3.5          1.4         0.2  setosa         1
@@ -84,15 +92,19 @@ Dummy var
     ## 5             0            0
     ## 6             0            0
 
-    # With logical.
-    dummy_var(c(TRUE, FALSE))
+``` r
+# With logical.
+dummy_var(c(TRUE, FALSE))
+```
 
     ##   FALSE TRUE
     ## 1     0    1
     ## 2     1    0
 
-    # With character.
-    dummy_var(c("cat", "cat", "dog", "corgi", "corgi"))
+``` r
+# With character.
+dummy_var(c("cat", "cat", "dog", "corgi", "corgi"))
+```
 
     ##   cat corgi dog
     ## 1   1     0   0
@@ -101,7 +113,9 @@ Dummy var
     ## 4   0     1   0
     ## 5   0     1   0
 
-    sessionInfo()
+``` r
+sessionInfo()
+```
 
     ## R version 4.0.4 (2021-02-15)
     ## Platform: x86_64-pc-linux-gnu (64-bit)
