@@ -1,6 +1,6 @@
 ---
 author: 'FCA Collin, Ph.D.'
-date: 'Thursday, April 15, 2021'
+date: 'Friday, May 07, 2021'
 title: Utils
 weight: '-210311'
 ---
@@ -113,6 +113,97 @@ dummy_var(c("cat", "cat", "dog", "corgi", "corgi"))
     ## 4   0     1   0
     ## 5   0     1   0
 
+Matrix To Long Format
+---------------------
+
+``` r
+#' Matrix-like Data To Long Data Frame
+#'
+#' Transform a matrix-like data set into a long data frame.
+#'
+mat_to_long_df <- function(x, ...) {
+  UseMethod("mat_to_long_df", x)
+}
+
+mat_to_long_df.matrix <- function(x, names = c("row", "col", "value"), ...) {
+  
+  assertthat::assert_that(length(names) == 3L)
+  if (is.null(colnames(x))) colnames(x) <- as.character(seq_len(ncol(x)))
+  if (is.null(rownames(x))) rownames(x) <- as.character(seq_len(nrow(x)))
+
+  y <- data.frame(
+    rownames(x)[c(row(x))],
+    colnames(x)[c(col(x))],
+    c(x),
+    row.names = NULL
+  )
+
+  names(y) <- names
+  y
+}
+
+mat_to_long_df.data.frame <- function(x, ...) {
+  x <- as.matrix(x)
+  mat_to_long_df(x, ...)
+}
+
+m <- matrix(
+   c(
+    11, 12,
+    21, 22,
+    31, 32
+    ),
+  nrow = 3, byrow = TRUE,
+  dimnames = list(row = 1:3, col = 1:2)
+)
+df <- as.data.frame(m)
+
+mat_to_long_df(m)
+```
+
+    ##   row col value
+    ## 1   1   1    11
+    ## 2   2   1    21
+    ## 3   3   1    31
+    ## 4   1   2    12
+    ## 5   2   2    22
+    ## 6   3   2    32
+
+``` r
+mat_to_long_df(df)
+```
+
+    ##   row col value
+    ## 1   1   1    11
+    ## 2   2   1    21
+    ## 3   3   1    31
+    ## 4   1   2    12
+    ## 5   2   2    22
+    ## 6   3   2    32
+
+``` r
+library(testthat)
+test_that("mat_to_long_df names are used", {
+  result <- mat_to_long_df(m, names = c("a", "b", "y"))
+  expected <- data.frame(
+    a = c("1", "2", "3", "1", "2", "3"),
+    b = c("1", "1", "1", "2", "2", "2"),
+    y = c(11, 21, 31, 12, 22, 32)
+  )
+  expect_identical(result, expected)
+})
+```
+
+    ## Test passed 🌈
+
+``` r
+test_that("mat_to_long_df error if not 3 names provided", {
+  expect_error(mat_to_long_df(m, names = "a"))
+})
+```
+
+    ## Test passed 🥇
+
 ``` r
 sessionInfo()
 ```
@@ -136,8 +227,13 @@ sessionInfo()
     ## attached base packages:
     ## [1] stats     graphics  grDevices utils     datasets  methods   base     
     ## 
+    ## other attached packages:
+    ## [1] testthat_3.0.2
+    ## 
     ## loaded via a namespace (and not attached):
-    ##  [1] compiler_4.0.4    magrittr_2.0.1    tools_4.0.4       htmltools_0.5.1.1
-    ##  [5] yaml_2.2.1        stringi_1.5.3     rmarkdown_2.6     knitr_1.31       
-    ##  [9] stringr_1.4.0     xfun_0.22         digest_0.6.27     rlang_0.4.10     
-    ## [13] evaluate_0.14
+    ##  [1] ps_1.6.0          rprojroot_2.0.2   crayon_1.4.1      digest_0.6.27    
+    ##  [5] withr_2.4.1       assertthat_0.2.1  R6_2.5.0          magrittr_2.0.1   
+    ##  [9] evaluate_0.14     cli_2.5.0         rlang_0.4.11      stringi_1.5.3    
+    ## [13] rstudioapi_0.13   rmarkdown_2.6     desc_1.3.0        tools_4.0.4      
+    ## [17] stringr_1.4.0     xfun_0.22         pkgload_1.1.0     yaml_2.2.1       
+    ## [21] compiler_4.0.4    htmltools_0.5.1.1 knitr_1.33
