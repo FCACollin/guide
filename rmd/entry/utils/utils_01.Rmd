@@ -140,6 +140,52 @@ test_that("mat_to_long_df error if not 3 names provided", {
 })
 ```
 
+## Set a theme for `ggplot2`
+
+```{r}
+#' `ggplot` theme
+#'
+#' Compliance with journal requirements.
+#' @param reset (`flag`).
+#' @export
+#'
+theme_rpack <- function(reset = FALSE) {
+
+  assertthat::assert_that(is.logical(reset))
+  if (reset) {
+    ggplot2::theme_set(ggplot2::theme_gray())
+  } else {
+    new_theme <- ggplot2::theme_minimal() +
+      ggplot2::theme(
+        line = ggplot2::element_line(color = "black"),
+        legend.position = "bottom",
+        legend.key.height = grid::unit(.3, "cm"),
+        text = ggplot2::element_text(size = 8),
+        plot.margin = ggplot2::margin(0, 0, 0, 0, "cm"),
+        legend.margin = ggplot2::margin(0, 0, 0, 0, "cm")
+      )
+    ggplot2::theme_set(new_theme)
+  }
+}
+```
+
+```{r, fig.width = 7, height = 3}
+library(ggplot2)
+gg <- ggplot(economics, aes(date, unemploy)) + geom_line()
+gg
+```
+
+```{r, fig.width = 7, height = 3}
+theme_rpack()
+gg
+```
+
+```{r, fig.width = 7, height = 3}
+theme_rpack(reset = TRUE)
+gg
+```
+
+
 ##
 
 ```{r}

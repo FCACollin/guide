@@ -1,6 +1,6 @@
 ---
 author: 'FCA Collin, Ph.D.'
-date: 'Friday, May 07, 2021'
+date: 'Thursday, May 27, 2021'
 title: Utils
 weight: '-210311'
 ---
@@ -194,7 +194,7 @@ test_that("mat_to_long_df names are used", {
 })
 ```
 
-    ## Test passed 🌈
+    ## Test passed 🎊
 
 ``` r
 test_that("mat_to_long_df error if not 3 names provided", {
@@ -202,7 +202,59 @@ test_that("mat_to_long_df error if not 3 names provided", {
 })
 ```
 
-    ## Test passed 🥇
+    ## Test passed 🎊
+
+Set a theme for `ggplot2`
+-------------------------
+
+``` r
+#' `ggplot` theme
+#'
+#' Compliance with journal requirements.
+#' @param reset (`flag`).
+#' @export
+#'
+theme_rpack <- function(reset = FALSE) {
+
+  assertthat::assert_that(is.logical(reset))
+  if (reset) {
+    ggplot2::theme_set(ggplot2::theme_gray())
+  } else {
+    new_theme <- ggplot2::theme_minimal() +
+      ggplot2::theme(
+        line = ggplot2::element_line(color = "black"),
+        legend.position = "bottom",
+        legend.key.height = grid::unit(.3, "cm"),
+        text = ggplot2::element_text(size = 8),
+        plot.margin = ggplot2::margin(0, 0, 0, 0, "cm"),
+        legend.margin = ggplot2::margin(0, 0, 0, 0, "cm")
+      )
+    ggplot2::theme_set(new_theme)
+  }
+}
+```
+
+``` r
+library(ggplot2)
+gg <- ggplot(economics, aes(date, unemploy)) + geom_line()
+gg
+```
+
+![](img/unnamed-chunk-6-1.png)
+
+``` r
+theme_rpack()
+gg
+```
+
+![](img/unnamed-chunk-7-1.png)
+
+``` r
+theme_rpack(reset = TRUE)
+gg
+```
+
+![](img/unnamed-chunk-8-1.png)
 
 ``` r
 sessionInfo()
@@ -228,12 +280,18 @@ sessionInfo()
     ## [1] stats     graphics  grDevices utils     datasets  methods   base     
     ## 
     ## other attached packages:
-    ## [1] testthat_3.0.2
+    ## [1] ggplot2_3.3.3  testthat_3.0.2
     ## 
     ## loaded via a namespace (and not attached):
-    ##  [1] ps_1.6.0          rprojroot_2.0.2   crayon_1.4.1      digest_0.6.27    
-    ##  [5] withr_2.4.1       assertthat_0.2.1  R6_2.5.0          magrittr_2.0.1   
-    ##  [9] evaluate_0.14     cli_2.5.0         rlang_0.4.11      stringi_1.5.3    
-    ## [13] rstudioapi_0.13   rmarkdown_2.6     desc_1.3.0        tools_4.0.4      
-    ## [17] stringr_1.4.0     xfun_0.22         pkgload_1.1.0     yaml_2.2.1       
-    ## [21] compiler_4.0.4    htmltools_0.5.1.1 knitr_1.33
+    ##  [1] highr_0.9         compiler_4.0.4    pillar_1.6.0      tools_4.0.4      
+    ##  [5] digest_0.6.27     pkgload_1.1.0     evaluate_0.14     lifecycle_1.0.0  
+    ##  [9] tibble_3.1.1      gtable_0.3.0      pkgconfig_2.0.3   rlang_0.4.11     
+    ## [13] DBI_1.1.1         cli_2.5.0         rstudioapi_0.13   yaml_2.2.1       
+    ## [17] xfun_0.22         withr_2.4.1       stringr_1.4.0     dplyr_1.0.5      
+    ## [21] knitr_1.33        generics_0.1.0    desc_1.3.0        vctrs_0.3.8      
+    ## [25] tidyselect_1.1.1  rprojroot_2.0.2   grid_4.0.4        glue_1.4.2       
+    ## [29] R6_2.5.0          fansi_0.4.2       rmarkdown_2.6     farver_2.1.0     
+    ## [33] purrr_0.3.4       magrittr_2.0.1    scales_1.1.1      ps_1.6.0         
+    ## [37] htmltools_0.5.1.1 ellipsis_0.3.2    assertthat_0.2.1  colorspace_2.0-1 
+    ## [41] labeling_0.4.2    utf8_1.2.1        stringi_1.5.3     munsell_0.5.0    
+    ## [45] crayon_1.4.1
