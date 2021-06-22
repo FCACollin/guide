@@ -1,6 +1,6 @@
 ---
 author: 'FCA Collin, Ph.D.'
-date: 'Thursday, May 27, 2021'
+date: 'Wednesday, June 16, 2021'
 title: Utils
 weight: '-210311'
 ---
@@ -194,7 +194,7 @@ test_that("mat_to_long_df names are used", {
 })
 ```
 
-    ## Test passed 🎊
+    ## Test passed 😀
 
 ``` r
 test_that("mat_to_long_df error if not 3 names provided", {
@@ -202,7 +202,7 @@ test_that("mat_to_long_df error if not 3 names provided", {
 })
 ```
 
-    ## Test passed 🎊
+    ## Test passed 🥇
 
 Set a theme for `ggplot2`
 -------------------------

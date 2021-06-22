@@ -1,5 +1,5 @@
 ---
-title: R Content
+title: R
 weight: 2
 ---
 

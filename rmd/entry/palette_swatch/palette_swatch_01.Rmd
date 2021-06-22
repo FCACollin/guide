@@ -1,0 +1,146 @@
+---
+title: "Palette Swatch"
+subtitle: ""
+author: "FCA Collin, Ph.D."
+date: "`r format(Sys.Date(), '%A, %B %d, %Y')`"
+weight: -210311
+---
+
+_2021-03-19, FCA Collin_
+
+---
+
+<!--more-->
+```{r setup_knitr, echo = FALSE, message = FALSE, warning = FALSE}
+fig.height <- 1
+fig.width <- 7
+knitr::opts_chunk$set(
+  fig.width  = fig.width,
+  fig.height = fig.height,
+  dev = c('png', 'pdf', 'svg'),
+  fig.path = "img/"
+)
+```
+
+Good toy example to practice `grid` _viewport_ and _grob_ trees.
+
+```{r r_palette_swatch, echo = FALSE}
+#' Palette Swatch
+#'
+#' Represent a color palette.
+#'
+#' @param ... (`atomic`)\cr valid color(s) (according to grid)
+#' @param draw (`logical`)
+#' @export
+#' @examples
+#'
+#' palette_swatch("gray", "red", "gray", NA, "blue")
+#'
+palette_swatch <- function(..., draw = TRUE) {
+
+  colors <- list(...)
+  lapply(colors, function(x) assertthat::assert_that(is.atomic(x)))
+
+  colors <- unlist(colors)
+  nm <- paste(colors, seq_along(colors), sep = "_")
+  vp <- grid::vpTree(
+    parent = grid::viewport(name = "page", width = 0.95, height = 0.95),
+    children = do.call(
+      grid::vpList,
+      Map(
+        nm = nm,
+        x = seq_along(colors) / (length(colors)),
+        width = 1 / length(colors),
+        f = function(nm, x, width) {
+          grid::viewport(
+            name = nm,
+            x = x,
+            width = width,
+            just = "right"
+          )
+        }
+      )
+    )
+  )
+
+  gr <- do.call(
+    grid::gList,
+    Map(
+      colors,
+      nm,
+      f = function(colors, nm) {
+        grid::gTree(
+          vp = nm,
+          children = grid::gList(
+            grid::rectGrob(gp = grid::gpar(fill = colors, col = colors))
+          )
+        )
+      }
+    )
+  )
+
+  gr <- grid::gTree(
+    childrenvp = vp,
+    children = grid::gList(
+      grid::gTree(
+        vp = "page",
+        children = gr
+      )
+    )
+  )
+
+  if (draw) {
+    grid::grid.newpage()
+    grid::grid.draw(gr)
+  } else {
+    invisible()
+  }
+}
+```
+
+## Use Cases
+
+```{r}
+palette_swatch(viridis::viridis_pal(option = "A")(20))
+palette_swatch(viridis::viridis_pal(option = "B")(10))
+palette_swatch(viridis::viridis_pal(option = "C")(5))
+palette_swatch(viridis::viridis_pal(option = "D")(20))
+palette_swatch(viridis::viridis_pal(option = "E")(20))
+palette_swatch(viridis::viridis_pal(option = "F")(10))
+palette_swatch(viridis::viridis_pal(option = "G")(5))
+palette_swatch(viridis::viridis_pal(option = "H")(20))
+```
+
+## Definition
+
+```{r r_palette_swatch, eval = FALSE}
+```
+
+## Unit tests
+
+```{r}
+library(testthat)
+test_that("palette_swatch works if atomic", {
+  expect_silent(palette_swatch("gray", draw = FALSE))
+  expect_silent(palette_swatch("gray", c("blue", "green"), draw = FALSE))
+  expect_silent(palette_swatch("gray", "red", NA, "blue", draw = FALSE))
+  })
+
+test_that("palette_swatch works if a color is repeated", {
+  expect_silent(palette_swatch(rep("gray", 10), draw = FALSE))
+  expect_silent(palette_swatch("red", "red", draw = FALSE))
+  })
+
+test_that("palette_swatch fail if non-atomic", {
+  expect_error(palette_swatch("gray", iris, draw = FALSE))
+  })
+
+```
+
+##
+
+```{r}
+sessionInfo()
+```
+
+[modeline]: # ( vim: set foldlevel=0 spell spelllang=en_gb: ) 

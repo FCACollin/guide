@@ -15,7 +15,15 @@
   </url>
   
   <url>
+    <loc>/r_content/utils/palette_swatch_01/palette_swatch_01.html</loc>
+  </url>
+  
+  <url>
     <loc>/r_content/utils_01/utils_01.html</loc>
+  </url>
+  
+  <url>
+    <loc>/git/git_cmd/git_cmd_01.html</loc>
   </url>
   
   <url>
@@ -39,11 +47,19 @@
   </url>
   
   <url>
+    <loc>/git.html</loc>
+  </url>
+  
+  <url>
     <loc>/r_content.html</loc>
   </url>
   
   <url>
     <loc>/standard.html</loc>
+  </url>
+  
+  <url>
+    <loc>/r_content/utils.html</loc>
   </url>
   
   <url>
@@ -67,6 +83,11 @@
   
   <url>
     <loc>/tags/ggplot2.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/git.html</loc>
     <priority>0</priority>
   </url>
   

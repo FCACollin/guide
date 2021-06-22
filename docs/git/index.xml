@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on Portfolio</title>
+    <link>/git.html</link>
+    <description>Recent content in Git on Portfolio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git Translation</title>
+      <link>/git/git_cmd/git_cmd_01.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/git/git_cmd/git_cmd_01.html</guid>
+      <description>2021-06-22, FCA Collin
+Starting with Git from a user perspective.
+Why should I use Git?  Back up:  If I did a mistake I can roll back to a previously working stage.  Version control:  some versions are definitely working and might be used &amp;hellip; it does not stop me to carry on the programming (e.g. I want to add a new feature, I want to correct something) and eventually update the project: all is self contained (no copy paste from a draft directory to a production one)  Collaboration:  Easy to share code.</description>
+    </item>
+    
+  </channel>
+</rss>

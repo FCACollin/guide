@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Utils on Portfolio</title>
+    <link>/r_content/utils.html</link>
+    <description>Recent content in Utils on Portfolio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/r_content/utils/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Beat The Code</title>
+      <link>/r_content/utils_01/btc_01.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/r_content/utils_01/btc_01.html</guid>
+      <description>&lt;p&gt;&lt;em&gt;2021-03-11, FCA Collin&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;</description>
+    </item>
+    
+    <item>
+      <title>Palette Swatch</title>
+      <link>/r_content/utils/palette_swatch_01/palette_swatch_01.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/r_content/utils/palette_swatch_01/palette_swatch_01.html</guid>
+      <description>&lt;p&gt;&lt;em&gt;2021-03-19, FCA Collin&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;</description>
+    </item>
+    
+    <item>
+      <title>Utils</title>
+      <link>/r_content/utils_01/utils_01.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/r_content/utils_01/utils_01.html</guid>
+      <description>&lt;p&gt;&lt;em&gt;2021-03-19, FCA Collin&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
