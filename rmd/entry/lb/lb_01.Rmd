@@ -1,0 +1,138 @@
+---
+title: "LB Facets"
+subtitle: ""
+author: "FCA Collin, Ph.D."
+date: "`r format(Sys.Date(), '%A, %B %d, %Y')`"
+tags: ["graph", "ggplot2"] 
+weight: -210610
+---
+
+_2021-07-02, FCA Collin_
+
+<!--more-->
+```{r setup_knitr, echo = FALSE, message = FALSE, warning = FALSE}
+fig.height <- 5;
+fig.width <- 16/9 * fig.height;
+knitr::opts_chunk$set(
+  fig.width  = fig.width,
+  fig.height = fig.height,
+  dev = c('png', 'pdf', 'svg'),
+  fig.path = "img/"
+)
+```
+
+```{r dataset}
+library(tidyverse)
+
+# Simulated adlb
+adlb <- expand.grid(
+  USUBJID = paste("subj", 1:50),
+  AVISITN = 0:10,
+  ARMCD = paste("Arm", c("A", "B")),
+  PARAMCD = "prm 1"
+)
+
+adlb$AVISIT <- paste("VST", adlb$AVISIT)
+adlb <- do.call(
+  rbind,
+  lapply(
+    X = split(adlb, f = adlb$AVISITN),
+    FUN = function(x) {
+      x$AVAL <- rbeta(nrow(x), (unique(x$AVISITN) + 2)*0.5, 4) + 1
+      x
+    })
+)
+
+adlb <- rbind(
+  adlb,
+  within(adlb, {PARAMCD = "prm 2"; AVAL = 0.2 * AVAL}),
+  within(adlb, {PARAMCD = "prm 3"; AVAL = 0.5 * AVAL}),
+  within(adlb, {PARAMCD = "prm 4"; AVAL = 0.8 * AVAL})
+)
+```
+
+# Proposed preprocessing
+
+```{r preprocessing}
+## Identify Max visit if not already done in ADLB
+lb_max <- adlb %>%
+  group_by(USUBJID, PARAMCD, ARMCD) %>%
+  slice(which.max(AVAL)) %>%
+  mutate(AVISIT = "MAX") %>%
+  ungroup()
+
+## Identify Baseline visit if not already done in ADLB
+lb_bl <- adlb %>%
+  group_by(USUBJID, ARMCD) %>%
+  filter(AVISITN == 0) %>% # Change if Baseline differently identifed e.g. ABLFL
+  mutate(AVISIT = "BL") %>%
+  ungroup()
+
+## Combine baseline and max in Analysis DataSet [ads]
+ads <- bind_rows(lb_max, lb_bl)
+```
+
+# Graph 
+
+```{r}
+## Simple
+ads_plot <- pivot_wider(ads, names_from = AVISIT, values_from = AVAL, -AVISITN)
+
+gg <- ggplot(data = ads_plot, mapping = aes(x = BL, y = MAX, color = ARMCD)) +
+  geom_point() +
+  geom_abline(intercept = 0, slope = 1) + 
+  geom_hline(yintercept = 1:2, lty = 2) +
+  geom_vline(xintercept = 1:2, lty = 2) +
+  facet_wrap(. ~ PARAMCD) +
+  ggtitle("Panel of PRMs from Baseline to Maximum by Treatment") +
+  xlab("Baseline (/ULN)") +
+  ylab("Maximum (/ULN)") +
+  theme_minimal() + 
+  theme(asp = 1)
+gg
+
+```
+
+```{r}
+## Independent scales in facets
+
+### Identify Min / Max values in ads to keep asp = 1
+ads_lim <- split(ads, f = ads[c("ARMCD", "PARAMCD")])
+ads_lim <- lapply(
+  X = ads_lim,
+  FUN = function(x) {
+    df <- unique(x[c("ARMCD", "PARAMCD")])
+    row.names(df) <- NULL
+    cbind(
+      df,
+      AVISIT = unname(rep(unique(x$AVISIT), 2)),
+      range = rep(c("min", "max"), each = 2) ,
+      AVAL = rep(range(x$AVAL), each = 2)
+    )
+  }
+)
+ads_lim <- do.call(bind_rows, ads_lim) %>%
+  pivot_wider(names_from = AVISIT, values_from = AVAL)
+
+### Update figure
+gg <- ggplot(data = ads_lim, mapping = aes(x = BL, y = MAX, color = ARMCD)) +
+  geom_blank() +
+  geom_point(data = ads_plot, mapping = aes(x = BL, y = MAX, color = ARMCD)) +
+  geom_abline(intercept = 0, slope = 1) + 
+  geom_hline(yintercept = 1:2, lty = 2) +
+  geom_vline(xintercept = 1:2, lty = 2) +
+  facet_wrap(. ~ PARAMCD, scales = "free") +
+  ggtitle("Panel of PRMs from Baseline to Maximum by Treatment") +
+  xlab("Baseline (/ULN)") +
+  ylab("Maximum (/ULN)") +
+  theme_minimal() + 
+  theme(asp = 1)
+gg
+```
+
+
+```{r}
+sessionInfo()
+```
+
+[modeline]: # ( vim: set foldlevel=0 spell spelllang=en_gb: ) 

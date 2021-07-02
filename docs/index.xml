@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>LB Facets</title>
+      <link>/r_content/lb_01/lb_01.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/r_content/lb_01/lb_01.html</guid>
+      <description>&lt;p&gt;&lt;em&gt;2021-07-02, FCA Collin&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>A Bit of Style</title>
       <link>/r_content/btc/btc_02/btc_02.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -107,6 +116,17 @@ Why should I use Git?  Back up:  If I did a mistake I can roll back to a previou
       
       <guid>/faq/r_package/errors_01.html</guid>
       <description>&lt;p&gt;&lt;em&gt;2021-03-05, FCA Collin&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;</description>
+    </item>
+    
+    <item>
+      <title>ROC Curves</title>
+      <link>/r_content/lb_01/roc_01.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/r_content/lb_01/roc_01.html</guid>
+      <description>&lt;p&gt;&lt;em&gt;2021-01-11, FCA Collin (update 2021-01-12)&lt;/em&gt;&lt;/p&gt;
 
 &lt;hr /&gt;</description>
     </item>

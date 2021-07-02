@@ -3,6 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/r_content/lb_01/lb_01.html</loc>
+  </url>
+  
+  <url>
     <loc>/r_content/btc/btc_02/btc_02.html</loc>
   </url>
   
@@ -36,6 +40,10 @@
   
   <url>
     <loc>/faq/r_package/errors_01.html</loc>
+  </url>
+  
+  <url>
+    <loc>/r_content/lb_01/roc_01.html</loc>
   </url>
   
   <url>
