@@ -1,6 +1,7 @@
 ---
 title: Standard
 weight: 2
+
 ---
 
 Standard and information.

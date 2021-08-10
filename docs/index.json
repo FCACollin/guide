@@ -133,6 +133,20 @@
 	"content": ""
 },
 {
+	"uri": "/tags/date.html",
+	"title": "Date",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/standard/date.html",
+	"title": "Date and Time",
+	"tags": ["date", "time"],
+	"description": "",
+	"content": "2021-08-T05:49+0000, FCA Collin\nStandard followed to referred to date and time\nDate and time follows ISO 8601-1:2019, \u0026ldquo;Date and time - Representations for information interchange - Part 1: Basic rules\u0026rdquo;.\nWith R:\n# Date format(Sys.time(), \u0026#34;%Y-%m\u0026#34;) #\u0026gt; [1] \u0026#34;2021-08\u0026#34; format(Sys.time(), \u0026#34;%Y-%m-%d\u0026#34;) #\u0026gt; [1] \u0026#34;2021-08-10\u0026#34; # Date (compact) format(Sys.time(), \u0026#34;%Y%m\u0026#34;) #\u0026gt; [1] \u0026#34;202108\u0026#34; format(Sys.time(), \u0026#34;%Y%m%d\u0026#34;) #\u0026gt; [1] \u0026#34;20210810\u0026#34; # + Time format(Sys.time(), \u0026#34;%Y-%m-%dT%R%z\u0026#34;) #\u0026gt; [1] \u0026#34;2021-08-10T06:03+0000\u0026#34; format(Sys.time(), \u0026#34;%Y%m%dT%R%z\u0026#34;) #\u0026gt; [1] \u0026#34;20210810T06:03+0000\u0026#34; format(Sys.time(), \u0026#34;%Y-%m-%dT%T%z\u0026#34;) #\u0026gt; [1] \u0026#34;2021-08-10T06:03:19+0000\u0026#34; format(Sys.time(), \u0026#34;%Y%m%dT%T%z\u0026#34;) #\u0026gt; [1] \u0026#34;20210810T06:03:19+0000\u0026#34; Created on 2021-08-10 by the reprex package (v2.0.0)\nSome side advantages:\n alphabetic order matches chronological order (convenient for ordering) unambiguous and largely adopted across the world. "
+},
+{
 	"uri": "/tags/debug.html",
 	"title": "Debug",
 	"tags": [],
@@ -205,6 +219,13 @@
 {
 	"uri": "/tags.html",
 	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/time.html",
+	"title": "Time",
 	"tags": [],
 	"description": "",
 	"content": ""
