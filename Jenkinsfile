@@ -1,14 +1,15 @@
 pipeline {
   agent {
     docker {
-      image 'hello-world'
+      image 'node:6-alpine'
+      args '-p 3000:3000'
     }
 
   }
   stages {
-    stage('ayup') {
+    stage('build') {
       steps {
-        sh 'docker run hello-world'
+        sh 'npm install'
       }
     }
 
