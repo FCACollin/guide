@@ -1,9 +1,14 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'h'
+    }
+
+  }
   stages {
-    stage('copy') {
+    stage('ayup') {
       steps {
-        writeFile(file: 'README.md', text: 'test')
+        sh 'docker run hello-world'
       }
     }
 
