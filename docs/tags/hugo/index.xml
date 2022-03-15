@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on Portfolio</title>
-    <link>/tags/hugo/</link>
+    <link>/tags/hugo.html</link>
     <description>Recent content in Hugo on Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
