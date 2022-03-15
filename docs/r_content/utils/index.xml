@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Utils on Portfolio</title>
-    <link>/r_content/utils.html</link>
+    <link>/r_content/utils/</link>
     <description>Recent content in Utils on Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Beat The Code</title>
-      <link>/r_content/utils_01/btc_01.html</link>
+      <link>/r_content/utils_01/btc_01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/r_content/utils_01/btc_01.html</guid>
+      <guid>/r_content/utils_01/btc_01/</guid>
       <description>&lt;p&gt;&lt;em&gt;2021-03-11, FCA Collin&lt;/em&gt;&lt;/p&gt;
 
 &lt;hr /&gt;</description>
@@ -23,10 +23,10 @@
     
     <item>
       <title>Palette Swatch</title>
-      <link>/r_content/utils/palette_swatch_01/palette_swatch_01.html</link>
+      <link>/r_content/utils/palette_swatch_01/palette_swatch_01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/r_content/utils/palette_swatch_01/palette_swatch_01.html</guid>
+      <guid>/r_content/utils/palette_swatch_01/palette_swatch_01/</guid>
       <description>&lt;p&gt;&lt;em&gt;2021-03-19, FCA Collin&lt;/em&gt;&lt;/p&gt;
 
 &lt;hr /&gt;</description>
@@ -34,10 +34,10 @@
     
     <item>
       <title>Utils</title>
-      <link>/r_content/utils_01/utils_01.html</link>
+      <link>/r_content/utils_01/utils_01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/r_content/utils_01/utils_01.html</guid>
+      <guid>/r_content/utils_01/utils_01/</guid>
       <description>&lt;p&gt;&lt;em&gt;2021-03-19, FCA Collin&lt;/em&gt;&lt;/p&gt;
 
 &lt;hr /&gt;</description>

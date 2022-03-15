@@ -1,0 +1,11 @@
+languageCode: en-us
+title: Portfolio
+theme: hugo-theme-learn
+publishDir: docs
+
+# For search functionality
+outputs:
+  home: ["HTML", "RSS", "JSON"]
+
+params:
+  themeVariant: green

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Debug on Portfolio</title>
-    <link>/tags/debug.html</link>
+    <link>/tags/debug/</link>
     <description>Recent content in Debug on Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Git Help</title>
-      <link>/faq/git/git_01.html</link>
+      <link>/faq/git/git_01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/faq/git/git_01.html</guid>
+      <guid>/faq/git/git_01/</guid>
       <description>&lt;p&gt;&lt;em&gt;2021-03-08, FCA Collin&lt;/em&gt;&lt;/p&gt;
 
 &lt;hr /&gt;</description>
@@ -23,10 +23,10 @@
     
     <item>
       <title>R Pack Debug</title>
-      <link>/faq/r_package/errors_01.html</link>
+      <link>/faq/r_package/errors_01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/faq/r_package/errors_01.html</guid>
+      <guid>/faq/r_package/errors_01/</guid>
       <description>&lt;p&gt;&lt;em&gt;2021-03-05, FCA Collin&lt;/em&gt;&lt;/p&gt;
 
 &lt;hr /&gt;</description>

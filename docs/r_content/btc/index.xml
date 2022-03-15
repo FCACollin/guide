@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Beat The Code on Portfolio</title>
-    <link>/r_content/btc.html</link>
+    <link>/r_content/btc/</link>
     <description>Recent content in Beat The Code on Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>A Bit of Style</title>
-      <link>/r_content/btc/btc_02/btc_02.html</link>
+      <link>/r_content/btc/btc_02/btc_02/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/r_content/btc/btc_02/btc_02.html</guid>
+      <guid>/r_content/btc/btc_02/btc_02/</guid>
       <description>&lt;p&gt;&lt;em&gt;2021-03-11, FCA Collin&lt;/em&gt;&lt;/p&gt;
 
 &lt;hr /&gt;</description>
@@ -23,10 +23,10 @@
     
     <item>
       <title>Beat The Code</title>
-      <link>/r_content/btc/btc_01/btc_01.html</link>
+      <link>/r_content/btc/btc_01/btc_01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/r_content/btc/btc_01/btc_01.html</guid>
+      <guid>/r_content/btc/btc_01/btc_01/</guid>
       <description>&lt;p&gt;&lt;em&gt;2021-03-11, FCA Collin&lt;/em&gt;&lt;/p&gt;
 
 &lt;hr /&gt;</description>

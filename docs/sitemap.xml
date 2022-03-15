@@ -3,152 +3,40 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/r_content/lb_01/lb_01.html</loc>
+    <loc>/rmd_to_pdf/intro/</loc>
+    <lastmod>2022-03-15T09:22:43+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/r_content/btc/btc_02/btc_02.html</loc>
-  </url>
-  
-  <url>
-    <loc>/r_content/btc/btc_01/btc_01.html</loc>
-  </url>
-  
-  <url>
-    <loc>/r_content/utils_01/btc_01.html</loc>
-  </url>
-  
-  <url>
-    <loc>/r_content/utils/palette_swatch_01/palette_swatch_01.html</loc>
-  </url>
-  
-  <url>
-    <loc>/r_content/utils_01/utils_01.html</loc>
-  </url>
-  
-  <url>
-    <loc>/git/git_cmd/git_cmd_01.html</loc>
-  </url>
-  
-  <url>
-    <loc>/standard/lifecycle/lcycle_01.html</loc>
-  </url>
-  
-  <url>
-    <loc>/faq/git/git_01.html</loc>
-  </url>
-  
-  <url>
-    <loc>/faq/r_package/errors_01.html</loc>
-  </url>
-  
-  <url>
-    <loc>/r_content/lb_01/roc_01.html</loc>
-  </url>
-  
-  <url>
-    <loc>/r_content/roc_01/roc_01.html</loc>
-  </url>
-  
-  <url>
-    <loc>/r_content/btc.html</loc>
-  </url>
-  
-  <url>
-    <loc>/git.html</loc>
-  </url>
-  
-  <url>
-    <loc>/r_content.html</loc>
-  </url>
-  
-  <url>
-    <loc>/standard.html</loc>
-  </url>
-  
-  <url>
-    <loc>/r_content/utils.html</loc>
-  </url>
-  
-  <url>
-    <loc>/faq.html</loc>
-  </url>
-  
-  <url>
-    <loc>/categories.html</loc>
+    <loc>/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/date.html</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/standard/date.html</loc>
-  </url>
-  
-  <url>
-    <loc>/tags/debug.html</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/error.html</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ggplot2.html</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/git.html</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/graph.html</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/guide.html</loc>
+    <loc>/tags/guide/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/</loc>
+    <lastmod>2022-03-15T09:22:43+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/hugo.html</loc>
+    <loc>/tags/hugo/</loc>
+    <lastmod>2022-03-15T09:22:43+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/lifecycle.html</loc>
+    <loc>/rmd_to_pdf/</loc>
+    <lastmod>2022-03-15T09:22:43+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/roc.html</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags.html</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/time.html</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/warning.html</loc>
+    <loc>/tags/</loc>
+    <lastmod>2022-03-15T09:22:43+01:00</lastmod>
     <priority>0</priority>
   </url>
   

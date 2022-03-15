@@ -6,153 +6,18 @@
     <description>Recent content in Guide on Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Tue, 15 Mar 2022 09:22:43 +0100</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>LB Facets</title>
-      <link>/r_content/lb_01/lb_01.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Intro</title>
+      <link>/rmd_to_pdf/intro/</link>
+      <pubDate>Tue, 15 Mar 2022 09:22:43 +0100</pubDate>
       
-      <guid>/r_content/lb_01/lb_01.html</guid>
-      <description>&lt;p&gt;&lt;em&gt;2021-07-02, FCA Collin&lt;/em&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>A Bit of Style</title>
-      <link>/r_content/btc/btc_02/btc_02.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/r_content/btc/btc_02/btc_02.html</guid>
-      <description>&lt;p&gt;&lt;em&gt;2021-03-11, FCA Collin&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;</description>
-    </item>
-    
-    <item>
-      <title>Beat The Code</title>
-      <link>/r_content/btc/btc_01/btc_01.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/r_content/btc/btc_01/btc_01.html</guid>
-      <description>&lt;p&gt;&lt;em&gt;2021-03-11, FCA Collin&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;</description>
-    </item>
-    
-    <item>
-      <title>Beat The Code</title>
-      <link>/r_content/utils_01/btc_01.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/r_content/utils_01/btc_01.html</guid>
-      <description>&lt;p&gt;&lt;em&gt;2021-03-11, FCA Collin&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;</description>
-    </item>
-    
-    <item>
-      <title>Palette Swatch</title>
-      <link>/r_content/utils/palette_swatch_01/palette_swatch_01.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/r_content/utils/palette_swatch_01/palette_swatch_01.html</guid>
-      <description>&lt;p&gt;&lt;em&gt;2021-03-19, FCA Collin&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;</description>
-    </item>
-    
-    <item>
-      <title>Utils</title>
-      <link>/r_content/utils_01/utils_01.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/r_content/utils_01/utils_01.html</guid>
-      <description>&lt;p&gt;&lt;em&gt;2021-03-19, FCA Collin&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;</description>
-    </item>
-    
-    <item>
-      <title>Git Translation</title>
-      <link>/git/git_cmd/git_cmd_01.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/git/git_cmd/git_cmd_01.html</guid>
-      <description>2021-06-22, FCA Collin
-Starting with Git from a user perspective.
-Why should I use Git?  Back up:  If I did a mistake I can roll back to a previously working stage.  Version control:  some versions are definitely working and might be used &amp;hellip; it does not stop me to carry on the programming (e.g. I want to add a new feature, I want to correct something) and eventually update the project: all is self contained (no copy paste from a draft directory to a production one)  Collaboration:  Easy to share code.</description>
-    </item>
-    
-    <item>
-      <title>Lifecycle</title>
-      <link>/standard/lifecycle/lcycle_01.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/standard/lifecycle/lcycle_01.html</guid>
-      <description>&lt;p&gt;&lt;em&gt;2021-03-09, FCA Collin&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Presentation of lifecycle status and shields used in production&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;</description>
-    </item>
-    
-    <item>
-      <title>Git Help</title>
-      <link>/faq/git/git_01.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/faq/git/git_01.html</guid>
-      <description>&lt;p&gt;&lt;em&gt;2021-03-08, FCA Collin&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;</description>
-    </item>
-    
-    <item>
-      <title>R Pack Debug</title>
-      <link>/faq/r_package/errors_01.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/faq/r_package/errors_01.html</guid>
-      <description>&lt;p&gt;&lt;em&gt;2021-03-05, FCA Collin&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;</description>
-    </item>
-    
-    <item>
-      <title>ROC Curves</title>
-      <link>/r_content/lb_01/roc_01.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/r_content/lb_01/roc_01.html</guid>
-      <description>&lt;p&gt;&lt;em&gt;2021-01-11, FCA Collin (update 2021-01-12)&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;</description>
-    </item>
-    
-    <item>
-      <title>ROC Curves</title>
-      <link>/r_content/roc_01/roc_01.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/r_content/roc_01/roc_01.html</guid>
-      <description>&lt;p&gt;&lt;em&gt;2021-01-11, FCA Collin (update 2021-01-12)&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;</description>
-    </item>
-    
-    <item>
-      <title>Date and Time</title>
-      <link>/standard/date.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/standard/date.html</guid>
-      <description>&lt;p&gt;&lt;em&gt;2021-08-T05:49+0000, FCA Collin&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Standard followed to referred to date and time&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;</description>
+      <guid>/rmd_to_pdf/intro/</guid>
+      <description>Test cameleon</description>
     </item>
     
   </channel>
