@@ -13,7 +13,8 @@
       <pubDate>Tue, 15 Mar 2022 09:22:43 +0100</pubDate>
       
       <guid>/rmd_to_pdf/rmd2pdf_01.html</guid>
-      <description>graph LR; A[Hard edge] --|Link text| B(Round edge) B -- C{Decision} C --|One| D[Result one] C --|Two| E[Result two]  . . . .--- 1 .-- 1 / 1 / \ | | .---+ .-+ + / \ .---+---. .--+--. | &#39;--- 2 | &#39;-- 2 / \ 2 + + | | | | ---+ ---+ + / \ / \ .-+-. .-+-. .+. .+. | .--- 3 | .</description>
+      <description>RStudio:
+ File &amp;gt; New File &amp;gt; RMarkdown &amp;hellip; &amp;gt; Select output PDF and OK. See rmd2pdf_01_01.Rmd sequenceDiagram participant Rmd participant pdf Rmd-pdf: knit button Rmd-pdf: = `rmarkdown::pdf_document()`    rmarkdown: render()/pdf_document() Under the hood, the rendering of a document is managed by R, but also involves Pandoc. The rmarkdown&amp;rsquo;s functions render() and pdf_document() are high level functions which can manages most of the features a user my need when generating a document.</description>
     </item>
     
   </channel>

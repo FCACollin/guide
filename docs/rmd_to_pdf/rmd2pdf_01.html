@@ -12,22 +12,22 @@
     <title>Intro :: Portfolio</title>
 
     
-    <link href="../css/nucleus.css?1647407106" rel="stylesheet">
-    <link href="../css/fontawesome-all.min.css?1647407106" rel="stylesheet">
-    <link href="../css/hybrid.css?1647407106" rel="stylesheet">
-    <link href="../css/featherlight.min.css?1647407106" rel="stylesheet">
-    <link href="../css/perfect-scrollbar.min.css?1647407106" rel="stylesheet">
-    <link href="../css/auto-complete.css?1647407106" rel="stylesheet">
-    <link href="../css/atom-one-dark-reasonable.css?1647407106" rel="stylesheet">
-    <link href="../css/theme.css?1647407106" rel="stylesheet">
-    <link href="../css/tabs.css?1647407106" rel="stylesheet">
-    <link href="../css/hugo-theme.css?1647407106" rel="stylesheet">
+    <link href="../css/nucleus.css?1647429542" rel="stylesheet">
+    <link href="../css/fontawesome-all.min.css?1647429542" rel="stylesheet">
+    <link href="../css/hybrid.css?1647429542" rel="stylesheet">
+    <link href="../css/featherlight.min.css?1647429542" rel="stylesheet">
+    <link href="../css/perfect-scrollbar.min.css?1647429542" rel="stylesheet">
+    <link href="../css/auto-complete.css?1647429542" rel="stylesheet">
+    <link href="../css/atom-one-dark-reasonable.css?1647429542" rel="stylesheet">
+    <link href="../css/theme.css?1647429542" rel="stylesheet">
+    <link href="../css/tabs.css?1647429542" rel="stylesheet">
+    <link href="../css/hugo-theme.css?1647429542" rel="stylesheet">
     
-    <link href="../css/theme-green.css?1647407106" rel="stylesheet">
+    <link href="../css/theme-green.css?1647429542" rel="stylesheet">
     
     
 
-    <script src="../js/jquery-3.3.1.min.js?1647407106"></script>
+    <script src="../js/jquery-3.3.1.min.js?1647429542"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../js/lunr.min.js?1647407106"></script>
-<script type="text/javascript" src="../js/auto-complete.js?1647407106"></script>
+<script type="text/javascript" src="../js/lunr.min.js?1647429542"></script>
+<script type="text/javascript" src="../js/auto-complete.js?1647429542"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../js/search.js?1647407106"></script>
+<script type="text/javascript" src="../js/search.js?1647429542"></script>
 
     
   </div>
@@ -198,7 +198,13 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#rmarkdown-renderpdf_document">rmarkdown: <code>render()</code>/<code>pdf_document()</code></a></li>
+    <li><a href="#pass-arguments-to-pandoc">Pass arguments to pandoc</a></li>
+    <li><a href="#pass-arguments-to-the-latex-engine">Pass arguments to the LaTeX engine</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -221,24 +227,172 @@
         
 
 
+<p>RStudio:</p>
+<ul>
+<li>File &gt; New File &gt; RMarkdown &hellip; &gt; Select output PDF and OK.</li>
+<li>See <code>rmd2pdf_01_01.Rmd</code>
 
 <div class="mermaid" align="left">
-graph LR;
-    A[Hard edge] -->|Link text| B(Round edge)
-    B --> C{Decision}
-    C -->|One| D[Result one]
-    C -->|Two| E[Result two]
+sequenceDiagram
+    participant Rmd
+    participant pdf
+    Rmd->>pdf: knit button
+    Rmd->>pdf: = `rmarkdown::pdf_document()`
+</div>
+</li>
+</ul>
+<h2 id="rmarkdown-renderpdf_document">rmarkdown: <code>render()</code>/<code>pdf_document()</code></h2>
+<p>Under the hood, the rendering of a document is managed by R, but also involves
+Pandoc. The <code>rmarkdown</code>&rsquo;s functions <code>render()</code> and <code>pdf_document()</code> are high
+level functions which can manages most of the features a user my need when
+generating a document.</p>
+
+<div class="mermaid" align="left">
+sequenceDiagram
+    participant Rmd
+    participant md
+    participant pdf
+    Rmd->>md: R
+    md->>pdf: pandoc
+    Rmd->>pdf: rmarkdown::pdf_document()
+    Note right of Rmd: keep_md=FALSE</br>toc=TRUE
 </div>
 
-<pre tabindex="0"><code class="language-goat" data-lang="goat">      .               .                .               .--- 1          .-- 1     / 1
-     / \              |                |           .---+            .-+         +
-    /   \         .---+---.         .--+--.        |   '--- 2      |   '-- 2   / \ 2
-   +     +        |       |        |       |    ---+            ---+          +
-  / \   / \     .-+-.   .-+-.     .+.     .+.      |   .--- 3      |   .-- 3   \ / 3
- /   \ /   \    |   |   |   |    |   |   |   |     '---+            '-+         +
- 1   2 3   4    1   2   3   4    1   2   3   4         '--- 4          '-- 4     \ 4
+<ul>
+<li>
+<p>The options above can be passed via the <code>yaml</code> frontmatter
+(e.g. <code>rmd2pdf_01_03.Rmd</code>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+<span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;Rmd to PDF&#34;</span>
+<span style="color:#f92672">output</span>:
+  <span style="color:#f92672">pdf_document</span>:
+    <span style="color:#f92672">keep_md</span>: <span style="color:#66d9ef">true</span>
+    <span style="color:#f92672">toc</span>: <span style="color:#66d9ef">true</span>
+---
+</code></pre></div></li>
+<li>
+<p>or via an output function.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">render</span>(
+  input <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;rmd2pdf_01_02.Rmd&#34;</span>,
+  output_format <span style="color:#f92672">=</span> <span style="color:#a6e22e">pdf_document</span>(toc <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, keep_md <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+)
+</code></pre></div></li>
+</ul>
 
-</code></pre>
+<div class="notices tip" ><p><code>render</code> and <code>pdf_document</code> are functions exported by the <code>rmarkdown</code> package.
+Check
+<a href="https://rdrr.io/cran/rmarkdown/src/R/pdf_document.R"><code>?rmarkdown::pdf_document</code> &rsquo;s help</a>.</p>
+</div>
+
+<h2 id="pass-arguments-to-pandoc">Pass arguments to pandoc</h2>
+<p>Some options are handled by pandoc and so called, these arguments must then
+been conveyed to Pandoc which treats them as
+<em><a href="https://pandoc.org/MANUAL.html#variables-for-latex">variables for LaTeX</a></em>.</p>
+
+<div class="mermaid" align="left">
+sequenceDiagram
+    participant Rmd
+    participant md
+    participant pdf
+    Rmd->>+md: rmarkdown::pdf_document()
+    Note right of Rmd: keep_md=FALSE</br>toc=TRUE
+    md-->>-pdf: Pandoc
+    Note right of md: Variables For LaTeX</br>fontfamily: libertinus-type1
+</div>
+
+<p>The Pandoc variables for LaTeX can be provisionned by:</p>
+<ul>
+<li>the Rmarkdown document
+<a href="https://bookdown.org/yihui/rmarkdown-cookbook/latex-variables.html#latex-variables">yaml front matter</a>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+<span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;Rmd to PDF&#34;</span>
+<span style="color:#f92672">output</span>:
+  <span style="color:#f92672">pdf_document</span>:
+    <span style="color:#f92672">keep_md</span>: <span style="color:#66d9ef">true</span>
+    <span style="color:#f92672">toc</span>: <span style="color:#66d9ef">true</span>
+<span style="color:#f92672">fontfamily</span>: <span style="color:#ae81ff">libertinus-type1</span>
+---
+</code></pre></div></li>
+<li>the <code>pdf_document()</code> function:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">rmarkdown<span style="color:#f92672">::</span><span style="color:#a6e22e">render</span>(
+  input <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;rmd2pdf_01_03.Rmd&#34;</span>,
+  output_format <span style="color:#f92672">=</span> rmarkdown<span style="color:#f92672">::</span><span style="color:#a6e22e">pdf_document</span>(
+    toc <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,
+    pandoc_args <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(
+      <span style="color:#e6db74">&#34;--variable=fontfamily:libertinus-type1&#34;</span>
+    )
+  )
+)
+</code></pre></div><h2 id="pass-arguments-to-the-latex-engine">Pass arguments to the LaTeX engine</h2>
+<p>Pandoc itself is a high level programs which handles conversion between formats.
+A conversion toward a PDF document requires an intermediary LaTeX document,
+this LaTeX document is then processed by a a LaTeX engine into pdf.
+Most of the expected functionnalities are translated via Pandoc, however,
+sometimes, LaTeX functionnalities are not covered and they must be conveyed
+from the original R Markdown document to the LaTeX document.</p>
+
+<div class="mermaid" align="left">
+sequenceDiagram
+    participant Rmd
+    participant md
+    participant tex
+    participant pdf
+    Rmd->>pdf: rmarkdown::pdf_document()
+    Rmd->>md: R
+    Note right of Rmd: rmarkdown arguments
+    md->>+tex: Pandoc
+    Note right of md: LaTeX Variables
+    tex-->>-pdf: LaTeX engine
+    Note right of tex: Extra depencendies</br>e.g. fancyhdr
+</div>
+
+<ul>
+<li>The yaml frontmatter won&rsquo;t be self sufficient anymore, the use of
+<code>include/in_header</code> points at a supplementary <code>.tex</code> file:
+<ul>
+<li>yaml:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+<span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;Rmd to PDF&#34;</span>
+<span style="color:#f92672">output</span>:
+  <span style="color:#f92672">pdf_document</span>:
+    <span style="color:#f92672">latex_engine</span>: <span style="color:#ae81ff">xelatex</span>
+    <span style="color:#f92672">keep_md</span>: <span style="color:#66d9ef">true</span>
+    <span style="color:#f92672">toc</span>: <span style="color:#66d9ef">true</span>
+    <span style="color:#f92672">includes</span>:
+      <span style="color:#f92672">in_header</span>: <span style="color:#e6db74">&#34;preamble.tex&#34;</span>
+<span style="color:#f92672">mainfont</span>: <span style="color:#ae81ff">DejaVuSansMono</span>
+---
+</code></pre></div><ul>
+<li><code>preambule.tex</code>:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex"><span style="color:#66d9ef">\usepackage</span>{fancyhdr}
+<span style="color:#66d9ef">\pagestyle</span>{fancy}
+<span style="color:#66d9ef">\fancyhead</span><span style="color:#a6e22e">[L]</span>{FCollin}
+</code></pre></div></li>
+<li>The use of <code>pdf_document()</code> is an interesting alternative, maybe more
+compact:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">rmarkdown<span style="color:#f92672">::</span><span style="color:#a6e22e">render</span>(
+  input <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;rmd2pdf_01_04.Rmd&#34;</span>,
+  output_format <span style="color:#f92672">=</span> rmarkdown<span style="color:#f92672">::</span><span style="color:#a6e22e">pdf_document</span>(
+    toc <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,
+    latex_engine <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;xelatex&#34;</span>,
+    pandoc_args <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(<span style="color:#e6db74">&#34;--variable=mainfont:DejaVuSansMono&#34;</span>),
+    extra_dependencies <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(
+      rmarkdown<span style="color:#f92672">::</span><span style="color:#a6e22e">latex_dependency</span>(
+        <span style="color:#e6db74">&#34;fancyhdr&#34;</span>,
+        extra_lines <span style="color:#f92672">=</span> <span style="color:#a6e22e">paste</span>(
+          <span style="color:#e6db74">&#34;\\pagestyle{fancy}&#34;</span>,
+          <span style="color:#e6db74">&#34;\\fancyhead[L]{FCollin}&#34;</span>
+        )
+      )
+    )
+  )
+)
+</code></pre></div></li>
+</ul>
+
 
 <footer class="footline">
 	
@@ -328,19 +482,19 @@ graph LR;
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../js/clipboard.min.js?1647407106"></script>
-    <script src="../js/perfect-scrollbar.min.js?1647407106"></script>
-    <script src="../js/perfect-scrollbar.jquery.min.js?1647407106"></script>
-    <script src="../js/jquery.sticky.js?1647407106"></script>
-    <script src="../js/featherlight.min.js?1647407106"></script>
-    <script src="../js/highlight.pack.js?1647407106"></script>
+    <script src="../js/clipboard.min.js?1647429542"></script>
+    <script src="../js/perfect-scrollbar.min.js?1647429542"></script>
+    <script src="../js/perfect-scrollbar.jquery.min.js?1647429542"></script>
+    <script src="../js/jquery.sticky.js?1647429542"></script>
+    <script src="../js/featherlight.min.js?1647429542"></script>
+    <script src="../js/highlight.pack.js?1647429542"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../js/modernizr.custom-3.6.0.js?1647407106"></script>
-    <script src="../js/learn.js?1647407106"></script>
-    <script src="../js/hugo-learn.js?1647407106"></script>
+    <script src="../js/modernizr.custom-3.6.0.js?1647429542"></script>
+    <script src="../js/learn.js?1647429542"></script>
+    <script src="../js/hugo-learn.js?1647429542"></script>
     
         
-            <script src="../mermaid/mermaid.js?1647407106"></script>
+            <script src="../mermaid/mermaid.js?1647429542"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
