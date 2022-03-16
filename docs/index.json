@@ -1,10 +1,24 @@
 [
 {
-	"uri": "/rmd_to_pdf/intro.html",
+	"uri": "/",
+	"title": "Guide",
+	"tags": ["hugo", "guide"],
+	"description": "",
+	"content": "Welcome 2021-03-10, FCA Collin\n This guide contains information for stakeholders about methods used in when I develop programs. This is still a fairly new initiative and is likely to strongly evolve in the coming months.\nUnder The Hood This is an example of static web page generated with Hugo. No big knowledge of html, Hugo comes with ready-to-use features, further augmented by themes . For instance, the learn theme used for these pages has nice features for project documentation, included but not restricted to:\n keyword search box in the top-left corner. content folder structure corresponding to the left expandable navigation menu. the code is highlighted.  Different themes serve different purpose, I have found the Creative portfolio especially useful to present my \u0026hellip; portfolio!\nGitHub repository, check directory hugo.\nThe user simply edits the content folder with markdown files, adds figures, docs, or other elements in the static folder and run the command hugoto render the webpage in thepublic` folder. Nicely, with the following comment the website is dynamically rendered at http://localhost:1313/ and modifications of the source are automatically rendered.\nhugo server Credits  Hugo-theme-learn is a theme for Hugo, a fast and modern static website engine written in Go.  "
+},
+{
+	"uri": "/rmd_to_pdf/rmd2pdf_01.html",
 	"title": "Intro",
 	"tags": [],
 	"description": "",
-	"content": "Test cameleon\n"
+	"content": " graph LR; A[Hard edge] --|Link text| B(Round edge) B -- C{Decision} C --|One| D[Result one] C --|Two| E[Result two]  . . . .--- 1 .-- 1 / 1 / \\ | | .---+ .-+ + / \\ .---+---. .--+--. | '--- 2 | '-- 2 / \\ 2 + + | | | | ---+ ---+ + / \\ / \\ .-+-. .-+-. .+. .+. | .--- 3 | .-- 3 \\ / 3 / \\ / \\ | | | | | | | | '---+ '-+ + 1 2 3 4 1 2 3 4 1 2 3 4 '--- 4 '-- 4 \\ 4 "
+},
+{
+	"uri": "/rmd_to_pdf.html",
+	"title": "R Markdown to PDF",
+	"tags": ["hugo", "guide"],
+	"description": "",
+	"content": "Welcome "
 },
 {
 	"uri": "/categories.html",
@@ -15,28 +29,14 @@
 },
 {
 	"uri": "/tags/guide.html",
-	"title": "Guide",
+	"title": "guide",
 	"tags": [],
 	"description": "",
 	"content": ""
-},
-{
-	"uri": "/",
-	"title": "Guide",
-	"tags": ["hugo", "guide"],
-	"description": "",
-	"content": " Welcome 2021-03-10, FCA Collin\nThis guide contains information for stakeholders about methods used in when I develop programs. This is still a fairly new initiative and is likely to strongly evolve in the coming months.\nUnder The Hood This is an example of static web page generated with Hugo. No big knowledge of html, Hugo comes with ready-to-use features, further augmented by themes . For instance, the learn theme used for these pages has nice features for project documentation, included but not restricted to:\n keyword search box in the top-left corner. content folder structure corresponding to the left expandable navigation menu. the code is highlighted.  Try the search box in the top-left corner and look for ggplot2.\n Different themes serve different purpose, I have found the Creative portfolio especially useful to present my \u0026hellip; portfolio!\nGitHub repository, check directory hugo.\nThe user simply edits the content folder with markdown files, adds figures, docs, or other elements in the static folder and run the commandhugoto render the webpage in thepublic` folder. Nicely, with the following comment the website is dynamically rendered at http://localhost:1313/ and modifications of the source are automatically rendered.\nhugo server  Credits  Hugo-theme-learn is a theme for Hugo, a fast and modern static website engine written in Go.  "
 },
 {
 	"uri": "/tags/hugo.html",
-	"title": "Hugo",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "/rmd_to_pdf.html",
-	"title": "Rmd_to_pdf",
+	"title": "hugo",
 	"tags": [],
 	"description": "",
 	"content": ""
