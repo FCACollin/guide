@@ -1,9 +1,10 @@
+baseURL: "http://localhost:802/"
 languageCode: en-us
 title: latarnia-local
 theme: hugo-theme-learn
 publishDir: docs
 
-relativeURLs: true
+relativeURLs: false
 uglyURLs: true
 pluralizelisttitles: false
 

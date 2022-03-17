@@ -9,7 +9,7 @@
 {
 	"uri": "https://fcacollin.github.io/guide/rmd_to_pdf/rmd2pdf_01.html",
 	"title": "Intro",
-	"tags": [],
+	"tags": ["rmd"],
 	"description": "",
 	"content": "RStudio:\n File \u0026gt; New File \u0026gt; RMarkdown \u0026hellip; \u0026gt; Select output PDF and OK. See rmd2pdf_01_01.Rmd sequenceDiagram participant Rmd participant pdf Rmd-pdf: knit button Rmd-pdf: = `rmarkdown::pdf_document()`    rmarkdown: render()/pdf_document() Under the hood, the rendering of a document is managed by R, but also involves Pandoc. The rmarkdown\u0026rsquo;s functions render() and pdf_document() are high level functions which can manages most of the features a user my need when generating a document.\nsequenceDiagram participant Rmd participant md participant pdf Rmd-md: R md-pdf: pandoc Rmd-pdf: rmarkdown::pdf_document() Note right of Rmd: keep_md=FALSEtoc=TRUE    The options above can be passed via the yaml frontmatter (e.g. rmd2pdf_01_03.Rmd):\n--- title: \u0026#34;Rmd to PDF\u0026#34; output: pdf_document: keep_md: true toc: true ---   or via an output function.\nrender( input = \u0026#34;rmd2pdf_01_02.Rmd\u0026#34;, output_format = pdf_document(toc = TRUE, keep_md = TRUE) )   render and pdf_document are functions exported by the rmarkdown package. Check ?rmarkdown::pdf_document \u0026rsquo;s help.\n Pass arguments to pandoc Some options are handled by pandoc and so called, these arguments must then been conveyed to Pandoc which treats them as variables for LaTeX.\nsequenceDiagram participant Rmd participant md participant pdf Rmd-+md: rmarkdown::pdf_document() Note right of Rmd: keep_md=FALSEtoc=TRUE md---pdf: Pandoc Note right of md: Variables For LaTeXfontfamily: libertinus-type1  The Pandoc variables for LaTeX can be provisionned by:\n the Rmarkdown document yaml front matter: --- title: \u0026#34;Rmd to PDF\u0026#34; output: pdf_document: keep_md: true toc: true fontfamily: libertinus-type1 ---  the pdf_document() function:  rmarkdown::render( input = \u0026#34;rmd2pdf_01_03.Rmd\u0026#34;, output_format = rmarkdown::pdf_document( toc = TRUE, pandoc_args = list( \u0026#34;--variable=fontfamily:libertinus-type1\u0026#34; ) ) ) Pass arguments to the LaTeX engine Pandoc itself is a high level programs which handles conversion between formats. A conversion toward a PDF document requires an intermediary LaTeX document, this LaTeX document is then processed by a a LaTeX engine into pdf. Most of the expected functionnalities are translated via Pandoc, however, sometimes, LaTeX functionnalities are not covered and they must be conveyed from the original R Markdown document to the LaTeX document.\nsequenceDiagram participant Rmd participant md participant tex participant pdf Rmd-pdf: rmarkdown::pdf_document() Rmd-md: R Note right of Rmd: rmarkdown arguments md-+tex: Pandoc Note right of md: LaTeX Variables tex---pdf: LaTeX engine Note right of tex: Extra depencendiese.g. fancyhdr   The yaml frontmatter won\u0026rsquo;t be self sufficient anymore, the use of include/in_header points at a supplementary .tex file:  yaml:  --- title: \u0026#34;Rmd to PDF\u0026#34; output: pdf_document: latex_engine: xelatex keep_md: true toc: true includes: in_header: \u0026#34;preamble.tex\u0026#34; mainfont: DejaVuSansMono ---  preambule.tex:  \\usepackage{fancyhdr} \\pagestyle{fancy} \\fancyhead[L]{FCollin}  The use of pdf_document() is an interesting alternative, maybe more compact: rmarkdown::render( input = \u0026#34;rmd2pdf_01_04.Rmd\u0026#34;, output_format = rmarkdown::pdf_document( toc = TRUE, latex_engine = \u0026#34;xelatex\u0026#34;, pandoc_args = list(\u0026#34;--variable=mainfont:DejaVuSansMono\u0026#34;), extra_dependencies = list( rmarkdown::latex_dependency( \u0026#34;fancyhdr\u0026#34;, extra_lines = paste( \u0026#34;\\\\pagestyle{fancy}\u0026#34;, \u0026#34;\\\\fancyhead[L]{FCollin}\u0026#34; ) ) ) ) )   "
 },
@@ -19,6 +19,20 @@
 	"tags": ["hugo", "guide"],
 	"description": "",
 	"content": "Welcome "
+},
+{
+	"uri": "https://fcacollin.github.io/guide/tags/rmd.html",
+	"title": "rmd",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://fcacollin.github.io/guide/tags.html",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "https://fcacollin.github.io/guide/categories.html",
@@ -37,13 +51,6 @@
 {
 	"uri": "https://fcacollin.github.io/guide/tags/hugo.html",
 	"title": "hugo",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://fcacollin.github.io/guide/tags.html",
-	"title": "Tags",
 	"tags": [],
 	"description": "",
 	"content": ""
