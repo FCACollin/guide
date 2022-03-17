@@ -1,0 +1,21 @@
+languageCode: en-us
+title: latarnia-local
+theme: hugo-theme-learn
+publishDir: docs
+
+relativeURLs: true
+uglyURLs: true
+pluralizelisttitles: false
+
+# For search functionality
+outputs:
+  home: ["HTML", "RSS", "JSON"]
+
+params:
+  themeVariant: green
+
+
+baseURL: "https://fcacollin.github.io/guide/"
+relativeURLs: false
+title: latarnia-gh
+
