@@ -24,5 +24,4 @@ docker run --rm -it \
   -v $(pwd):/src \
   klakegg/hugo:0.92.1
 
-# rm config.yaml
-
+rm config.yaml
