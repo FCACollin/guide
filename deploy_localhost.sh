@@ -6,6 +6,7 @@ docker container stop serve_hugo_guide_container
 docker rm serve_hugo_guide_container
 docker image rm serve_hugo_guide
 
+cp config_base.yaml config.yaml
 docker run --rm -it \
   -v $(pwd):/src \
   klakegg/hugo:0.92.1
@@ -17,3 +18,11 @@ docker run \
   --detach \
   --publish 802:80 \
   serve_hugo_guide
+
+cat config_base.yaml config_gh.yaml > config.yaml
+docker run --rm -it \
+  -v $(pwd):/src \
+  klakegg/hugo:0.92.1
+
+# rm config.yaml
+
