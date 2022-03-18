@@ -7,23 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://fcacollin.github.io/guide/tags/guide/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Guide</title>
+      <title>Home</title>
       <link>https://fcacollin.github.io/guide/</link>
       <pubDate>Tue, 15 Mar 2022 09:22:43 +0100</pubDate>
       
       <guid>https://fcacollin.github.io/guide/</guid>
-      <description>Welcome 2022-03-17, FCA Collin
- This guide contains information for stakeholders about methods used in when I develop programs. This is still a fairly new initiative and is likely to strongly evolve in the coming months.
-Under The Hood This is an example of static web page generated with Hugo. No big knowledge of html, Hugo comes with ready-to-use features, further augmented by themes . For instance, the learn theme used for these pages has nice features for project documentation, included but not restricted to:</description>
-    </item>
-    
-    <item>
-      <title>R Markdown to PDF</title>
-      <link>https://fcacollin.github.io/guide/rmd_to_pdf.html</link>
-      <pubDate>Tue, 15 Mar 2022 09:22:43 +0100</pubDate>
-      
-      <guid>https://fcacollin.github.io/guide/rmd_to_pdf.html</guid>
-      <description>Welcome </description>
+      <description>Welcome  R Markdown to PDF  Description of the pipeline converting a R Markdown file into a pdf, and how to modify the configurate the document with options passed to Pandoc and an LaTeX engine.
+ Hugo  Lesson learned with Hugo
+ </description>
     </item>
     
   </channel>

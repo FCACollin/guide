@@ -1,24 +1,17 @@
 [
 {
 	"uri": "https://fcacollin.github.io/guide/",
-	"title": "Guide",
+	"title": "Home",
 	"tags": ["hugo", "guide"],
 	"description": "",
-	"content": "Welcome 2022-03-17, FCA Collin\n This guide contains information for stakeholders about methods used in when I develop programs. This is still a fairly new initiative and is likely to strongly evolve in the coming months.\nUnder The Hood This is an example of static web page generated with Hugo. No big knowledge of html, Hugo comes with ready-to-use features, further augmented by themes . For instance, the learn theme used for these pages has nice features for project documentation, included but not restricted to:\n keyword search box in the top-left corner. content folder structure corresponding to the left expandable navigation menu. the code is highlighted.  Different themes serve different purpose, I have found the Creative portfolio especially useful to present my \u0026hellip; portfolio!\nGitHub repository, check directory hugo.\nThe user simply edits the content folder with markdown files, adds figures, docs, or other elements in the static folder and run the command hugoto render the webpage in thepublic` folder. Nicely, with the following comment the website is dynamically rendered at http://localhost:1313/ and modifications of the source are automatically rendered.\nhugo server Credits  Hugo-theme-learn is a theme for Hugo, a fast and modern static website engine written in Go.  "
-},
-{
-	"uri": "https://fcacollin.github.io/guide/rmd_to_pdf/rmd2pdf_01.html",
-	"title": "Intro",
-	"tags": ["rmd"],
-	"description": "",
-	"content": "RStudio:\n File \u0026gt; New File \u0026gt; RMarkdown \u0026hellip; \u0026gt; Select output PDF and OK. See rmd2pdf_01_01.Rmd sequenceDiagram participant Rmd participant pdf Rmd-pdf: knit button Rmd-pdf: = `rmarkdown::pdf_document()`    rmarkdown: render()/pdf_document() Under the hood, the rendering of a document is managed by R, but also involves Pandoc. The rmarkdown\u0026rsquo;s functions render() and pdf_document() are high level functions which can manages most of the features a user my need when generating a document.\nsequenceDiagram participant Rmd participant md participant pdf Rmd-md: R md-pdf: pandoc Rmd-pdf: rmarkdown::pdf_document() Note right of Rmd: keep_md=FALSEtoc=TRUE    The options above can be passed via the yaml frontmatter (e.g. rmd2pdf_01_03.Rmd):\n--- title: \u0026#34;Rmd to PDF\u0026#34; output: pdf_document: keep_md: true toc: true ---   or via an output function.\nrender( input = \u0026#34;rmd2pdf_01_02.Rmd\u0026#34;, output_format = pdf_document(toc = TRUE, keep_md = TRUE) )   render and pdf_document are functions exported by the rmarkdown package. Check ?rmarkdown::pdf_document \u0026rsquo;s help.\n Pass arguments to pandoc Some options are handled by pandoc and so called, these arguments must then been conveyed to Pandoc which treats them as variables for LaTeX.\nsequenceDiagram participant Rmd participant md participant pdf Rmd-+md: rmarkdown::pdf_document() Note right of Rmd: keep_md=FALSEtoc=TRUE md---pdf: Pandoc Note right of md: Variables For LaTeXfontfamily: libertinus-type1  The Pandoc variables for LaTeX can be provisionned by:\n the Rmarkdown document yaml front matter: --- title: \u0026#34;Rmd to PDF\u0026#34; output: pdf_document: keep_md: true toc: true fontfamily: libertinus-type1 ---  the pdf_document() function:  rmarkdown::render( input = \u0026#34;rmd2pdf_01_03.Rmd\u0026#34;, output_format = rmarkdown::pdf_document( toc = TRUE, pandoc_args = list( \u0026#34;--variable=fontfamily:libertinus-type1\u0026#34; ) ) ) Pass arguments to the LaTeX engine Pandoc itself is a high level programs which handles conversion between formats. A conversion toward a PDF document requires an intermediary LaTeX document, this LaTeX document is then processed by a a LaTeX engine into pdf. Most of the expected functionnalities are translated via Pandoc, however, sometimes, LaTeX functionnalities are not covered and they must be conveyed from the original R Markdown document to the LaTeX document.\nsequenceDiagram participant Rmd participant md participant tex participant pdf Rmd-pdf: rmarkdown::pdf_document() Rmd-md: R Note right of Rmd: rmarkdown arguments md-+tex: Pandoc Note right of md: LaTeX Variables tex---pdf: LaTeX engine Note right of tex: Extra depencendiese.g. fancyhdr   The yaml frontmatter won\u0026rsquo;t be self sufficient anymore, the use of include/in_header points at a supplementary .tex file:  yaml:  --- title: \u0026#34;Rmd to PDF\u0026#34; output: pdf_document: latex_engine: xelatex keep_md: true toc: true includes: in_header: \u0026#34;preamble.tex\u0026#34; mainfont: DejaVuSansMono ---  preambule.tex:  \\usepackage{fancyhdr} \\pagestyle{fancy} \\fancyhead[L]{FCollin}  The use of pdf_document() is an interesting alternative, maybe more compact: rmarkdown::render( input = \u0026#34;rmd2pdf_01_04.Rmd\u0026#34;, output_format = rmarkdown::pdf_document( toc = TRUE, latex_engine = \u0026#34;xelatex\u0026#34;, pandoc_args = list(\u0026#34;--variable=mainfont:DejaVuSansMono\u0026#34;), extra_dependencies = list( rmarkdown::latex_dependency( \u0026#34;fancyhdr\u0026#34;, extra_lines = paste( \u0026#34;\\\\pagestyle{fancy}\u0026#34;, \u0026#34;\\\\fancyhead[L]{FCollin}\u0026#34; ) ) ) ) )   "
+	"content": "Welcome  R Markdown to PDF  Description of the pipeline converting a R Markdown file into a pdf, and how to modify the configurate the document with options passed to Pandoc and an LaTeX engine.\n Hugo  Lesson learned with Hugo\n "
 },
 {
 	"uri": "https://fcacollin.github.io/guide/rmd_to_pdf.html",
 	"title": "R Markdown to PDF",
-	"tags": ["hugo", "guide"],
-	"description": "",
-	"content": "Welcome "
+	"tags": ["R Markdown"],
+	"description": "Description of the pipeline converting a R Markdown file into a pdf, and how to modify the configurate the document with options passed to Pandoc and an LaTeX engine.",
+	"content": ""
 },
 {
 	"uri": "https://fcacollin.github.io/guide/tags/rmd.html",
@@ -35,6 +28,13 @@
 	"content": ""
 },
 {
+	"uri": "https://fcacollin.github.io/guide/rmd_to_pdf/rmd2pdf_01.html",
+	"title": "Understand the pipeline",
+	"tags": ["rmd"],
+	"description": "",
+	"content": "Prerequisite The examples below assumes a RStudio environment. If you encounter an error of type: it doesn\u0026rsquo;t work on my machine, you can have a look at the definition of the environment used to illustrate the present topic as a docker image freely available at: https://github.com/FCACollin/ayup_dock.\n1 - Introduction The RStudio environment includes templates of R Markdown documents which propose as a configuration step to select a PDF output format. It is then very easy to render the document, actually simple as a click.\nsequenceDiagram participant Rmd participant pdf Rmd-pdf: knit button Rmd-pdf: = `rmarkdown::pdf_document()`  If starting is easy, the click (bait) is hidding complexity: the question of PDF output configuration is already more challenging (e.g. add a footnote, chance font):\n under the hood, at least three different nested high-level tools are chained together to handle the R Markdown document (R, Pandoc and a LaTeX engine), fine tuning a PDF document in R consists in passing arguments to the right one using the application interface proposed by R. two or three ways exist to convey the configuration code: either using a R function argument, or conveying settings via the yaml front matter of the R Markdown document, or eventually through a configuration file.  The aim of the present page is to summarize the pipeline involved when triggering the rendering of the PDF document, and how to present step-by-step how to pass configuration element to the right underlying tool.\nHow to start a PDF in RStudio: (1) File \u0026gt; New File \u0026gt; RMarkdown \u0026hellip; \u0026gt; Select output PDF and OK; (2) click the knit button at the top of the source pane.  2 - Results 2.1 - R Markdown: render()/pdf_document() Producing a pdf document from a R Markdown (rmd) input is managed by R, but also involves Pandoc: R takes care of the conversion of the rmd file to a markdown file (md), and pandoc handles the conversion toward a pdf document. The rmarkdown\u0026rsquo;s functions render() and pdf_document() are high R level functions which can manages most of the features a user my need when generating a document.\nsequenceDiagram participant Rmd participant md participant pdf Rmd-md: R md-pdf: pandoc Rmd-pdf: rmarkdown::pdf_document() Note right of Rmd: keep_md=FALSEtoc=TRUE  For instance, the options can be used to keep the intermediary md file and also influence the output by adding a table of content (TOC).\n  The options above can be passed via the yaml frontmatter (e.g. rmd2pdf_01_03.Rmd):\n--- title: \u0026#34;Rmd to PDF\u0026#34; output: pdf_document: keep_md: true toc: true ---   or via an output function.\nrender( input = \u0026#34;rmd2pdf_01_02.Rmd\u0026#34;, output_format = pdf_document(toc = TRUE, keep_md = TRUE) )   render and pdf_document are functions exported by the rmarkdown package. Check ?rmarkdown::pdf_document \u0026rsquo;s help.\n 2.2 - Pass arguments to Pandoc Some options are handled by Pandoc. For Pandoc, configuration of an output is handled by variables for LaTeX . In the example above, the option TOC is conveyed to Pandoc directly. However, not all the possibilities offered by Pandoc, found an exact matching variable in R. This is when the pandoc_args argument from rmarkdown::pdf_document() is used to feed Pandoc variables for LaTeX.\nsequenceDiagram participant Rmd participant md participant pdf Rmd-+md: rmarkdown::pdf_document() Note right of Rmd: keep_md=FALSEtoc=TRUE md---pdf: Pandoc Note right of md: Variables For LaTeXfontfamily: libertinus-type1  The Pandoc variables for LaTeX can be provisionned by:\n the Rmarkdown document yaml front matter: --- title: \u0026#34;Rmd to PDF\u0026#34; output: pdf_document: keep_md: true toc: true fontfamily: libertinus-type1 ---  the pdf_document() function:  rmarkdown::render( input = \u0026#34;rmd2pdf_01_03.Rmd\u0026#34;, output_format = rmarkdown::pdf_document( toc = TRUE, pandoc_args = list( \u0026#34;--variable=fontfamily:libertinus-type1\u0026#34; ) ) ) 2.3 - Pass arguments to the LaTeX engine Pandoc itself is a high level programs which handles conversion between formats. A conversion toward a PDF document requires an intermediary LaTeX document later processed by a a LaTeX engine into pdf. Most of the expected functionnalities are translated via Pandoc, however, sometimes, LaTeX functionnalities are not covered and they must be conveyed from the original R Markdown document to the LaTeX document.\nsequenceDiagram participant Rmd participant md participant tex participant pdf Rmd-pdf: rmarkdown::pdf_document() Rmd-md: R Note right of Rmd: rmarkdown arguments md-+tex: Pandoc Note right of md: LaTeX Variables tex---pdf: LaTeX engine Note right of tex: Extra depencendiese.g. fancyhdr   The yaml frontmatter won\u0026rsquo;t be self sufficient anymore, the use of include/in_header points at a supplementary .tex file:  yaml:  --- title: \u0026#34;Rmd to PDF\u0026#34; output: pdf_document: latex_engine: xelatex keep_md: true toc: true includes: in_header: \u0026#34;preamble.tex\u0026#34; mainfont: DejaVuSansMono ---  preambule.tex:  \\usepackage{fancyhdr} \\pagestyle{fancy} \\fancyhead[L]{FCollin}  The use of pdf_document() is an interesting alternative, maybe more compact: rmarkdown::render( input = \u0026#34;rmd2pdf_01_04.Rmd\u0026#34;, output_format = rmarkdown::pdf_document( toc = TRUE, latex_engine = \u0026#34;xelatex\u0026#34;, pandoc_args = list(\u0026#34;--variable=mainfont:DejaVuSansMono\u0026#34;), extra_dependencies = list( rmarkdown::latex_dependency( \u0026#34;fancyhdr\u0026#34;, extra_lines = paste( \u0026#34;\\\\pagestyle{fancy}\u0026#34;, \u0026#34;\\\\fancyhead[L]{FCollin}\u0026#34; ) ) ) ) )   "
+},
+{
 	"uri": "https://fcacollin.github.io/guide/categories.html",
 	"title": "Categories",
 	"tags": [],
@@ -49,8 +49,22 @@
 	"content": ""
 },
 {
+	"uri": "https://fcacollin.github.io/guide/hugo.html",
+	"title": "Hugo",
+	"tags": ["hugo"],
+	"description": "Lesson learned with Hugo",
+	"content": "Welcome "
+},
+{
 	"uri": "https://fcacollin.github.io/guide/tags/hugo.html",
 	"title": "hugo",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://fcacollin.github.io/guide/tags/r-markdown.html",
+	"title": "R Markdown",
 	"tags": [],
 	"description": "",
 	"content": ""

@@ -4,7 +4,7 @@ title: latarnia-local
 theme: hugo-theme-learn
 publishDir: docs
 
-relativeURLs: false
+relativeURLs: true
 uglyURLs: true
 pluralizelisttitles: false
 
@@ -14,7 +14,7 @@ outputs:
 
 params:
   themeVariant: green
-
+  disableLandingPageButton: true
 
 baseURL: "https://fcacollin.github.io/guide/"
 relativeURLs: false
