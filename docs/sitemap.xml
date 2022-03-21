@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://fcacollin.github.io/guide/rmd_to_pdf/rmd2pdf_01.html</loc>
+    <lastmod>2022-03-15T09:22:43+01:00</lastmod>
+  </url><url>
+    <loc>https://fcacollin.github.io/guide/rmd_to_pdf/rmd2pdf_02.html</loc>
+    <lastmod>2022-03-15T09:22:43+01:00</lastmod>
+  </url><url>
     <loc>https://fcacollin.github.io/guide/</loc>
     <lastmod>2022-03-15T09:22:43+01:00</lastmod>
   </url><url>
@@ -14,8 +20,7 @@
     <loc>https://fcacollin.github.io/guide/tags.html</loc>
     <lastmod>2022-03-15T09:22:43+01:00</lastmod>
   </url><url>
-    <loc>https://fcacollin.github.io/guide/rmd_to_pdf/rmd2pdf_01.html</loc>
-    <lastmod>2022-03-15T09:22:43+01:00</lastmod>
+    <loc>https://fcacollin.github.io/guide/rmd_to_pdf/citations.html</loc>
   </url><url>
     <loc>https://fcacollin.github.io/guide/categories.html</loc>
   </url><url>

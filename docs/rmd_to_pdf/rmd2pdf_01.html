@@ -9,25 +9,25 @@
 
     <link rel="icon" href="/guide/images/logo4.svg" type="image/svg">
 
-    <title>Understand the pipeline :: latarnia-gh</title>
+    <title>01 - Understand the pipeline :: latarnia-gh</title>
 
     
-    <link href="/guide/css/nucleus.css?1647587614" rel="stylesheet">
-    <link href="/guide/css/fontawesome-all.min.css?1647587614" rel="stylesheet">
-    <link href="/guide/css/hybrid.css?1647587614" rel="stylesheet">
-    <link href="/guide/css/featherlight.min.css?1647587614" rel="stylesheet">
-    <link href="/guide/css/perfect-scrollbar.min.css?1647587614" rel="stylesheet">
-    <link href="/guide/css/auto-complete.css?1647587614" rel="stylesheet">
-    <link href="/guide/css/atom-one-dark-reasonable.css?1647587614" rel="stylesheet">
-    <link href="/guide/css/theme.css?1647587614" rel="stylesheet">
-    <link href="/guide/css/tabs.css?1647587614" rel="stylesheet">
-    <link href="/guide/css/hugo-theme.css?1647587614" rel="stylesheet">
+    <link href="/guide/css/nucleus.css?1647852089" rel="stylesheet">
+    <link href="/guide/css/fontawesome-all.min.css?1647852089" rel="stylesheet">
+    <link href="/guide/css/hybrid.css?1647852089" rel="stylesheet">
+    <link href="/guide/css/featherlight.min.css?1647852089" rel="stylesheet">
+    <link href="/guide/css/perfect-scrollbar.min.css?1647852089" rel="stylesheet">
+    <link href="/guide/css/auto-complete.css?1647852089" rel="stylesheet">
+    <link href="/guide/css/atom-one-dark-reasonable.css?1647852089" rel="stylesheet">
+    <link href="/guide/css/theme.css?1647852089" rel="stylesheet">
+    <link href="/guide/css/tabs.css?1647852089" rel="stylesheet">
+    <link href="/guide/css/hugo-theme.css?1647852089" rel="stylesheet">
     
-    <link href="/guide/css/theme-green.css?1647587614" rel="stylesheet">
+    <link href="/guide/css/theme-green.css?1647852089" rel="stylesheet">
     
     
 
-    <script src="/guide/js/jquery-3.3.1.min.js?1647587614"></script>
+    <script src="/guide/js/jquery-3.3.1.min.js?1647852089"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/guide/js/lunr.min.js?1647587614"></script>
-<script type="text/javascript" src="/guide/js/auto-complete.js?1647587614"></script>
+<script type="text/javascript" src="/guide/js/lunr.min.js?1647852089"></script>
+<script type="text/javascript" src="/guide/js/auto-complete.js?1647852089"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/fcacollin.github.io\/guide\/";
     
 </script>
-<script type="text/javascript" src="/guide/js/search.js?1647587614"></script>
+<script type="text/javascript" src="/guide/js/search.js?1647852089"></script>
 
     
   </div>
@@ -109,9 +109,51 @@
  
   
     
-      <li data-nav-id="/guide/rmd_to_pdf/rmd2pdf_01.html" title="Understand the pipeline" class="dd-item active">
+      <li data-nav-id="/guide/rmd_to_pdf/rmd2pdf_01.html" title="01 - Understand the pipeline" class="dd-item active">
         <a href="/guide/rmd_to_pdf/rmd2pdf_01.html">
-        Understand the pipeline
+        01 - Understand the pipeline
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/guide/rmd_to_pdf/rmd2pdf_02.html" title="02 - Templates and extended features" class="dd-item ">
+        <a href="/guide/rmd_to_pdf/rmd2pdf_02.html">
+        02 - Templates and extended features
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/guide/rmd_to_pdf/citations.html" title="" class="dd-item ">
+        <a href="/guide/rmd_to_pdf/citations.html">
+        
         
         </a>
     </li>
@@ -201,7 +243,7 @@
             
           
           
-            <a href='/guide/'>Home</a> > <a href='/guide/rmd_to_pdf.html'>R Markdown to PDF</a> > Understand the pipeline
+            <a href='/guide/'>Home</a> > <a href='/guide/rmd_to_pdf.html'>R Markdown to PDF</a> > 01 - Understand the pipeline
           
         
           
@@ -216,15 +258,17 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#prerequisite">Prerequisite</a></li>
     <li><a href="#1---introduction">1 - Introduction</a></li>
-    <li><a href="#2---results">2 - Results</a>
+    <li><a href="#2-material-and-methods">2. Material and Methods</a></li>
+    <li><a href="#3---results">3 - Results</a>
       <ul>
-        <li><a href="#21---r-markdown-renderpdf_document">2.1 - R Markdown: <code>render()</code>/<code>pdf_document()</code></a></li>
-        <li><a href="#22---pass-arguments-to-pandoc">2.2 - Pass arguments to Pandoc</a></li>
-        <li><a href="#23---pass-arguments-to-the-latex-engine">2.3 - Pass arguments to the LaTeX engine</a></li>
+        <li><a href="#31---r-markdown-renderpdf_document">3.1 - R Markdown: <code>render()</code>/<code>pdf_document()</code></a></li>
+        <li><a href="#32---pass-arguments-to-pandoc">3.2 - Pass arguments to Pandoc</a></li>
+        <li><a href="#33---pass-arguments-to-the-latex-engine">3.3 - Pass arguments to the LaTeX engine</a></li>
       </ul>
     </li>
+    <li><a href="#4-discussion">4. Discussion</a></li>
+    <li><a href="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -248,18 +292,13 @@
           
             <h1>
               
-              Understand the pipeline
+              01 - Understand the pipeline
             </h1>
           
 
         
 
 
-<h2 id="prerequisite">Prerequisite</h2>
-<p>The examples below assumes a RStudio environment. If you encounter an error
-of type: <em>it doesn&rsquo;t work on my machine</em>, you can have a look at the definition
-of the environment used to illustrate the present topic as a docker image
-freely available at: <a href="https://github.com/FCACollin/ayup_dock">https://github.com/FCACollin/ayup_dock</a>.</p>
 <h2 id="1---introduction">1 - Introduction</h2>
 <p>The RStudio environment includes templates of R Markdown documents which
 propose as a configuration step to select a PDF output format. It is then
@@ -286,9 +325,9 @@ interface proposed by R.</li>
 using a R function argument, or conveying settings via the yaml front matter
 of the R Markdown document, or eventually through a configuration file.</li>
 </ul>
-<p>The aim of the present page is to summarize the pipeline involved when
-triggering the rendering of the PDF document, and how to present step-by-step
-how to pass configuration element to the right underlying tool.</p>
+<p>The aim of the present page is to provide an overview of the tools involved
+in the pipeline when triggering the rendering of the PDF document, and how to
+how to pass configuration elements to the right underlying tool.</p>
 
 <div class="notices tip" ><p><strong>How to start a PDF in RStudio:</strong>
 (1) File &gt; New File &gt; <strong>RMarkdown</strong> &hellip; &gt; Select output PDF and OK;
@@ -296,8 +335,33 @@ how to pass configuration element to the right underlying tool.</p>
 <img src="img/rmd_to_pdf_01.png" alt="Defaut pdf output with R Markdown, simple as a click in RStudio."></p>
 </div>
 
-<h2 id="2---results">2 - Results</h2>
-<h3 id="21---r-markdown-renderpdf_document">2.1 - R Markdown: <code>render()</code>/<code>pdf_document()</code></h3>
+<h2 id="2-material-and-methods">2. Material and Methods</h2>
+<p>A series of minimum working examples was generated to support the demonstration.
+The examples were built at the same time as the results below were reported.</p>
+<p>The environment for the examples was containerized, a docker image and
+its definition was used to ensure reproducibility and / or enable the extenssion
+of the work (Nüst et al. 2020).
+The Docker definition was made publicly available at
+<a href="https://github.com/FCACollin/ayup_dock">https://github.com/FCACollin/ayup_dock</a>.
+Note that the image was not originally intended for this specific usage,
+this explains why it also includes some R packages and LaTeX dependencies not
+strictely necessary for the examples. However, the image as currently
+defined was also configured for a research task where pdf reporting was a
+requirement. Therefore, it was relevant to document the present examples based
+on this image used in real-life work.</p>
+<p>The image includes:</p>
+<ul>
+<li>A rocker/verse image (4.1.0)</li>
+<li>A series of additional R packaes.</li>
+<li>A series of LaTeX dependencies.</li>
+</ul>
+<p>In terms of pdf reporting, this image can:</p>
+<ul>
+<li>handles templates.</li>
+<li>use bibliographic references.</li>
+</ul>
+<h2 id="3---results">3 - Results</h2>
+<h3 id="31---r-markdown-renderpdf_document">3.1 - R Markdown: <code>render()</code>/<code>pdf_document()</code></h3>
 <p>Producing a pdf document from a R Markdown (rmd) input is managed by R, but also
 involves <a href="https://pandoc.org/">Pandoc</a>: R takes care of the conversion
 of the rmd file to a markdown file (md), and pandoc handles the conversion
@@ -346,7 +410,7 @@ Check
 </div>
 
 <p><img src="img/rmd_to_pdf_02.png" alt="Keep the markdown file and add a table of content."></p>
-<h3 id="22---pass-arguments-to-pandoc">2.2 - Pass arguments to Pandoc</h3>
+<h3 id="32---pass-arguments-to-pandoc">3.2 - Pass arguments to Pandoc</h3>
 <p>Some options are handled by Pandoc. For Pandoc, configuration of an output is
 handled by
 <em><a href="https://pandoc.org/MANUAL.html#variables-for-latex">variables for LaTeX</a></em> .
@@ -392,7 +456,7 @@ sequenceDiagram
   )
 )
 </code></pre></div><p><img src="img/rmd_to_pdf_03.png" alt="Modify the font family"></p>
-<h3 id="23---pass-arguments-to-the-latex-engine">2.3 - Pass arguments to the LaTeX engine</h3>
+<h3 id="33---pass-arguments-to-the-latex-engine">3.3 - Pass arguments to the LaTeX engine</h3>
 <p>Pandoc itself is a high level programs which handles conversion between formats.
 A conversion toward a PDF document requires an intermediary LaTeX document
 later processed by a a LaTeX engine into pdf.
@@ -461,6 +525,35 @@ compact:
 </code></pre></div></li>
 </ul>
 <p><img src="img/rmd_to_pdf_04.png" alt="Modify the header"></p>
+<h2 id="4-discussion">4. Discussion</h2>
+<p>It was evidenced that the original raw pdf has generated
+by a simple click in RStudio, hides complexity. Entering the detail of this
+complexity and decomposing the pipeline brings a better understanding of
+the possible levels of configuration which can be addressed either through
+the R functions, the Pandoc interface or the LaTeX engine. The configuration
+of the output is also complex and may take advantage of a knowledge of the
+Pandoc command line interface, a better understanding of the YAML format
+for configuration, and a basic knowledge of LaTeX may also help in achieving
+a very well designed report. This complexity allows an incredible flexibility
+in the configuration of the reporting.</p>
+<p>However, the complexity can also be seen as hurdle: the increase number
+of programming languages decrease the likelyhood of finding contributors who
+can leverage the whole potential of pdf reporting with R Markdown. To
+aleviate this difficulty it is also possible to use templates: in other word,
+the confirguration of a pdf output is a one-off, it is a deliverable itself
+which can be injected in many reporting task (think about it as a corporate
+Microsoft word template).</p>
+<p>The pdf reporting as presented above, is an illustration of the mecanisms
+involved to convert a R Markdown file into a document.
+The same applies to render docx, html or other: the markdown file being at the
+cross road and pandoc involved to the final conversion. As for the pdf
+documents, all output can take advantage of templates, and markup languages
+(e.g. LaTeX or html) accepts headers or other additional configuration files.</p>
+<h2 id="references">References</h2>
+<p>Nüst, Daniel, Vanessa Sochat, Ben Marwick, Stephen J Eglen, Tim Head,
+Tony Hirst, and Benjamin D Evans. 2020. “Ten Simple Rules for Writing
+Dockerfiles for Reproducible Data Science.” Public Library of Science
+San Francisco, CA USA. <a href="https://doi.org/10.1371/journal.pcbi.1008316">https://doi.org/10.1371/journal.pcbi.1008316</a>.</p>
 
 
 <footer class="footline">
@@ -526,6 +619,22 @@ compact:
             
         
                     
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
                     
@@ -534,8 +643,24 @@ compact:
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
                     
                 
                 
@@ -560,7 +685,7 @@ compact:
 			<a class="nav nav-prev" href="/guide/rmd_to_pdf.html" title="R Markdown to PDF"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/guide/hugo.html" title="Hugo" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/guide/rmd_to_pdf/rmd2pdf_02.html" title="02 - Templates and extended features" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -570,19 +695,19 @@ compact:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/guide/js/clipboard.min.js?1647587614"></script>
-    <script src="/guide/js/perfect-scrollbar.min.js?1647587614"></script>
-    <script src="/guide/js/perfect-scrollbar.jquery.min.js?1647587614"></script>
-    <script src="/guide/js/jquery.sticky.js?1647587614"></script>
-    <script src="/guide/js/featherlight.min.js?1647587614"></script>
-    <script src="/guide/js/highlight.pack.js?1647587614"></script>
+    <script src="/guide/js/clipboard.min.js?1647852089"></script>
+    <script src="/guide/js/perfect-scrollbar.min.js?1647852089"></script>
+    <script src="/guide/js/perfect-scrollbar.jquery.min.js?1647852089"></script>
+    <script src="/guide/js/jquery.sticky.js?1647852089"></script>
+    <script src="/guide/js/featherlight.min.js?1647852089"></script>
+    <script src="/guide/js/highlight.pack.js?1647852089"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/guide/js/modernizr.custom-3.6.0.js?1647587614"></script>
-    <script src="/guide/js/learn.js?1647587614"></script>
-    <script src="/guide/js/hugo-learn.js?1647587614"></script>
+    <script src="/guide/js/modernizr.custom-3.6.0.js?1647852089"></script>
+    <script src="/guide/js/learn.js?1647852089"></script>
+    <script src="/guide/js/hugo-learn.js?1647852089"></script>
     
         
-            <script src="/guide/mermaid/mermaid.js?1647587614"></script>
+            <script src="/guide/mermaid/mermaid.js?1647852089"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

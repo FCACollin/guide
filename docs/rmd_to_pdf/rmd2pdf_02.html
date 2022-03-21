@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.92.1" />
-    <meta name="description" content="Lesson learned with Hugo">
+    <meta name="description" content="">
 
 
     <link rel="icon" href="/guide/images/logo4.svg" type="image/svg">
 
-    <title>Hugo :: latarnia-gh</title>
+    <title>02 - Templates and extended features :: latarnia-gh</title>
 
     
     <link href="/guide/css/nucleus.css?1647852089" rel="stylesheet">
@@ -37,7 +37,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/guide/hugo.html">
+  <body class="" data-url="/guide/rmd_to_pdf/rmd2pdf_02.html">
     <nav id="sidebar" class="">
 
 
@@ -83,7 +83,7 @@
   
     
     <li data-nav-id="/guide/rmd_to_pdf.html" title="R Markdown to PDF" class="dd-item
-        
+        parent
         
         
         ">
@@ -130,7 +130,7 @@
  
   
     
-      <li data-nav-id="/guide/rmd_to_pdf/rmd2pdf_02.html" title="02 - Templates and extended features" class="dd-item ">
+      <li data-nav-id="/guide/rmd_to_pdf/rmd2pdf_02.html" title="02 - Templates and extended features" class="dd-item active">
         <a href="/guide/rmd_to_pdf/rmd2pdf_02.html">
         02 - Templates and extended features
         
@@ -180,8 +180,8 @@
   
     
     <li data-nav-id="/guide/hugo.html" title="Hugo" class="dd-item
-        parent
-        active
+        
+        
         
         ">
       <a href="/guide/hugo.html">
@@ -239,7 +239,13 @@
             
           
           
-            <a href='/guide/'>Home</a> > Hugo
+            
+            
+          
+          
+            <a href='/guide/'>Home</a> > <a href='/guide/rmd_to_pdf.html'>R Markdown to PDF</a> > 02 - Templates and extended features
+          
+        
           
         
           
@@ -250,7 +256,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1---introduction">1 - Introduction</a></li>
+    <li><a href="#2-material-and-methods">2. Material and Methods</a></li>
+    <li><a href="#3-results">3. Results</a></li>
+    <li><a href="#4-discussion">4. Discussion</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -262,7 +276,7 @@
         
 <div class="tags">
 
-  <a class="tag-link" href="/guide/tags/hugo">hugo</a>
+  <a class="tag-link" href="/guide/tags/rmd">rmd</a>
 
 </div>
 
@@ -272,21 +286,49 @@
           
             <h1>
               
-              Hugo
+              02 - Templates and extended features
             </h1>
           
 
         
 
 
+<h2 id="1---introduction">1 - Introduction</h2>
+<p>In the previous section,</p>
 
-	<h1 id="welcome">Welcome</h1>
+<div class="mermaid" align="left">
+sequenceDiagram
+    participant Rmd
+    participant md
+    participant tex
+    participant pdf
+    Rmd->>pdf: rmarkdown::pdf_document()
+    Rmd->>md: R
+    Note right of Rmd: rmarkdown arguments
+    md->>+tex: Pandoc
+    Note right of md: LaTeX Variables
+    tex-->>-pdf: LaTeX engine
+    Note right of tex: Extra depencendies</br>e.g. fancyhdr
+</div>
+
+<h2 id="2-material-and-methods">2. Material and Methods</h2>
+<p>A series of minimum working examples was generated to support the demonstration.
+The examples were built at the same time as the results below were reported.</p>
+<p>The environment for the examples was containerized, a docker image and
+its definition was used to ensure reproducibility and / or enable the extenssion
+of the work (Nüst et al. 2020).
+The Docker definition was made publicly available at
+<a href="https://github.com/FCACollin/ayup_dock">https://github.com/FCACollin/ayup_dock</a>.</p>
+<h2 id="3-results">3. Results</h2>
+<h2 id="4-discussion">4. Discussion</h2>
+<h2 id="references">References</h2>
+<p>Nüst, Daniel, Vanessa Sochat, Ben Marwick, Stephen J Eglen, Tim Head,
+Tony Hirst, and Benjamin D Evans. 2020. “Ten Simple Rules for Writing
+Dockerfiles for Reproducible Data Science.” Public Library of Science
+San Francisco, CA USA. <a href="https://doi.org/10.1371/journal.pcbi.1008316">https://doi.org/10.1371/journal.pcbi.1008316</a>.</p>
 
 
-
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -353,6 +395,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -360,6 +403,28 @@
                     
                     
 
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -382,26 +447,6 @@
                     
             
         
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
 
         
 
@@ -409,10 +454,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/guide/rmd_to_pdf/citations.html" title=""> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/guide/rmd_to_pdf/rmd2pdf_01.html" title="01 - Understand the pipeline"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/guide/rmd_to_pdf.html" title="R Markdown to PDF" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/guide/rmd_to_pdf/citations.html" title="" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -444,3 +489,4 @@
 
   </body>
 </html>
+
