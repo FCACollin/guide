@@ -12,22 +12,22 @@
     <title>02 - Templates and extended features :: latarnia-gh</title>
 
     
-    <link href="/guide/css/nucleus.css?1647852089" rel="stylesheet">
-    <link href="/guide/css/fontawesome-all.min.css?1647852089" rel="stylesheet">
-    <link href="/guide/css/hybrid.css?1647852089" rel="stylesheet">
-    <link href="/guide/css/featherlight.min.css?1647852089" rel="stylesheet">
-    <link href="/guide/css/perfect-scrollbar.min.css?1647852089" rel="stylesheet">
-    <link href="/guide/css/auto-complete.css?1647852089" rel="stylesheet">
-    <link href="/guide/css/atom-one-dark-reasonable.css?1647852089" rel="stylesheet">
-    <link href="/guide/css/theme.css?1647852089" rel="stylesheet">
-    <link href="/guide/css/tabs.css?1647852089" rel="stylesheet">
-    <link href="/guide/css/hugo-theme.css?1647852089" rel="stylesheet">
+    <link href="/guide/css/nucleus.css?1647934115" rel="stylesheet">
+    <link href="/guide/css/fontawesome-all.min.css?1647934115" rel="stylesheet">
+    <link href="/guide/css/hybrid.css?1647934115" rel="stylesheet">
+    <link href="/guide/css/featherlight.min.css?1647934115" rel="stylesheet">
+    <link href="/guide/css/perfect-scrollbar.min.css?1647934115" rel="stylesheet">
+    <link href="/guide/css/auto-complete.css?1647934115" rel="stylesheet">
+    <link href="/guide/css/atom-one-dark-reasonable.css?1647934115" rel="stylesheet">
+    <link href="/guide/css/theme.css?1647934115" rel="stylesheet">
+    <link href="/guide/css/tabs.css?1647934115" rel="stylesheet">
+    <link href="/guide/css/hugo-theme.css?1647934115" rel="stylesheet">
     
-    <link href="/guide/css/theme-green.css?1647852089" rel="stylesheet">
+    <link href="/guide/css/theme-green.css?1647934115" rel="stylesheet">
     
     
 
-    <script src="/guide/js/jquery-3.3.1.min.js?1647852089"></script>
+    <script src="/guide/js/jquery-3.3.1.min.js?1647934115"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/guide/js/lunr.min.js?1647852089"></script>
-<script type="text/javascript" src="/guide/js/auto-complete.js?1647852089"></script>
+<script type="text/javascript" src="/guide/js/lunr.min.js?1647934115"></script>
+<script type="text/javascript" src="/guide/js/auto-complete.js?1647934115"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/fcacollin.github.io\/guide\/";
     
 </script>
-<script type="text/javascript" src="/guide/js/search.js?1647852089"></script>
+<script type="text/javascript" src="/guide/js/search.js?1647934115"></script>
 
     
   </div>
@@ -294,7 +294,15 @@
 
 
 <h2 id="1---introduction">1 - Introduction</h2>
-<p>In the previous section,</p>
+<p>In the previous section, the pipeline behind the knit-click from the RStudio
+interface was scrutinized to understand what tools are actucally involved,
+what argument they can respectively digest, and how to pass them from the
+R high level functions. It results that the fine tuning of the output is
+accessible. However, the use of these options can be combersum, and
+may not be very end-user friendly. A sensible user expectation is that once
+an output is well configured, these should be translated into a template much
+easier to reuse, hidding the unnecessary complexity, and only showing
+the options that are desirable. This is where templates becomes handy.</p>
 
 <div class="mermaid" align="left">
 sequenceDiagram
@@ -308,7 +316,8 @@ sequenceDiagram
     md->>+tex: Pandoc
     Note right of md: LaTeX Variables
     tex-->>-pdf: LaTeX engine
-    Note right of tex: Extra depencendies</br>e.g. fancyhdr
+    tex-->>pdf: LaTeX template
+    Note right of tex: e.g. Eisvogel
 </div>
 
 <h2 id="2-material-and-methods">2. Material and Methods</h2>
@@ -319,13 +328,46 @@ its definition was used to ensure reproducibility and / or enable the extenssion
 of the work (Nüst et al. 2020).
 The Docker definition was made publicly available at
 <a href="https://github.com/FCACollin/ayup_dock">https://github.com/FCACollin/ayup_dock</a>.</p>
+<p>In addition, the template used for this example was <em>eisvogel</em>, an open-source
+LaTeX template for Pandoc, available in
+<a href="https://github.com/Wandmalfarbe/pandoc-latex-template">GitHub</a>.
+(Wagler and MacFarlane, 2021).</p>
 <h2 id="3-results">3. Results</h2>
+<p>The template <em>eisvogel</em> was cloned from the GitHub to a directory
+<code>pandoc/eisvogel</code>, location given in reference to the own location of the
+R Markodwn file calling the template. In addition, the file <code>eisvogel.tex</code>
+was renamed as <code>eisvogel.latex</code>.</p>
+<p>The LaTeX template is simply used through an expected <code>template</code> argument
+handled by <code>pdf_document</code>. Therefore the yaml fronmt matter is such as:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+<span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;R Markdown to PDF&#34;</span>
+<span style="color:#f92672">subtitle</span>:
+    <span style="color:#ae81ff">The compexity can be alleviated with the use of templates\newline</span>
+    <span style="color:#ae81ff">e.g. _Eisvogel_ </span>
+    <span style="color:#ae81ff">([Pascal Wagler](https://github.com/Wandmalfarbe/pandoc-latex-template))</span>
+<span style="color:#f92672">author</span>: <span style="color:#ae81ff">FCA Collin</span>
+<span style="color:#f92672">date</span>: <span style="color:#e6db74">&#34;`r format(Sys.Date(), &#39;%d %B %Y&#39;)`&#34;</span>
+<span style="color:#f92672">output</span>:
+  <span style="color:#f92672">pdf_document</span>:
+    <span style="color:#f92672">template</span>: <span style="color:#ae81ff">pandoc/eisvogel/eisvogel</span>
+    <span style="color:#f92672">latex_engine</span>: <span style="color:#ae81ff">xelatex</span>
+<span style="color:#f92672">titlepage</span>: <span style="color:#66d9ef">true</span>
+<span style="color:#f92672">titlepage-color</span>: <span style="color:#e6db74">&#34;3F682E&#34;</span>
+<span style="color:#f92672">titlepage-rule-color</span>: <span style="color:#e6db74">&#34;FFFFFF&#34;</span>
+<span style="color:#f92672">titlepage-text-color</span>: <span style="color:#e6db74">&#34;FFFFFF&#34;</span>
+---
+</code></pre></div><p>The template comes with it own arguments, which complete the Pandoc
+LaTeX variables, that is whjy, to be used, they just need to be declared as
+extra configuration lines in the yaml section (e.g. <code>titlepage</code>).</p>
 <h2 id="4-discussion">4. Discussion</h2>
 <h2 id="references">References</h2>
 <p>Nüst, Daniel, Vanessa Sochat, Ben Marwick, Stephen J Eglen, Tim Head,
 Tony Hirst, and Benjamin D Evans. 2020. “Ten Simple Rules for Writing
 Dockerfiles for Reproducible Data Science.” Public Library of Science
 San Francisco, CA USA. <a href="https://doi.org/10.1371/journal.pcbi.1008316">https://doi.org/10.1371/journal.pcbi.1008316</a>.</p>
+<p>Wagler, Pascal, and John MacFarlane. 2021. “Eisvogel Pandoc Latex
+Template.” GitHub Wandmalfarbe.
+<a href="https://github.com/Wandmalfarbe/pandoc-latex-template">https://github.com/Wandmalfarbe/pandoc-latex-template</a>.</p>
 
 
 <footer class="footline">
@@ -467,19 +509,19 @@ San Francisco, CA USA. <a href="https://doi.org/10.1371/journal.pcbi.1008316">ht
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/guide/js/clipboard.min.js?1647852089"></script>
-    <script src="/guide/js/perfect-scrollbar.min.js?1647852089"></script>
-    <script src="/guide/js/perfect-scrollbar.jquery.min.js?1647852089"></script>
-    <script src="/guide/js/jquery.sticky.js?1647852089"></script>
-    <script src="/guide/js/featherlight.min.js?1647852089"></script>
-    <script src="/guide/js/highlight.pack.js?1647852089"></script>
+    <script src="/guide/js/clipboard.min.js?1647934115"></script>
+    <script src="/guide/js/perfect-scrollbar.min.js?1647934115"></script>
+    <script src="/guide/js/perfect-scrollbar.jquery.min.js?1647934115"></script>
+    <script src="/guide/js/jquery.sticky.js?1647934115"></script>
+    <script src="/guide/js/featherlight.min.js?1647934115"></script>
+    <script src="/guide/js/highlight.pack.js?1647934115"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/guide/js/modernizr.custom-3.6.0.js?1647852089"></script>
-    <script src="/guide/js/learn.js?1647852089"></script>
-    <script src="/guide/js/hugo-learn.js?1647852089"></script>
+    <script src="/guide/js/modernizr.custom-3.6.0.js?1647934115"></script>
+    <script src="/guide/js/learn.js?1647934115"></script>
+    <script src="/guide/js/hugo-learn.js?1647934115"></script>
     
         
-            <script src="/guide/mermaid/mermaid.js?1647852089"></script>
+            <script src="/guide/mermaid/mermaid.js?1647934115"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
