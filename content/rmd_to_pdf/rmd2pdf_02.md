@@ -88,7 +88,7 @@ extra configuration lines in the yaml section (e.g. `titlepage`).
 
 [Open the pdf example.](pdf/rmd2pdf_02_01.pdf)
 
-{{<embed-pdf url="pdf/rmd2pdf_02_01.pdf" width="100">}}
+{{<embed-pdf url="rmd_to_pdf/pdf/rmd2pdf_02_01.pdf" width="100">}}
 
 ## 4. Discussion
 
