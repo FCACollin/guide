@@ -86,6 +86,9 @@ The template comes with it own arguments, which complete the Pandoc
 LaTeX variables, that is whjy, to be used, they just need to be declared as
 extra configuration lines in the yaml section (e.g. `titlepage`).
 
+[Open the pdf example.](pdf/rmd2pdf_02_01.pdf)
+
+{{<embed-pdf url="pdf/rmd2pdf_02_01.pdf" width="100">}}
 
 ## 4. Discussion
 
