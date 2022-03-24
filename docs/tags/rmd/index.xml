@@ -23,7 +23,8 @@ sequenceDiagram participant Rmd participant pdf Rmd-pdf: knit button Rmd-pdf: = 
       <pubDate>Tue, 15 Mar 2022 09:22:43 +0100</pubDate>
       
       <guid>https://fcacollin.github.io/guide/rmd_to_pdf/rmd2pdf_02.html</guid>
-      <description>1 - Introduction In the previous section, the pipeline behind the knit-click from the RStudio interface was scrutinized to understand what tools are actucally involved, what argument they can respectively digest, and how to pass them from the R high level functions. It results that the fine tuning of the output is accessible. However, the use of these options can be combersum, and may not be very end-user friendly. A sensible user expectation is that once an output is well configured, these should be translated into a template much easier to reuse, hidding the unnecessary complexity, and only showing the options that are desirable.</description>
+      <description>1. Introduction In the previous section, the pipeline behind the knit-click from the RStudio interface was scrutinized to understand what tools are actucally involved, what argument they can respectively digest, and how to pass them from the R high level functions. It results that the fine tuning of the output is at hand.
+However, the use of these options can be combersum, and may not be very end-user friendly. A sensible user expectation is that once an output is well configured, these should be translated into a template much easier to reuse, hidding the unnecessary complexity, and only showing the options that are desirable.</description>
     </item>
     
   </channel>

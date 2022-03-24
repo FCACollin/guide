@@ -8,6 +8,5 @@ tags:
 - R Markdown
 ---
 
-
-
+![](rmd_to_pdf/img/cover.png)
 

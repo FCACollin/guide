@@ -12,22 +12,22 @@
     <title>02 - Templates and extended features :: latarnia-gh</title>
 
     
-    <link href="/guide/css/nucleus.css?1648022991" rel="stylesheet">
-    <link href="/guide/css/fontawesome-all.min.css?1648022991" rel="stylesheet">
-    <link href="/guide/css/hybrid.css?1648022991" rel="stylesheet">
-    <link href="/guide/css/featherlight.min.css?1648022991" rel="stylesheet">
-    <link href="/guide/css/perfect-scrollbar.min.css?1648022991" rel="stylesheet">
-    <link href="/guide/css/auto-complete.css?1648022991" rel="stylesheet">
-    <link href="/guide/css/atom-one-dark-reasonable.css?1648022991" rel="stylesheet">
-    <link href="/guide/css/theme.css?1648022991" rel="stylesheet">
-    <link href="/guide/css/tabs.css?1648022991" rel="stylesheet">
-    <link href="/guide/css/hugo-theme.css?1648022991" rel="stylesheet">
+    <link href="/guide/css/nucleus.css?1648109178" rel="stylesheet">
+    <link href="/guide/css/fontawesome-all.min.css?1648109178" rel="stylesheet">
+    <link href="/guide/css/hybrid.css?1648109178" rel="stylesheet">
+    <link href="/guide/css/featherlight.min.css?1648109178" rel="stylesheet">
+    <link href="/guide/css/perfect-scrollbar.min.css?1648109178" rel="stylesheet">
+    <link href="/guide/css/auto-complete.css?1648109178" rel="stylesheet">
+    <link href="/guide/css/atom-one-dark-reasonable.css?1648109178" rel="stylesheet">
+    <link href="/guide/css/theme.css?1648109178" rel="stylesheet">
+    <link href="/guide/css/tabs.css?1648109178" rel="stylesheet">
+    <link href="/guide/css/hugo-theme.css?1648109178" rel="stylesheet">
     
-    <link href="/guide/css/theme-green.css?1648022991" rel="stylesheet">
+    <link href="/guide/css/theme-green.css?1648109178" rel="stylesheet">
     
     
 
-    <script src="/guide/js/jquery-3.3.1.min.js?1648022991"></script>
+    <script src="/guide/js/jquery-3.3.1.min.js?1648109178"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/guide/js/lunr.min.js?1648022991"></script>
-<script type="text/javascript" src="/guide/js/auto-complete.js?1648022991"></script>
+<script type="text/javascript" src="/guide/js/lunr.min.js?1648109178"></script>
+<script type="text/javascript" src="/guide/js/auto-complete.js?1648109178"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/fcacollin.github.io\/guide\/";
     
 </script>
-<script type="text/javascript" src="/guide/js/search.js?1648022991"></script>
+<script type="text/javascript" src="/guide/js/search.js?1648109178"></script>
 
     
   </div>
@@ -258,11 +258,17 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#1---introduction">1 - Introduction</a></li>
+    <li><a href="#1-introduction">1. Introduction</a></li>
     <li><a href="#2-material-and-methods">2. Material and Methods</a></li>
-    <li><a href="#3-results">3. Results</a></li>
+    <li><a href="#3-results">3. Results</a>
+      <ul>
+        <li><a href="#31-use-templates">3.1 Use templates</a></li>
+        <li><a href="#32-manage-bibliographic-references">3.2 Manage bibliographic references</a></li>
+      </ul>
+    </li>
     <li><a href="#4-discussion">4. Discussion</a></li>
     <li><a href="#references">References</a></li>
+    <li><a href="#supplementary">Supplementary</a></li>
   </ul>
 </nav>
     </div>
@@ -293,16 +299,39 @@
         
 
 
-<h2 id="1---introduction">1 - Introduction</h2>
+<h2 id="1-introduction">1. Introduction</h2>
 <p>In the previous section, the pipeline behind the knit-click from the RStudio
 interface was scrutinized to understand what tools are actucally involved,
 what argument they can respectively digest, and how to pass them from the
 R high level functions. It results that the fine tuning of the output is
-accessible. However, the use of these options can be combersum, and
+at hand.</p>
+<p>However, the use of these options can be combersum, and
 may not be very end-user friendly. A sensible user expectation is that once
 an output is well configured, these should be translated into a template much
 easier to reuse, hidding the unnecessary complexity, and only showing
 the options that are desirable. This is where templates becomes handy.</p>
+<p>This section is providing a demonstration of how the concept of Pandoc
+templates can be leveraged to set up a report. It is completed by an additional
+feature, not tied up to the template topic, but so convenient: the
+handling of references.</p>
+<h2 id="2-material-and-methods">2. Material and Methods</h2>
+<p>A series of minimum working examples was generated to support the demonstration.
+The examples were built at the same time as the results below were reported.</p>
+<p>The environment for the examples was containerized, a docker image and
+its definition was used to ensure reproducibility and / or enable the extenssion
+of the work (Nüst et al. 2020).
+The Docker definition was made publicly available at
+<a href="https://github.com/FCACollin/ayup_dock">https://github.com/FCACollin/ayup_dock</a>.</p>
+<p>In addition, the template used for this example was <em>eisvogel</em>, an open-source
+LaTeX template for Pandoc, available in
+<a href="https://github.com/Wandmalfarbe/pandoc-latex-template">GitHub</a>.
+(Wagler and MacFarlane, 2021).</p>
+<h2 id="3-results">3. Results</h2>
+<h3 id="31-use-templates">3.1 Use templates</h3>
+<p>The template <em>eisvogel</em> was cloned from the GitHub to a directory
+<code>pandoc/eisvogel</code>, location given in reference to the own location of the
+R Markodwn file calling the template. In addition, the file <code>eisvogel.tex</code>
+was renamed as <code>eisvogel.latex</code>.</p>
 
 <div class="mermaid" align="left">
 sequenceDiagram
@@ -320,23 +349,6 @@ sequenceDiagram
     Note right of tex: e.g. Eisvogel
 </div>
 
-<h2 id="2-material-and-methods">2. Material and Methods</h2>
-<p>A series of minimum working examples was generated to support the demonstration.
-The examples were built at the same time as the results below were reported.</p>
-<p>The environment for the examples was containerized, a docker image and
-its definition was used to ensure reproducibility and / or enable the extenssion
-of the work (Nüst et al. 2020).
-The Docker definition was made publicly available at
-<a href="https://github.com/FCACollin/ayup_dock">https://github.com/FCACollin/ayup_dock</a>.</p>
-<p>In addition, the template used for this example was <em>eisvogel</em>, an open-source
-LaTeX template for Pandoc, available in
-<a href="https://github.com/Wandmalfarbe/pandoc-latex-template">GitHub</a>.
-(Wagler and MacFarlane, 2021).</p>
-<h2 id="3-results">3. Results</h2>
-<p>The template <em>eisvogel</em> was cloned from the GitHub to a directory
-<code>pandoc/eisvogel</code>, location given in reference to the own location of the
-R Markodwn file calling the template. In addition, the file <code>eisvogel.tex</code>
-was renamed as <code>eisvogel.latex</code>.</p>
 <p>The LaTeX template is simply used through an expected <code>template</code> argument
 handled by <code>pdf_document</code>. Therefore the yaml fronmt matter is such as:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
@@ -360,204 +372,167 @@ handled by <code>pdf_document</code>. Therefore the yaml fronmt matter is such a
 LaTeX variables, that is whjy, to be used, they just need to be declared as
 extra configuration lines in the yaml section (e.g. <code>titlepage</code>).</p>
 <p><a href="pdf/rmd2pdf_02_01.pdf">Open the pdf example.</a></p>
-<script type="text/javascript" src= 'https://fcacollin.github.io/guide//js/pdf-js/build/pdf.js'></script>
-<style>
-#the-canvas {
-  border: 1px solid black;
-  direction: ltr;
-  width: 100%;
-  height: auto;
-  display: none;
-  max-width: 500px;
-  margin: 0 auto;
+
+<iframe src="pdf/rmd2pdf_02_01.pdf" height="800" width="100%"></iframe>
+
+
+<h3 id="32-manage-bibliographic-references">3.2 Manage bibliographic references</h3>
+<p>LaTeX handles bibliographic references with <a href="http://www.bibtex.org/">BibTex</a>.
+Pandoc has developed a filter: <code>citeproc</code> (formerly known as
+<code>pandoc-citeproc</code>) which handles the
+<a href="https://pandoc.org/demo/example19/Extension-citations.html">markdown citations</a>.
+For a
+<a href="https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html">R Markdown</a>
+user this is translated into a simple field referencing the BibTeX file.
+In addition, a Citation Style Language file
+(<a href="https://citationstyles.org/">csl</a>,
+<a href="https://www.zotero.org/styles">Zotero Style Repository</a>)
+can be referenced, it will manage the inline citation style
+along with the list of references.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+<span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;R Markdown to PDF&#34;</span>
+<span style="color:#f92672">subtitle</span>:
+    <span style="color:#ae81ff">The addition of citation management</span>
+<span style="color:#f92672">author</span>: <span style="color:#ae81ff">FCA Collin</span>
+<span style="color:#f92672">date</span>: <span style="color:#e6db74">&#34;`r format(Sys.Date(), &#39;%d %B %Y&#39;)`&#34;</span>
+<span style="color:#f92672">output</span>:
+  <span style="color:#f92672">pdf_document</span>:
+    <span style="color:#f92672">template</span>: <span style="color:#ae81ff">pandoc/eisvogel/eisvogel</span>
+    <span style="color:#f92672">toc</span>: <span style="color:#66d9ef">true</span>
+    <span style="color:#f92672">number_sections</span>: <span style="color:#66d9ef">true</span>
+    <span style="color:#f92672">latex_engine</span>: <span style="color:#ae81ff">xelatex</span>
+<span style="color:#f92672">bibliography</span>: <span style="color:#ae81ff">ref/ref.bib</span>
+<span style="color:#f92672">csl</span>: <span style="color:#ae81ff">ref/csl/field-crops-research.csl</span>
+<span style="color:#f92672">titlepage</span>: <span style="color:#66d9ef">true</span>
+<span style="color:#f92672">titlepage-color</span>: <span style="color:#e6db74">&#34;354C71&#34;</span>
+<span style="color:#f92672">titlepage-rule-color</span>: <span style="color:#e6db74">&#34;FFFFFF&#34;</span>
+<span style="color:#f92672">titlepage-text-color</span>: <span style="color:#e6db74">&#34;FFFFFF&#34;</span>
+<span style="color:#f92672">toc-own-page</span>: <span style="color:#66d9ef">true</span>
+<span style="color:#f92672">colorlinks</span>: <span style="color:#66d9ef">true</span>
+---
+</code></pre></div><p>A BibTex list of references is a simple text file as formated below. Note that
+graphical user interfaces can be used to handle it, such as the lightweight
+opensource <a href="https://www.jabref.org/">JabRef</a>. Note that the BibTex format is
+also used for R package citations.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bibtex" data-lang="bibtex"><span style="color:#75715e">% Encoding: UTF-8</span>
+
+<span style="color:#a6e22e">@Article</span>{Florindo2020,
+  <span style="color:#a6e22e">author</span>    = <span style="color:#e6db74">{Florindo, Helena F and Kleiner, Ron and Vaskovich-Koubi, Daniella and Ac{\&#39;u}rcio, Rita C and Carreira, Barbara and Yeini, Eilam and Tiram, Galia and Liubomirski, Yulia and Satchi-Fainaro, Ronit}</span>,
+  <span style="color:#a6e22e">title</span>     = <span style="color:#e6db74">{Immune-mediated approaches against COVID-19}</span>,
+  <span style="color:#a6e22e">journal</span>   = <span style="color:#e6db74">{Nature nanotechnology}</span>,
+  <span style="color:#a6e22e">year</span>      = <span style="color:#e6db74">{2020}</span>,
+  <span style="color:#a6e22e">volume</span>    = <span style="color:#e6db74">{15}</span>,
+  <span style="color:#a6e22e">number</span>    = <span style="color:#e6db74">{8}</span>,
+  <span style="color:#a6e22e">pages</span>     = <span style="color:#e6db74">{630--645}</span>,
+  <span style="color:#a6e22e">doi</span>       = <span style="color:#e6db74">{10.1038/s41565-020-0732-3}</span>,
+  <span style="color:#a6e22e">publisher</span> = <span style="color:#e6db74">{Nature Publishing Group}</span>,
 }
 
-#paginator {
-  display: none;
-  text-align: center;
-  margin-bottom: 10px;
+<span style="color:#a6e22e">@Misc</span>{Nuest2020,
+  <span style="color:#a6e22e">author</span>    = <span style="color:#e6db74">{N{\&#34;u}st, Daniel and Sochat, Vanessa and Marwick, Ben and Eglen, Stephen J and Head, Tim and Hirst, Tony and Evans, Benjamin D}</span>,
+  <span style="color:#a6e22e">title</span>     = <span style="color:#e6db74">{Ten simple rules for writing Dockerfiles for reproducible data science}</span>,
+  <span style="color:#a6e22e">year</span>      = <span style="color:#e6db74">{2020}</span>,
+  <span style="color:#a6e22e">doi</span>       = <span style="color:#e6db74">{10.1371/journal.pcbi.1008316}</span>,
+  <span style="color:#a6e22e">publisher</span> = <span style="color:#e6db74">{Public Library of Science San Francisco, CA USA}</span>,
 }
 
-#loadingWrapper {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 350px;
+<span style="color:#a6e22e">@PhdThesis</span>{Collin2018b,
+  <span style="color:#a6e22e">author</span> = <span style="color:#e6db74">{Collin, Francois Christophe}</span>,
+  <span style="color:#a6e22e">title</span>  = <span style="color:#e6db74">{The tolerance of wheat (Triticum aestivum L.) to Septoria tritici blotch}</span>,
+  <span style="color:#a6e22e">school</span> = <span style="color:#e6db74">{The University of Nottingham and L’Institut des sciences et industries du vivant et de l’environnement (AgroParisTech)}</span>,
+  <span style="color:#a6e22e">year</span>   = <span style="color:#e6db74">{2018}</span>,
 }
 
-#loading {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  border: 3px solid #d2d0d0;;
-  border-radius: 50%;
-  border-top-color: #383838;
-  animation: spin 1s ease-in-out infinite;
-  -webkit-animation: spin 1s ease-in-out infinite;
+<span style="color:#a6e22e">@Article</span>{Collin2018,
+  <span style="color:#a6e22e">author</span>    = <span style="color:#e6db74">{Collin, F and Bancal, P and Spink, J and {Kock Appelgren}, P and Smith, J and Paveley, N D and Bancal, M-O and Foulkes, M J}</span>,
+  <span style="color:#a6e22e">title</span>     = <span style="color:#e6db74">{Wheat lines exhibiting variation in tolerance of {S}eptoria tritici blotch differentiated by grain source limitation}</span>,
+  <span style="color:#a6e22e">journal</span>   = <span style="color:#e6db74">{Field Crops Research}</span>,
+  <span style="color:#a6e22e">year</span>      = <span style="color:#e6db74">{2018}</span>,
+  <span style="color:#a6e22e">volume</span>    = <span style="color:#e6db74">{217}</span>,
+  <span style="color:#a6e22e">pages</span>     = <span style="color:#e6db74">{1-- 10}</span>,
+  <span style="color:#a6e22e">month</span>     = <span style="color:#e6db74">{March}</span>,
+  <span style="color:#a6e22e">issn</span>      = <span style="color:#e6db74">{0378-4290}</span>,
+  <span style="color:#a6e22e">doi</span>       = <span style="color:#e6db74">{10.1016/j.fcr.2017.11.022}</span>,
+  <span style="color:#a6e22e">groups</span>    = <span style="color:#e6db74">{Collin2018}</span>,
+  <span style="color:#a6e22e">keywords</span>  = <span style="color:#e6db74">{STB}</span>,
+  <span style="color:#a6e22e">owner</span>     = <span style="color:#e6db74">{fcollin}</span>,
+  <span style="color:#a6e22e">timestamp</span> = <span style="color:#e6db74">{2017.12.09}</span>,
+  <span style="color:#a6e22e">url</span>       = <span style="color:#e6db74">{https://www.sciencedirect.com/science/article/pii/S0378429017312078}</span>,
 }
 
-@keyframes spin {
-  to { -webkit-transform: rotate(360deg); }
-}
-@-webkit-keyframes spin {
-  to { -webkit-transform: rotate(360deg); }
-}
-</style>
-
-<div id="paginator">
-    <button id="prev">Previous</button>
-    <button id="next">Next</button>
-    &nbsp; &nbsp;
-    <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
-</div>
-<div id="embed-pdf-container">
-    <div id="loadingWrapper">
-      <div id="loading"></div>
-    </div>
-    <canvas id="the-canvas"></canvas>
-</div>
-
-<script type="text/javascript">
-window.onload = function() {
-
-
-var url = "https:\/\/fcacollin.github.io\/guide\/" + 'rmd_to_pdf\/pdf\/rmd2pdf_02_01.pdf';
-
-var hidePaginator = "" === "true";
-var hideLoader = "" === "true";
-var selectedPageNum = parseInt("") || 1;
-
-
-var pdfjsLib = window['pdfjs-dist/build/pdf'];
-
-
-pdfjsLib.GlobalWorkerOptions.workerSrc = "https:\/\/fcacollin.github.io\/guide\/" + '/js/pdf-js/build/pdf.worker.js';
-
-
-var pdfDoc = null,
-    pageNum = selectedPageNum,
-    pageRendering = false,
-    pageNumPending = null,
-    scale = 3,
-    canvas = document.getElementById('the-canvas'),
-    ctx = canvas.getContext('2d'),
-    paginator = document.getElementById("paginator"),
-    loadingWrapper = document.getElementById('loadingWrapper');
-
-
-
-showPaginator();
-showLoader();
-
-
-
-function renderPage(num) {
-  pageRendering = true;
-  
-  pdfDoc.getPage(num).then(function(page) {
-    var viewport = page.getViewport({scale: scale});
-    canvas.height = viewport.height;
-    canvas.width = viewport.width;
-
-    
-    var renderContext = {
-      canvasContext: ctx,
-      viewport: viewport
-    };
-    var renderTask = page.render(renderContext);
-
-    
-    renderTask.promise.then(function() {
-      pageRendering = false;
-      showContent();
-      
-      if (pageNumPending !== null) {
-        
-        renderPage(pageNumPending);
-        pageNumPending = null;
-      }
-    });
-  });
-
-  
-  document.getElementById('page_num').textContent = num;
+<span style="color:#a6e22e">@Article</span>{Kapica-Topczewska2019a,
+  <span style="color:#a6e22e">author</span>    = <span style="color:#e6db74">{Kapica-Topczewska, Katarzyna AND Tarasiuk, Joanna AND Collin, Francois AND Brola, Waldemar AND Chorąży, Monika AND Czarnowska, Agata AND Kwaśniewski, Mirosław AND Bartosik-Psujek, Halina AND Adamczyk-Sowa, Monika AND Kochanowicz, Jan AND Kułakowska, Alina}</span>,
+  <span style="color:#a6e22e">title</span>     = <span style="color:#e6db74">{The effectiveness of interferon beta versus glatiramer acetate and natalizumab versus fingolimod in a Polish real-world population}</span>,
+  <span style="color:#a6e22e">journal</span>   = <span style="color:#e6db74">{PLOS ONE}</span>,
+  <span style="color:#a6e22e">year</span>      = <span style="color:#e6db74">{2019}</span>,
+  <span style="color:#a6e22e">volume</span>    = <span style="color:#e6db74">{14}</span>,
+  <span style="color:#a6e22e">number</span>    = <span style="color:#e6db74">{10}</span>,
+  <span style="color:#a6e22e">pages</span>     = <span style="color:#e6db74">{1-12}</span>,
+  <span style="color:#a6e22e">month</span>     = <span style="color:#e6db74">{10}</span>,
+  <span style="color:#a6e22e">doi</span>       = <span style="color:#e6db74">{10.1371/journal.pone.0223863}</span>,
+  <span style="color:#a6e22e">publisher</span> = <span style="color:#e6db74">{Public Library of Science}</span>,
+  <span style="color:#a6e22e">url</span>       = <span style="color:#e6db74">{https://doi.org/10.1371/journal.pone.0223863}</span>,
 }
 
+<span style="color:#75715e">@Comment{jabref-meta: databaseType:bibtex;}</span>
+</code></pre></div><p>In the markdown text, invoking a citation is easy and clear (check for more
+examples of
+<a href="https://pandoc.org/demo/example19/Extension-citations.html">markdown citations</a>).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">![<span style="color:#f92672">Schematic representation of SARS-CoV-2 structure. This is an enveloped,
+</span><span style="color:#f92672">positive-sense RNA virus with four main structural proteins,
+</span><span style="color:#f92672">including spike (S) and membrane (M) glycoproteins, as well as envelope (E)
+</span><span style="color:#f92672">and nucleocapsid (N) proteins. Figure and caption from
+</span><span style="color:#f92672">@Florindo2020.\label{f-intro_covid}</span>](<span style="color:#a6e22e">img/florindo2020_covid_drawing.jpg</span>)
 
+The figure \ref{f-intro_covid} cross-referencing is enabled by <span style="color:#e6db74">`\label{}`</span> and
+<span style="color:#e6db74">`\ref{}`</span> commands. It refers to a bibtex reference <span style="color:#e6db74">`@Florindo2020`</span> which is
+rendered as &#34;@Florindo2020&#34;, along with an entry added to the reference list at
+the end of the document. The handling of reference is very convenient and
+still readable in plain text. For instance if I want to refer
+to reproducible science and Docker images [@Nuest2020] the bracketed reference
+is added by <span style="color:#e6db74">`[@Nuest2020]`</span>.
+Several references can be used so I can refer to several items of my PhD
+in a single reference [@Collin2018;@Collin2018b] with
+<span style="color:#e6db74">`[@Collin2018;@Collin2018b]`</span>.
+This citation system is flexible enough to allow free text within the
+citation call [@Kapica-Topczewska2019a, see the Kaplan-Meir step curves];
+this last reference is as:
+<span style="color:#e6db74">`[@Kapica-Topczewska2019a, see the Kaplan-Meir step curves]`</span>.
+</code></pre></div><p>The text above is rendered in the first section of the document reported below
+(<a href="pdf/rmd2pdf_02_02.pdf">open the pdf example</a>).</p>
 
-function showContent() {
-  loadingWrapper.style.display = 'none';
-  canvas.style.display = 'block';
-}
+<iframe src="pdf/rmd2pdf_02_02.pdf" height="800" width="100%"></iframe>
 
-
-
-function showLoader() {
-  if(hideLoader) return
-  loadingWrapper.style.display = 'flex';
-  canvas.style.display = 'none';
-}
-
-
-
-function showPaginator() {
-  if(hidePaginator) return
-  paginator.style.display = 'block';
-}
-
-
-
-function queueRenderPage(num) {
-  if (pageRendering) {
-    pageNumPending = num;
-  } else {
-    renderPage(num);
-  }
-}
-
-
-
-function onPrevPage() {
-  if (pageNum <= 1) {
-    return;
-  }
-  pageNum--;
-  queueRenderPage(pageNum);
-}
-document.getElementById('prev').addEventListener('click', onPrevPage);
-
-
-
-function onNextPage() {
-  if (pageNum >= pdfDoc.numPages) {
-    return;
-  }
-  pageNum++;
-  queueRenderPage(pageNum);
-}
-document.getElementById('next').addEventListener('click', onNextPage);
-
-
-
-pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
-  pdfDoc = pdfDoc_;
-  var numPages = pdfDoc.numPages;
-  document.getElementById('page_count').textContent = numPages;
-  
-  
-  if(pageNum > numPages) {
-    pageNum = numPages
-  }
-
-  
-  renderPage(pageNum);
-});
-}
-
-</script>
 
 <h2 id="4-discussion">4. Discussion</h2>
+<p>R Markdown allows for fine configuration of a pdf document. The large number
+of options can be substituted by a template file, while keeping scientif authors
+tools such as a en efficient citation manager at hand.</p>
+<p>This is only a subset of possibilities, some other tools of interest I
+personnaly used in plain LaTeX formats includes:  might
+need to be evoked: glossary, list of tables, list of figures, connection
+of children documents, several pagination styles and starts within a document
+(an example is added as a supplementary section at the end of this page).
+I expect them to be also accessible from the R Markdown interface.</p>
+<p>Perpsectives:</p>
+<ul>
+<li>the concept of Pandoc templates is not limited to LaTeX processing, it
+is also found for instance for docs and html content. Those interested
+in docx or other output should explore the templating capabilities.</li>
+<li>the complex examples above use a yaml configuration, but the rendering
+of the document still relies on <code>rmarkdown::pdf_document()</code>. Once a template
+is ready and stable, I suggest the next step would be to create and export
+a custom <code>pdf_document()</code> function such as <code>my_super_report()</code> that
+would be invoked directly into the yaml front matter, hence, anybody could
+leverage this new format.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+<span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;R Markdown to PDF&#34;</span>
+<span style="color:#f92672">author</span>: <span style="color:#ae81ff">FCA Collin</span>
+<span style="color:#f92672">date</span>: <span style="color:#e6db74">&#34;`r format(Sys.Date(), &#39;%d %B %Y&#39;)`&#34;</span>
+<span style="color:#f92672">output</span>: <span style="color:#ae81ff">my_super_report</span>
+---
+</code></pre></div></li>
+</ul>
 <h2 id="references">References</h2>
 <p>Nüst, Daniel, Vanessa Sochat, Ben Marwick, Stephen J Eglen, Tim Head,
 Tony Hirst, and Benjamin D Evans. 2020. “Ten Simple Rules for Writing
@@ -566,6 +541,14 @@ San Francisco, CA USA. <a href="https://doi.org/10.1371/journal.pcbi.1008316">ht
 <p>Wagler, Pascal, and John MacFarlane. 2021. “Eisvogel Pandoc Latex
 Template.” GitHub Wandmalfarbe.
 <a href="https://github.com/Wandmalfarbe/pandoc-latex-template">https://github.com/Wandmalfarbe/pandoc-latex-template</a>.</p>
+<h2 id="supplementary">Supplementary</h2>
+<p>Example of complex document handled by LaTeX, all the options used in this
+document are accessible from the R Markdown interface
+<a href="https://pastel.archives-ouvertes.fr/tel-02443529/document">(Collin 2018, PhD manuscript)</a>:</p>
+
+<iframe src="https://pastel.archives-ouvertes.fr/tel-02443529/document" height="1000" width="100%"></iframe>
+
+
 
 
 <footer class="footline">
@@ -707,19 +690,19 @@ Template.” GitHub Wandmalfarbe.
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/guide/js/clipboard.min.js?1648022991"></script>
-    <script src="/guide/js/perfect-scrollbar.min.js?1648022991"></script>
-    <script src="/guide/js/perfect-scrollbar.jquery.min.js?1648022991"></script>
-    <script src="/guide/js/jquery.sticky.js?1648022991"></script>
-    <script src="/guide/js/featherlight.min.js?1648022991"></script>
-    <script src="/guide/js/highlight.pack.js?1648022991"></script>
+    <script src="/guide/js/clipboard.min.js?1648109179"></script>
+    <script src="/guide/js/perfect-scrollbar.min.js?1648109179"></script>
+    <script src="/guide/js/perfect-scrollbar.jquery.min.js?1648109179"></script>
+    <script src="/guide/js/jquery.sticky.js?1648109179"></script>
+    <script src="/guide/js/featherlight.min.js?1648109179"></script>
+    <script src="/guide/js/highlight.pack.js?1648109179"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/guide/js/modernizr.custom-3.6.0.js?1648022991"></script>
-    <script src="/guide/js/learn.js?1648022991"></script>
-    <script src="/guide/js/hugo-learn.js?1648022991"></script>
+    <script src="/guide/js/modernizr.custom-3.6.0.js?1648109179"></script>
+    <script src="/guide/js/learn.js?1648109179"></script>
+    <script src="/guide/js/hugo-learn.js?1648109179"></script>
     
         
-            <script src="/guide/mermaid/mermaid.js?1648022991"></script>
+            <script src="/guide/mermaid/mermaid.js?1648109179"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
