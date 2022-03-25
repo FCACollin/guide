@@ -15,6 +15,7 @@ outputs:
 params:
   themeVariant: green
   disableLandingPageButton: true
+  ordersectionsby: "weight"
 
 baseURL: "https://fcacollin.github.io/guide/"
 relativeURLs: false

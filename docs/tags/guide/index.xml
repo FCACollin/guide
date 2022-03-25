@@ -9,10 +9,10 @@
     <item>
       <title>Home</title>
       <link>https://fcacollin.github.io/guide/</link>
-      <pubDate>Tue, 15 Mar 2022 09:22:43 +0100</pubDate>
+      <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://fcacollin.github.io/guide/</guid>
-      <description>Welcome  R Markdown to PDF  Description of the pipeline converting a R Markdown file into a pdf, and how to modify the configurate the document with options passed to Pandoc and an LaTeX engine.
+      <description>Welcome  R Markdown to PDF  R Markdown to PDF: understand the pipeline to enable fine tuning of the resulting PDF documents.
  Hugo  Lesson learned with Hugo
  </description>
     </item>

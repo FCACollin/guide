@@ -15,4 +15,5 @@ outputs:
 params:
   themeVariant: green
   disableLandingPageButton: true
+  ordersectionsby: "weight"
 

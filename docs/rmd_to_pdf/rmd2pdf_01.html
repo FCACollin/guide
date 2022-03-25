@@ -4,30 +4,30 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.92.1" />
-    <meta name="description" content="">
+    <meta name="description" content="Description of the pipeline converting a R Markdown file into a pdf, and how to modify the configuration of the document with options passed to Pandoc and an LaTeX engine.">
 
 
     <link rel="icon" href="/guide/images/logo4.svg" type="image/svg">
 
-    <title>01 - Understand the pipeline :: latarnia-gh</title>
+    <title>Understand the pipeline :: latarnia-gh</title>
 
     
-    <link href="/guide/css/nucleus.css?1648109178" rel="stylesheet">
-    <link href="/guide/css/fontawesome-all.min.css?1648109178" rel="stylesheet">
-    <link href="/guide/css/hybrid.css?1648109178" rel="stylesheet">
-    <link href="/guide/css/featherlight.min.css?1648109178" rel="stylesheet">
-    <link href="/guide/css/perfect-scrollbar.min.css?1648109178" rel="stylesheet">
-    <link href="/guide/css/auto-complete.css?1648109178" rel="stylesheet">
-    <link href="/guide/css/atom-one-dark-reasonable.css?1648109178" rel="stylesheet">
-    <link href="/guide/css/theme.css?1648109178" rel="stylesheet">
-    <link href="/guide/css/tabs.css?1648109178" rel="stylesheet">
-    <link href="/guide/css/hugo-theme.css?1648109178" rel="stylesheet">
+    <link href="/guide/css/nucleus.css?1648190554" rel="stylesheet">
+    <link href="/guide/css/fontawesome-all.min.css?1648190554" rel="stylesheet">
+    <link href="/guide/css/hybrid.css?1648190554" rel="stylesheet">
+    <link href="/guide/css/featherlight.min.css?1648190554" rel="stylesheet">
+    <link href="/guide/css/perfect-scrollbar.min.css?1648190554" rel="stylesheet">
+    <link href="/guide/css/auto-complete.css?1648190554" rel="stylesheet">
+    <link href="/guide/css/atom-one-dark-reasonable.css?1648190554" rel="stylesheet">
+    <link href="/guide/css/theme.css?1648190554" rel="stylesheet">
+    <link href="/guide/css/tabs.css?1648190554" rel="stylesheet">
+    <link href="/guide/css/hugo-theme.css?1648190554" rel="stylesheet">
     
-    <link href="/guide/css/theme-green.css?1648109178" rel="stylesheet">
+    <link href="/guide/css/theme-green.css?1648190554" rel="stylesheet">
     
     
 
-    <script src="/guide/js/jquery-3.3.1.min.js?1648109178"></script>
+    <script src="/guide/js/jquery-3.3.1.min.js?1648190554"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/guide/js/lunr.min.js?1648109178"></script>
-<script type="text/javascript" src="/guide/js/auto-complete.js?1648109178"></script>
+<script type="text/javascript" src="/guide/js/lunr.min.js?1648190554"></script>
+<script type="text/javascript" src="/guide/js/auto-complete.js?1648190554"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/fcacollin.github.io\/guide\/";
     
 </script>
-<script type="text/javascript" src="/guide/js/search.js?1648109178"></script>
+<script type="text/javascript" src="/guide/js/search.js?1648190554"></script>
 
     
   </div>
@@ -109,7 +109,7 @@
  
   
     
-      <li data-nav-id="/guide/rmd_to_pdf/rmd2pdf_01.html" title="01 - Understand the pipeline" class="dd-item active">
+      <li data-nav-id="/guide/rmd_to_pdf/rmd2pdf_01.html" title="Understand the pipeline" class="dd-item active">
         <a href="/guide/rmd_to_pdf/rmd2pdf_01.html">
         01 - Understand the pipeline
         
@@ -130,7 +130,7 @@
  
   
     
-      <li data-nav-id="/guide/rmd_to_pdf/rmd2pdf_02.html" title="02 - Templates and extended features" class="dd-item ">
+      <li data-nav-id="/guide/rmd_to_pdf/rmd2pdf_02.html" title="Templates and extended features" class="dd-item ">
         <a href="/guide/rmd_to_pdf/rmd2pdf_02.html">
         02 - Templates and extended features
         
@@ -151,9 +151,9 @@
  
   
     
-      <li data-nav-id="/guide/rmd_to_pdf/citations.html" title="" class="dd-item ">
+      <li data-nav-id="/guide/rmd_to_pdf/citations.html" title="References" class="dd-item ">
         <a href="/guide/rmd_to_pdf/citations.html">
-        
+        References
         
         </a>
     </li>
@@ -243,7 +243,7 @@
             
           
           
-            <a href='/guide/'>Home</a> > <a href='/guide/rmd_to_pdf.html'>R Markdown to PDF</a> > 01 - Understand the pipeline
+            <a href='/guide/'>Home</a> > <a href='/guide/rmd_to_pdf.html'>R Markdown to PDF</a> > Understand the pipeline
           
         
           
@@ -282,7 +282,11 @@
         
 <div class="tags">
 
-  <a class="tag-link" href="/guide/tags/rmd">rmd</a>
+  <a class="tag-link" href="/guide/tags/r-markdown">R Markdown</a>
+
+  <a class="tag-link" href="/guide/tags/pandoc">Pandoc</a>
+
+  <a class="tag-link" href="/guide/tags/latex">LaTeX</a>
 
 </div>
 
@@ -292,7 +296,7 @@
           
             <h1>
               
-              01 - Understand the pipeline
+              Understand the pipeline
             </h1>
           
 
@@ -300,34 +304,9 @@
 
 
 <h2 id="1---introduction">1 - Introduction</h2>
-<p>The RStudio environment includes templates of R Markdown documents which
-propose as a configuration step to select a PDF output format. It is then
-very easy to render the document, actually simple as a click.</p>
-
-<div class="mermaid" align="left">
-sequenceDiagram
-    participant Rmd
-    participant pdf
-    Rmd->>pdf: knit button
-    Rmd->>pdf: = `rmarkdown::pdf_document()`
-</div>
-
-<p>If starting is easy, the click (bait) is hidding complexity:
-the question of PDF output configuration is already more challenging
-(e.g. add a footnote, chance font):</p>
-<ul>
-<li>under the hood, at least three different nested high-level tools are chained
-together to handle the R Markdown
-document (R, Pandoc and a LaTeX engine), fine tuning a PDF document in
-R consists in passing arguments to the right one using the application
-interface proposed by R.</li>
-<li>two or three ways exist to convey the configuration code: either
-using a R function argument, or conveying settings via the yaml front matter
-of the R Markdown document, or eventually through a configuration file.</li>
-</ul>
-<p>The aim of the present page is to provide an overview of the tools involved
-in the pipeline when triggering the rendering of the PDF document, and how to
-how to pass configuration elements to the right underlying tool.</p>
+<p>The RStudio environment includes templates of R Markdown documents proposing
+at selection step to chose PDF output format. It is then
+easy to render the document, actually simple as a click.</p>
 
 <div class="notices tip" ><p><strong>How to start a PDF in RStudio:</strong>
 (1) File &gt; New File &gt; <strong>RMarkdown</strong> &hellip; &gt; Select output PDF and OK;
@@ -335,24 +314,46 @@ how to pass configuration elements to the right underlying tool.</p>
 <img src="img/rmd_to_pdf_01.png" alt="Defaut pdf output with R Markdown, simple as a click in RStudio."></p>
 </div>
 
+<p>If starting is easy, the click (bait) is hiding complexity as
+the question of PDF output configuration is more challenging
+(e.g. add a footnote, change font):</p>
+<ul>
+<li>at least three different nested high-level tools are chained
+together to handle the R Markdown
+document (R, Pandoc and a LaTeX engine), fine tuning a PDF document in
+R consists in passing arguments to the right one using the application
+interface proposed by R.</li>
+<li>two or three ways exist to convey configuration instructions: either
+using a R function arguments, or conveying settings via the yaml front matter
+of the R Markdown document, or eventually through a configuration file.</li>
+</ul>
+<p>The aim of the present page is to provide an overview of the tools involved
+in the pipeline when triggering the rendering of the PDF document, and how to
+how to pass configuration elements to the right underlying tool.</p>
 <h2 id="2-material-and-methods">2. Material and Methods</h2>
-<p>A series of minimum working examples was generated to support the demonstration.
-The examples were built at the same time as the results below were reported.</p>
+<p>A series of minimum working examples were generated to support the
+demonstration.
+The examples were built at the same time as the results below were reported,
+they are available as a GitHub repository:
+<a href="https://github.com/FCACollin/rmd_to_pdf">Rmd to PDF</a>.
+Diagrams were employed to describe the sequence of tools involved in the
+transformation of the R Markdown document to PDF, they were made possible by
+the <a href="https://mermaid-js.github.io/mermaid">Mermaid framework</a>.</p>
 <p>The environment for the examples was containerized, a docker image and
-its definition was used to ensure reproducibility and / or enable the extenssion
+its definition was used to ensure reproducibility and / or enable the extension
 of the work (Nüst et al. 2020).
 The Docker definition was made publicly available at
 <a href="https://github.com/FCACollin/ayup_dock">https://github.com/FCACollin/ayup_dock</a>.
 Note that the image was not originally intended for this specific usage,
 this explains why it also includes some R packages and LaTeX dependencies not
-strictely necessary for the examples. However, the image as currently
+strictly necessary for the examples. However, the image as currently
 defined was also configured for a research task where pdf reporting was a
-requirement. Therefore, it was relevant to document the present examples based
-on this image used in real-life work.</p>
+requirement. Therefore, it was decided to base the example on this image
+as it shows also how it can be used in production for real-life work.</p>
 <p>The image includes:</p>
 <ul>
 <li>A rocker/verse image (4.1.0)</li>
-<li>A series of additional R packaes.</li>
+<li>A series of additional R packages.</li>
 <li>A series of LaTeX dependencies.</li>
 </ul>
 <p>In terms of pdf reporting, this image can:</p>
@@ -363,12 +364,17 @@ on this image used in real-life work.</p>
 <h2 id="3---results">3 - Results</h2>
 <h3 id="31---r-markdown-renderpdf_document">3.1 - R Markdown: <code>render()</code>/<code>pdf_document()</code></h3>
 <p>Producing a pdf document from a R Markdown (rmd) input is managed by R, but also
-involves <a href="https://pandoc.org/">Pandoc</a>: R takes care of the conversion
-of the rmd file to a markdown file (md), and pandoc handles the conversion
-toward a pdf document.
+involves <a href="https://pandoc.org/">Pandoc</a>: R pre-process all the R Markdown code
+chunks and in-line code converting there result in markdown and generating an
+intermediary markdown file (md), Pandoc handles the conversion of the md file
+into a pdf document.
 The <code>rmarkdown</code>&rsquo;s functions <code>render()</code> and <code>pdf_document()</code> are high R
-level functions which can manages most of the features a user my need when
-generating a document.</p>
+level functions which manages most of the features a user might need when
+generating a report. The options managed by <code>pdf_document()</code> are directly
+assigned to the right tool to be interpreted simplifying the interaction
+with the <em>toolchain</em>. For instance, it accepts argument <code>toc</code> resulting in
+a Table of Content being added to the output, it also accepts <code>keep_md</code>
+which enables the inspection of the intermediary markdown file.</p>
 
 <div class="mermaid" align="left">
 sequenceDiagram
@@ -381,12 +387,10 @@ sequenceDiagram
     Note right of Rmd: keep_md=FALSE</br>toc=TRUE
 </div>
 
-<p>For instance, the options can be used to keep the intermediary md file and
-also influence the output by adding a table of content (TOC).</p>
 <ul>
 <li>
-<p>The options above can be passed via the <code>yaml</code> frontmatter
-(e.g. <code>rmd2pdf_01_03.Rmd</code>):</p>
+<p>The options are passed either via the <code>yaml</code> frontmatter
+(e.g. <code>rmd2pdf_01_03.Rmd</code>) &hellip;</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
 <span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;Rmd to PDF&#34;</span>
 <span style="color:#f92672">output</span>:
@@ -396,8 +400,12 @@ also influence the output by adding a table of content (TOC).</p>
 ---
 </code></pre></div></li>
 <li>
-<p>or via an output function.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">render</span>(
+<p>&hellip; Or via an output function. Comparing both syntaxes, the first line in the
+yaml front matters below &ldquo;output&rdquo; corresponds to the function used by R for
+configuring the output, (<code>pdf_document</code>) followed by options which find a
+match in the R function.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">library</span>(rmarkdown)
+<span style="color:#a6e22e">render</span>(
   input <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;rmd2pdf_01_02.Rmd&#34;</span>,
   output_format <span style="color:#f92672">=</span> <span style="color:#a6e22e">pdf_document</span>(toc <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, keep_md <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
 )
@@ -406,35 +414,42 @@ also influence the output by adding a table of content (TOC).</p>
 
 <div class="notices tip" ><p><code>render</code> and <code>pdf_document</code> are functions exported by the <code>rmarkdown</code> package.
 Check
-<a href="https://rdrr.io/cran/rmarkdown/src/R/pdf_document.R"><code>?rmarkdown::pdf_document</code> &rsquo;s help</a>.</p>
+<a href="https://www.rdocumentation.org/packages/rmarkdown/versions/2.11/topics/pdf_document"><code>?rmarkdown::pdf_document</code> &rsquo;s help</a>.</p>
 </div>
 
 <p><img src="img/rmd_to_pdf_02.png" alt="Keep the markdown file and add a table of content."></p>
 <h3 id="32---pass-arguments-to-pandoc">3.2 - Pass arguments to Pandoc</h3>
-<p>Some options are handled by Pandoc. For Pandoc, configuration of an output is
-handled by
+<p>R&rsquo;s function for rendering a pdf document is a high level function. It includes
+arguments which let the user handle some features of interest for a report, but
+it is not possible that R&rsquo;s function accounts for all possibilities offered
+by the downstream tool Pandoc. This is explained by at list two reasons: Pandoc
+is highly configurable and proposes a very large number of configuration
+options, Pandoc is an evolving framework, new features are still to be expected
+in the future.
+For Pandoc, configuration of an output is handled by
 <em><a href="https://pandoc.org/MANUAL.html#variables-for-latex">variables for LaTeX</a></em> .
-In the example above, the
-option TOC is conveyed to Pandoc directly. However, not all the possibilities
-offered by Pandoc, found an exact matching variable in R.
-This is when the <code>pandoc_args</code> argument from <code>rmarkdown::pdf_document()</code> is
-used to feed Pandoc variables for LaTeX.</p>
+In the example above, the option TOC is conveyed to Pandoc directly.
+In complement, for the variables which are not directly handled by R&rsquo;s
+function (e.g. the font family), the R argument <code>pandoc_args</code> leaves the door
+opened for more Pandoc variables for LaTeX (e.g. variable <code>fontfamily</code>).</p>
 
 <div class="mermaid" align="left">
 sequenceDiagram
     participant Rmd
     participant md
     participant pdf
-    Rmd->>+md: rmarkdown::pdf_document()
+    Rmd->>pdf: rmarkdown::pdf_document()
+    Rmd->>+md: R
     Note right of Rmd: keep_md=FALSE</br>toc=TRUE
     md-->>-pdf: Pandoc
     Note right of md: Variables For LaTeX</br>fontfamily: libertinus-type1
 </div>
 
-<p>The Pandoc variables for LaTeX can be provisionned by:</p>
+<p>The Pandoc variables for LaTeX can be conveyed via:</p>
 <ul>
-<li>the Rmarkdown document
-<a href="https://bookdown.org/yihui/rmarkdown-cookbook/latex-variables.html#latex-variables">yaml front matter</a>:
+<li>
+<p>either the R Markdown document
+<a href="https://bookdown.org/yihui/rmarkdown-cookbook/latex-variables.html#latex-variables">yaml front matter</a> &hellip;</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
 <span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;Rmd to PDF&#34;</span>
 <span style="color:#f92672">output</span>:
@@ -444,8 +459,9 @@ sequenceDiagram
 <span style="color:#f92672">fontfamily</span>: <span style="color:#ae81ff">libertinus-type1</span>
 ---
 </code></pre></div></li>
-<li>the <code>pdf_document()</code> function:</li>
-</ul>
+<li>
+<p>&hellip; Or the <code>pdf_document()</code> function. Extra lines in the yaml front matter
+correspond to new <code>pandoc_args</code> list items as built below:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">rmarkdown<span style="color:#f92672">::</span><span style="color:#a6e22e">render</span>(
   input <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;rmd2pdf_01_03.Rmd&#34;</span>,
   output_format <span style="color:#f92672">=</span> rmarkdown<span style="color:#f92672">::</span><span style="color:#a6e22e">pdf_document</span>(
@@ -455,14 +471,15 @@ sequenceDiagram
     )
   )
 )
-</code></pre></div><p><img src="img/rmd_to_pdf_03.png" alt="Modify the font family"></p>
+</code></pre></div></li>
+</ul>
+<p><img src="img/rmd_to_pdf_03.png" alt="Modify the font family"></p>
 <h3 id="33---pass-arguments-to-the-latex-engine">3.3 - Pass arguments to the LaTeX engine</h3>
-<p>Pandoc itself is a high level programs which handles conversion between formats.
-A conversion toward a PDF document requires an intermediary LaTeX document
-later processed by a a LaTeX engine into pdf.
-Most of the expected functionnalities are translated via Pandoc, however,
-sometimes, LaTeX functionnalities are not covered and they must be conveyed
-from the original R Markdown document to the LaTeX document.</p>
+<p>For the same reason which explain why R Markdown can not account for all
+possibilities offered by Pandoc, Pandoc being a high level function for LaTeX
+can not account for all possibilities offered by a LaTeX engine.
+Many expected functionalities are translated via Pandoc, for those which are
+not, R&rsquo;s function open the door via the extra dependency argument.</p>
 
 <div class="mermaid" align="left">
 sequenceDiagram
@@ -472,15 +489,15 @@ sequenceDiagram
     participant pdf
     Rmd->>pdf: rmarkdown::pdf_document()
     Rmd->>md: R
-    Note right of Rmd: rmarkdown arguments
+    Note right of Rmd: rmarkdown arguments</br>keep_md=FALSE</br>toc=TRUE
     md->>+tex: Pandoc
-    Note right of md: LaTeX Variables
+    Note right of md: Variables For LaTeX</br>fontfamily: libertinus-type1
     tex-->>-pdf: LaTeX engine
     Note right of tex: Extra depencendies</br>e.g. fancyhdr
 </div>
 
 <ul>
-<li>The yaml frontmatter won&rsquo;t be self sufficient anymore, the use of
+<li>The yaml front matter is no longer self sufficient, the use of
 <code>include/in_header</code> points at a supplementary <code>.tex</code> file:
 <ul>
 <li>yaml:</li>
@@ -526,7 +543,7 @@ compact:
 </ul>
 <p><img src="img/rmd_to_pdf_04.png" alt="Modify the header"></p>
 <h2 id="4-discussion">4. Discussion</h2>
-<p>It was evidenced that the original raw pdf has generated
+<p>It was evidenced that the original raw pdf as generated
 by a simple click in RStudio, hides complexity. Entering the detail of this
 complexity and decomposing the pipeline brings a better understanding of
 the possible levels of configuration which can be addressed either through
@@ -537,16 +554,16 @@ for configuration, and a basic knowledge of LaTeX may also help in achieving
 a very well designed report. This complexity allows an incredible flexibility
 in the configuration of the reporting.</p>
 <p>However, the complexity can also be seen as hurdle: the increase number
-of programming languages decrease the likelyhood of finding contributors who
+of programming languages decrease the likelihood of finding contributors who
 can leverage the whole potential of pdf reporting with R Markdown. To
-aleviate this difficulty it is also possible to use templates: in other word,
-the confirguration of a pdf output is a one-off, it is a deliverable itself
+alleviate this difficulty it is also possible to use templates: in other word,
+the configuration of a pdf output is a one-off, it is a deliverable itself
 which can be injected in many reporting task (think about it as a corporate
 Microsoft word template).</p>
-<p>The pdf reporting as presented above, is an illustration of the mecanisms
+<p>The pdf reporting as presented above, is an illustration of the mechanisms
 involved to convert a R Markdown file into a document.
 The same applies to render docx, html or other: the markdown file being at the
-cross road and pandoc involved to the final conversion. As for the pdf
+cross road and Pandoc involved to the final conversion. As for the pdf
 documents, all output can take advantage of templates, and markup languages
 (e.g. LaTeX or html) accepts headers or other additional configuration files.</p>
 <h2 id="references">References</h2>
@@ -685,7 +702,7 @@ San Francisco, CA USA. <a href="https://doi.org/10.1371/journal.pcbi.1008316">ht
 			<a class="nav nav-prev" href="/guide/rmd_to_pdf.html" title="R Markdown to PDF"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/guide/rmd_to_pdf/rmd2pdf_02.html" title="02 - Templates and extended features" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/guide/rmd_to_pdf/rmd2pdf_02.html" title="Templates and extended features" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -695,19 +712,19 @@ San Francisco, CA USA. <a href="https://doi.org/10.1371/journal.pcbi.1008316">ht
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/guide/js/clipboard.min.js?1648109178"></script>
-    <script src="/guide/js/perfect-scrollbar.min.js?1648109178"></script>
-    <script src="/guide/js/perfect-scrollbar.jquery.min.js?1648109178"></script>
-    <script src="/guide/js/jquery.sticky.js?1648109178"></script>
-    <script src="/guide/js/featherlight.min.js?1648109178"></script>
-    <script src="/guide/js/highlight.pack.js?1648109178"></script>
+    <script src="/guide/js/clipboard.min.js?1648190554"></script>
+    <script src="/guide/js/perfect-scrollbar.min.js?1648190554"></script>
+    <script src="/guide/js/perfect-scrollbar.jquery.min.js?1648190554"></script>
+    <script src="/guide/js/jquery.sticky.js?1648190554"></script>
+    <script src="/guide/js/featherlight.min.js?1648190554"></script>
+    <script src="/guide/js/highlight.pack.js?1648190554"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/guide/js/modernizr.custom-3.6.0.js?1648109178"></script>
-    <script src="/guide/js/learn.js?1648109178"></script>
-    <script src="/guide/js/hugo-learn.js?1648109178"></script>
+    <script src="/guide/js/modernizr.custom-3.6.0.js?1648190554"></script>
+    <script src="/guide/js/learn.js?1648190554"></script>
+    <script src="/guide/js/hugo-learn.js?1648190554"></script>
     
         
-            <script src="/guide/mermaid/mermaid.js?1648109178"></script>
+            <script src="/guide/mermaid/mermaid.js?1648190554"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

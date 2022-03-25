@@ -1,12 +1,15 @@
 ---
 title: "R Markdown to PDF"
 description:
-  "Description of the pipeline converting a R Markdown file into a pdf, and
-  how to modify the configurate the document with options passed to Pandoc
-  and an LaTeX engine."
+  "R Markdown to PDF: understand the pipeline to enable fine tuning of the
+  resulting PDF documents."
 tags:
 - R Markdown
 ---
 
+{{% children description="true" %}}
+
 ![](rmd_to_pdf/img/cover.png)
+
+[modeline]: # ( vim: set foldlevel=0 spell spelllang=en_gb: )
 

@@ -1,7 +1,12 @@
 ---
-title: "02 - Templates and extended features"
-date: 2022-03-15T09:22:43+01:00
+title: "Templates and extended features"
+menuTitle: "02 - Templates and extended features"
+weight: 02
+date: 2022-03-25
 bibliography: ref/ref.bib
+description:
+  "Advanced usage: why and how to use a LaTeX template?
+   How to handle references?"
 tags:
 - rmd
 ---
@@ -302,4 +307,7 @@ https://pastel.archives-ouvertes.fr/tel-02443529/document):
 {{< unsafe >}}
 <iframe src="https://pastel.archives-ouvertes.fr/tel-02443529/document" height="1000" width="100%"></iframe>
 {{< /unsafe >}}
+
+
+[modeline]: # ( vim: set foldlevel=0 spell spelllang=en_gb: )
 

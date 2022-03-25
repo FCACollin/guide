@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.92.1" />
-    <meta name="description" content="Description of the pipeline converting a R Markdown file into a pdf, and how to modify the configurate the document with options passed to Pandoc and an LaTeX engine.">
+    <meta name="description" content="R Markdown to PDF: understand the pipeline to enable fine tuning of the resulting PDF documents.">
 
 
     <link rel="icon" href="/guide/images/logo4.svg" type="image/svg">
@@ -12,22 +12,22 @@
     <title>R Markdown to PDF :: latarnia-gh</title>
 
     
-    <link href="/guide/css/nucleus.css?1648109178" rel="stylesheet">
-    <link href="/guide/css/fontawesome-all.min.css?1648109178" rel="stylesheet">
-    <link href="/guide/css/hybrid.css?1648109178" rel="stylesheet">
-    <link href="/guide/css/featherlight.min.css?1648109178" rel="stylesheet">
-    <link href="/guide/css/perfect-scrollbar.min.css?1648109178" rel="stylesheet">
-    <link href="/guide/css/auto-complete.css?1648109178" rel="stylesheet">
-    <link href="/guide/css/atom-one-dark-reasonable.css?1648109178" rel="stylesheet">
-    <link href="/guide/css/theme.css?1648109178" rel="stylesheet">
-    <link href="/guide/css/tabs.css?1648109178" rel="stylesheet">
-    <link href="/guide/css/hugo-theme.css?1648109178" rel="stylesheet">
+    <link href="/guide/css/nucleus.css?1648190554" rel="stylesheet">
+    <link href="/guide/css/fontawesome-all.min.css?1648190554" rel="stylesheet">
+    <link href="/guide/css/hybrid.css?1648190554" rel="stylesheet">
+    <link href="/guide/css/featherlight.min.css?1648190554" rel="stylesheet">
+    <link href="/guide/css/perfect-scrollbar.min.css?1648190554" rel="stylesheet">
+    <link href="/guide/css/auto-complete.css?1648190554" rel="stylesheet">
+    <link href="/guide/css/atom-one-dark-reasonable.css?1648190554" rel="stylesheet">
+    <link href="/guide/css/theme.css?1648190554" rel="stylesheet">
+    <link href="/guide/css/tabs.css?1648190554" rel="stylesheet">
+    <link href="/guide/css/hugo-theme.css?1648190554" rel="stylesheet">
     
-    <link href="/guide/css/theme-green.css?1648109178" rel="stylesheet">
+    <link href="/guide/css/theme-green.css?1648190554" rel="stylesheet">
     
     
 
-    <script src="/guide/js/jquery-3.3.1.min.js?1648109178"></script>
+    <script src="/guide/js/jquery-3.3.1.min.js?1648190554"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/guide/js/lunr.min.js?1648109178"></script>
-<script type="text/javascript" src="/guide/js/auto-complete.js?1648109178"></script>
+<script type="text/javascript" src="/guide/js/lunr.min.js?1648190554"></script>
+<script type="text/javascript" src="/guide/js/auto-complete.js?1648190554"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/fcacollin.github.io\/guide\/";
     
 </script>
-<script type="text/javascript" src="/guide/js/search.js?1648109178"></script>
+<script type="text/javascript" src="/guide/js/search.js?1648190554"></script>
 
     
   </div>
@@ -109,7 +109,7 @@
  
   
     
-      <li data-nav-id="/guide/rmd_to_pdf/rmd2pdf_01.html" title="01 - Understand the pipeline" class="dd-item ">
+      <li data-nav-id="/guide/rmd_to_pdf/rmd2pdf_01.html" title="Understand the pipeline" class="dd-item ">
         <a href="/guide/rmd_to_pdf/rmd2pdf_01.html">
         01 - Understand the pipeline
         
@@ -130,7 +130,7 @@
  
   
     
-      <li data-nav-id="/guide/rmd_to_pdf/rmd2pdf_02.html" title="02 - Templates and extended features" class="dd-item ">
+      <li data-nav-id="/guide/rmd_to_pdf/rmd2pdf_02.html" title="Templates and extended features" class="dd-item ">
         <a href="/guide/rmd_to_pdf/rmd2pdf_02.html">
         02 - Templates and extended features
         
@@ -151,9 +151,9 @@
  
   
     
-      <li data-nav-id="/guide/rmd_to_pdf/citations.html" title="" class="dd-item ">
+      <li data-nav-id="/guide/rmd_to_pdf/citations.html" title="References" class="dd-item ">
         <a href="/guide/rmd_to_pdf/citations.html">
-        
+        References
         
         </a>
     </li>
@@ -280,7 +280,83 @@
 
 
 
-	<p><img src="rmd_to_pdf/img/cover.png" alt=""></p>
+	
+
+
+
+
+
+
+<ul class="children children-li">
+	
+
+	
+		
+	
+
+	
+
+	
+		
+	
+		
+			
+				
+<li>
+<a href="/guide/rmd_to_pdf/rmd2pdf_01.html" >Understand the pipeline</a>
+</li>
+				
+
+				
+					
+<p>Description of the pipeline converting a R Markdown file into a pdf, and how to modify the configuration of the document with options passed to Pandoc and an LaTeX engine.</p>
+					
+				
+			
+			
+		
+	
+		
+			
+				
+<li>
+<a href="/guide/rmd_to_pdf/rmd2pdf_02.html" >Templates and extended features</a>
+</li>
+				
+
+				
+					
+<p>Advanced usage: why and how to use a LaTeX template? How to handle references?</p>
+					
+				
+			
+			
+		
+	
+		
+			
+				
+<li>
+<a href="/guide/rmd_to_pdf/citations.html" >References</a>
+</li>
+				
+
+				
+					
+<p> </p>
+					
+				
+			
+			
+		
+	
+
+	
+</ul>
+
+
+
+<p><img src="rmd_to_pdf/img/cover.png" alt=""></p>
 
 
 
@@ -412,7 +488,7 @@
 			<a class="nav nav-prev" href="/guide/" title="Home"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/guide/rmd_to_pdf/rmd2pdf_01.html" title="01 - Understand the pipeline" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/guide/rmd_to_pdf/rmd2pdf_01.html" title="Understand the pipeline" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -422,19 +498,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/guide/js/clipboard.min.js?1648109179"></script>
-    <script src="/guide/js/perfect-scrollbar.min.js?1648109179"></script>
-    <script src="/guide/js/perfect-scrollbar.jquery.min.js?1648109179"></script>
-    <script src="/guide/js/jquery.sticky.js?1648109179"></script>
-    <script src="/guide/js/featherlight.min.js?1648109179"></script>
-    <script src="/guide/js/highlight.pack.js?1648109179"></script>
+    <script src="/guide/js/clipboard.min.js?1648190554"></script>
+    <script src="/guide/js/perfect-scrollbar.min.js?1648190554"></script>
+    <script src="/guide/js/perfect-scrollbar.jquery.min.js?1648190554"></script>
+    <script src="/guide/js/jquery.sticky.js?1648190554"></script>
+    <script src="/guide/js/featherlight.min.js?1648190554"></script>
+    <script src="/guide/js/highlight.pack.js?1648190554"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/guide/js/modernizr.custom-3.6.0.js?1648109179"></script>
-    <script src="/guide/js/learn.js?1648109179"></script>
-    <script src="/guide/js/hugo-learn.js?1648109179"></script>
+    <script src="/guide/js/modernizr.custom-3.6.0.js?1648190554"></script>
+    <script src="/guide/js/learn.js?1648190554"></script>
+    <script src="/guide/js/hugo-learn.js?1648190554"></script>
     
         
-            <script src="/guide/mermaid/mermaid.js?1648109179"></script>
+            <script src="/guide/mermaid/mermaid.js?1648190554"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

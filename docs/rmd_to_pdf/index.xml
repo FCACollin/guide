@@ -6,21 +6,21 @@
     <description>Recent content in R Markdown to PDF on latarnia-gh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Mar 2022 09:22:43 +0100</lastBuildDate><atom:link href="https://fcacollin.github.io/guide/rmd_to_pdf/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://fcacollin.github.io/guide/rmd_to_pdf/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>01 - Understand the pipeline</title>
+      <title>Understand the pipeline</title>
       <link>https://fcacollin.github.io/guide/rmd_to_pdf/rmd2pdf_01.html</link>
-      <pubDate>Tue, 15 Mar 2022 09:22:43 +0100</pubDate>
+      <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://fcacollin.github.io/guide/rmd_to_pdf/rmd2pdf_01.html</guid>
-      <description>1 - Introduction The RStudio environment includes templates of R Markdown documents which propose as a configuration step to select a PDF output format. It is then very easy to render the document, actually simple as a click.
-sequenceDiagram participant Rmd participant pdf Rmd-pdf: knit button Rmd-pdf: = `rmarkdown::pdf_document()`  If starting is easy, the click (bait) is hidding complexity: the question of PDF output configuration is already more challenging (e.</description>
+      <description>1 - Introduction The RStudio environment includes templates of R Markdown documents proposing at selection step to chose PDF output format. It is then easy to render the document, actually simple as a click.
+How to start a PDF in RStudio: (1) File &amp;gt; New File &amp;gt; RMarkdown &amp;hellip; &amp;gt; Select output PDF and OK; (2) click the knit button at the top of the source pane.  If starting is easy, the click (bait) is hiding complexity as the question of PDF output configuration is more challenging (e.</description>
     </item>
     
     <item>
-      <title>02 - Templates and extended features</title>
+      <title>Templates and extended features</title>
       <link>https://fcacollin.github.io/guide/rmd_to_pdf/rmd2pdf_02.html</link>
-      <pubDate>Tue, 15 Mar 2022 09:22:43 +0100</pubDate>
+      <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://fcacollin.github.io/guide/rmd_to_pdf/rmd2pdf_02.html</guid>
       <description>1. Introduction In the previous section, the pipeline behind the knit-click from the RStudio interface was scrutinized to understand what tools are actucally involved, what argument they can respectively digest, and how to pass them from the R high level functions. It results that the fine tuning of the output is at hand.
@@ -28,14 +28,12 @@ However, the use of these options can be combersum, and may not be very end-user
     </item>
     
     <item>
-      <title></title>
+      <title>References</title>
       <link>https://fcacollin.github.io/guide/rmd_to_pdf/citations.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://fcacollin.github.io/guide/rmd_to_pdf/citations.html</guid>
-      <description>Nüst et al. (2020)
-Wagler and MacFarlane (2021)
-Nüst, Daniel, Vanessa Sochat, Ben Marwick, Stephen J Eglen, Tim Head, Tony Hirst, and Benjamin D Evans. 2020. “Ten Simple Rules for Writing Dockerfiles for Reproducible Data Science.” Public Library of Science San Francisco, CA USA. https://doi.org/10.1371/journal.pcbi.1008316.
+      <description>Nüst, Daniel, Vanessa Sochat, Ben Marwick, Stephen J Eglen, Tim Head, Tony Hirst, and Benjamin D Evans. 2020. “Ten Simple Rules for Writing Dockerfiles for Reproducible Data Science.” Public Library of Science San Francisco, CA USA. https://doi.org/10.1371/journal.pcbi.1008316.
 Wagler, Pascal, and John MacFarlane. 2021. “Eisvogel Pandoc Latex Template.” GitHub Wandmalfarbe. https://github.com/Wandmalfarbe/pandoc-latex-template.</description>
     </item>
     
