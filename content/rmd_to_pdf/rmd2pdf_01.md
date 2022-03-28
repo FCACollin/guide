@@ -165,11 +165,12 @@ sequenceDiagram
     participant Rmd
     participant md
     participant pdf
-    Rmd->>pdf: rmarkdown::pdf_document()
     Rmd->>+md: R
-    Note right of Rmd: keep_md=FALSE</br>toc=TRUE
+    Note right of Rmd: rmarkdown arguments
     md-->>-pdf: Pandoc
     Note right of md: Variables For LaTeX</br>fontfamily: libertinus-type1
+    Rmd->>pdf: rmarkdown::pdf_document()
+    Note over Rmd,pdf: keep_md=FALSE, toc=TRUE</br>pandoc_args: fontfamily
 {{< /mermaid >}}
 
 The Pandoc variables for LaTeX can be conveyed via:
@@ -220,13 +221,14 @@ sequenceDiagram
     participant md
     participant tex
     participant pdf
-    Rmd->>pdf: rmarkdown::pdf_document()
     Rmd->>md: R
-    Note right of Rmd: rmarkdown arguments</br>keep_md=FALSE</br>toc=TRUE
+    Note right of Rmd: rmarkdown arguments
     md->>+tex: Pandoc
-    Note right of md: Variables For LaTeX</br>fontfamily: libertinus-type1
+    Note right of md: Variables For LaTeX
     tex-->>-pdf: LaTeX engine
     Note right of tex: Extra depencendies</br>e.g. fancyhdr
+    Rmd->>pdf: rmarkdown::pdf_document()
+    Note over Rmd,pdf: keep_md=FALSE, toc=TRUE</br>pandoc_args</br>extra_dependencies
 {{< /mermaid >}}
 
 - The yaml front matter is no longer self sufficient, the use of 

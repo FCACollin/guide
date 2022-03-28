@@ -62,14 +62,15 @@ sequenceDiagram
     participant md
     participant tex
     participant pdf
-    Rmd->>pdf: rmarkdown::pdf_document()
     Rmd->>md: R
     Note right of Rmd: rmarkdown arguments
-    md->>+tex: Pandoc
+    md->>tex: Pandoc
     Note right of md: LaTeX Variables
-    tex-->>-pdf: LaTeX engine
-    tex-->>pdf: LaTeX template
+    tex->>pdf: LaTeX engine
+    Rmd-->>pdf: LaTeX template
     Note right of tex: e.g. Eisvogel
+    Rmd->>pdf: rmarkdown::pdf_document()
+    Note over Rmd,pdf: keep_md=FALSE, toc=TRUE</br>pandoc_args</br>extra_dependencies</br>template
 {{< /mermaid >}}
 
 The LaTeX template is simply used through an expected `template` argument
