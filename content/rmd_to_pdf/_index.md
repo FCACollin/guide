@@ -3,6 +3,7 @@ title: "R Markdown to PDF"
 description:
   "R Markdown to PDF: understand the pipeline to enable fine tuning of the
   resulting PDF documents."
+weight: 01
 tags:
 - R Markdown
 ---

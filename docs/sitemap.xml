@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://fcacollin.github.io/guide/rmd_to_pdf.html</loc>
+    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://fcacollin.github.io/guide/rmd_to_pdf/rmd2pdf_01.html</loc>
     <lastmod>2022-03-25T00:00:00+00:00</lastmod>
   </url><url>
@@ -11,8 +14,20 @@
     <loc>https://fcacollin.github.io/guide/rmd_to_pdf/citations.html</loc>
     <lastmod>2022-03-25T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://fcacollin.github.io/guide/faq.html</loc>
+    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://fcacollin.github.io/guide/tags/docker.html</loc>
+    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://fcacollin.github.io/guide/</loc>
-    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
+    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://fcacollin.github.io/guide/tags.html</loc>
+    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://fcacollin.github.io/guide/tags/tmux.html</loc>
+    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fcacollin.github.io/guide/tags/latex.html</loc>
     <lastmod>2022-03-25T00:00:00+00:00</lastmod>
@@ -23,20 +38,12 @@
     <loc>https://fcacollin.github.io/guide/tags/r-markdown.html</loc>
     <lastmod>2022-03-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fcacollin.github.io/guide/rmd_to_pdf.html</loc>
-    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://fcacollin.github.io/guide/tags/rmd.html</loc>
-    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://fcacollin.github.io/guide/tags.html</loc>
     <lastmod>2022-03-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fcacollin.github.io/guide/categories.html</loc>
   </url><url>
     <loc>https://fcacollin.github.io/guide/tags/guide.html</loc>
-  </url><url>
-    <loc>https://fcacollin.github.io/guide/hugo.html</loc>
   </url><url>
     <loc>https://fcacollin.github.io/guide/tags/hugo.html</loc>
   </url>

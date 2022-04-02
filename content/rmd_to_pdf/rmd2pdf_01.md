@@ -12,6 +12,9 @@ tags:
 - R Markdown
 - Pandoc
 - LaTeX
+aliases:
+    - /rmd_to_pdf/rmd2pdf_01.html # original name 
+    - /post/2022/03/25.html
 ---
 
 ## 1 - Introduction

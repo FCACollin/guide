@@ -1,5 +1,12 @@
 [
 {
+	"uri": "https://fcacollin.github.io/guide/rmd_to_pdf.html",
+	"title": "R Markdown to PDF",
+	"tags": ["R Markdown"],
+	"description": "R Markdown to PDF: understand the pipeline to enable fine tuning of the resulting PDF documents.",
+	"content": "  Understand the pipeline  Description of the pipeline converting a R Markdown file into a pdf, and how to modify the configuration of the document with options passed to Pandoc and an LaTeX engine.\n Templates and extended features  Advanced usage: why and how to use a LaTeX template? How to handle references?\n References    "
+},
+{
 	"uri": "https://fcacollin.github.io/guide/rmd_to_pdf/rmd2pdf_01.html",
 	"title": "Understand the pipeline",
 	"tags": ["R Markdown", "Pandoc", "LaTeX"],
@@ -21,11 +28,39 @@
 	"content": "Nüst, Daniel, Vanessa Sochat, Ben Marwick, Stephen J Eglen, Tim Head, Tony Hirst, and Benjamin D Evans. 2020. “Ten Simple Rules for Writing Dockerfiles for Reproducible Data Science.” Public Library of Science San Francisco, CA USA. https://doi.org/10.1371/journal.pcbi.1008316.\nWagler, Pascal, and John MacFarlane. 2021. “Eisvogel Pandoc Latex Template.” GitHub Wandmalfarbe. https://github.com/Wandmalfarbe/pandoc-latex-template.\n"
 },
 {
+	"uri": "https://fcacollin.github.io/guide/faq.html",
+	"title": "FAQ",
+	"tags": ["tmux", "Docker"],
+	"description": "Frequently Asked Questions",
+	"content": " Docker How to push a Docker image to Docker Hub?  docker tag fc-nmosd fcacollin/fc-nmosd docker logout docker login docker push fcacollin/fc-nmosd  How to save a Docker image locally?  docker save fc-nmosd -o fc-nmosd.tar - test  How to remove Docker images?  To remove all danding image: docker image prune. To remove all unused images: docker image prune --all. To remove an image docker image rm To delete all images docker rmi -f $(docker images -a -q)   TMUX How to copy-paste with tmux?  navigation ctrl + [ start selection ctrl + space copy selection ctrl + w paste selection ctrl + [  "
+},
+{
+	"uri": "https://fcacollin.github.io/guide/tags/docker.html",
+	"title": "Docker",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "https://fcacollin.github.io/guide/",
 	"title": "Home",
 	"tags": ["hugo", "guide"],
 	"description": "",
-	"content": "Welcome  R Markdown to PDF  R Markdown to PDF: understand the pipeline to enable fine tuning of the resulting PDF documents.\n Hugo  Lesson learned with Hugo\n "
+	"content": "Welcome  R Markdown to PDF  R Markdown to PDF: understand the pipeline to enable fine tuning of the resulting PDF documents.\n FAQ  Frequently Asked Questions\n "
+},
+{
+	"uri": "https://fcacollin.github.io/guide/tags.html",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://fcacollin.github.io/guide/tags/tmux.html",
+	"title": "tmux",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "https://fcacollin.github.io/guide/tags/latex.html",
@@ -49,22 +84,8 @@
 	"content": ""
 },
 {
-	"uri": "https://fcacollin.github.io/guide/rmd_to_pdf.html",
-	"title": "R Markdown to PDF",
-	"tags": ["R Markdown"],
-	"description": "R Markdown to PDF: understand the pipeline to enable fine tuning of the resulting PDF documents.",
-	"content": "  Understand the pipeline  Description of the pipeline converting a R Markdown file into a pdf, and how to modify the configuration of the document with options passed to Pandoc and an LaTeX engine.\n Templates and extended features  Advanced usage: why and how to use a LaTeX template? How to handle references?\n References    "
-},
-{
 	"uri": "https://fcacollin.github.io/guide/tags/rmd.html",
 	"title": "rmd",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://fcacollin.github.io/guide/tags.html",
-	"title": "Tags",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -82,13 +103,6 @@
 	"tags": [],
 	"description": "",
 	"content": ""
-},
-{
-	"uri": "https://fcacollin.github.io/guide/hugo.html",
-	"title": "Hugo",
-	"tags": ["hugo"],
-	"description": "Lesson learned with Hugo",
-	"content": "Welcome "
 },
 {
 	"uri": "https://fcacollin.github.io/guide/tags/hugo.html",

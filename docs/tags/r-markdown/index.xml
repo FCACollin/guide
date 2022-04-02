@@ -8,16 +8,6 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 25 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://fcacollin.github.io/guide/tags/r-markdown/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Understand the pipeline</title>
-      <link>https://fcacollin.github.io/guide/rmd_to_pdf/rmd2pdf_01.html</link>
-      <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://fcacollin.github.io/guide/rmd_to_pdf/rmd2pdf_01.html</guid>
-      <description>1 - Introduction The RStudio environment includes templates of R Markdown documents proposing at selection step to chose PDF output format. It is then easy to render the document, actually simple as a click.
-How to start a PDF in RStudio: (1) File &amp;gt; New File &amp;gt; RMarkdown &amp;hellip; &amp;gt; Select output PDF and OK; (2) click the knit button at the top of the source pane.  If starting is easy, the click (bait) is hiding complexity as the question of PDF output configuration is more challenging (e.</description>
-    </item>
-    
-    <item>
       <title>R Markdown to PDF</title>
       <link>https://fcacollin.github.io/guide/rmd_to_pdf.html</link>
       <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
@@ -26,6 +16,16 @@ How to start a PDF in RStudio: (1) File &amp;gt; New File &amp;gt; RMarkdown &am
       <description>  Understand the pipeline  Description of the pipeline converting a R Markdown file into a pdf, and how to modify the configuration of the document with options passed to Pandoc and an LaTeX engine.
  Templates and extended features  Advanced usage: why and how to use a LaTeX template? How to handle references?
  References    </description>
+    </item>
+    
+    <item>
+      <title>Understand the pipeline</title>
+      <link>https://fcacollin.github.io/guide/rmd_to_pdf/rmd2pdf_01.html</link>
+      <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://fcacollin.github.io/guide/rmd_to_pdf/rmd2pdf_01.html</guid>
+      <description>1 - Introduction The RStudio environment includes templates of R Markdown documents proposing at selection step to chose PDF output format. It is then easy to render the document, actually simple as a click.
+How to start a PDF in RStudio: (1) File &amp;gt; New File &amp;gt; RMarkdown &amp;hellip; &amp;gt; Select output PDF and OK; (2) click the knit button at the top of the source pane.  If starting is easy, the click (bait) is hiding complexity as the question of PDF output configuration is more challenging (e.</description>
     </item>
     
   </channel>

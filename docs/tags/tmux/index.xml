@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tmux on latarnia-gh</title>
+    <link>https://fcacollin.github.io/guide/tags/tmux.html</link>
+    <description>Recent content in tmux on latarnia-gh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 02 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://fcacollin.github.io/guide/tags/tmux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FAQ</title>
+      <link>https://fcacollin.github.io/guide/faq.html</link>
+      <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://fcacollin.github.io/guide/faq.html</guid>
+      <description>Docker How to push a Docker image to Docker Hub?  docker tag fc-nmosd fcacollin/fc-nmosd docker logout docker login docker push fcacollin/fc-nmosd  How to save a Docker image locally?  docker save fc-nmosd -o fc-nmosd.tar - test  How to remove Docker images?  To remove all danding image: docker image prune. To remove all unused images: docker image prune --all. To remove an image docker image rm To delete all images docker rmi -f $(docker images -a -q)   TMUX How to copy-paste with tmux?</description>
+    </item>
+    
+  </channel>
+</rss>
