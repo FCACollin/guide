@@ -34,6 +34,14 @@ aliases:
 - To remove an image `docker image rm`
 - To delete all images `docker rmi -f $(docker images -a -q)`
 
+The hard way:
+
+```
+docker container prune -f
+docker image prune -f
+docker volume prune -f
+```
+
 ---
 
 ## TMUX

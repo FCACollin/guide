@@ -13,7 +13,7 @@
       <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>https://fcacollin.github.io/guide/faq.html</guid>
-      <description>Docker How to push a Docker image to Docker Hub?  docker tag fc-nmosd fcacollin/fc-nmosd docker logout docker login docker push fcacollin/fc-nmosd  How to save a Docker image locally?  docker save fc-nmosd -o fc-nmosd.tar - test  How to remove Docker images?  To remove all danding image: docker image prune. To remove all unused images: docker image prune --all. To remove an image docker image rm To delete all images docker rmi -f $(docker images -a -q)   TMUX How to copy-paste with tmux?</description>
+      <description>Docker How to push a Docker image to Docker Hub?  docker tag fc-nmosd fcacollin/fc-nmosd docker logout docker login docker push fcacollin/fc-nmosd  How to save a Docker image locally?  docker save fc-nmosd -o fc-nmosd.tar - test  How to remove Docker images?  To remove all danding image: docker image prune. To remove all unused images: docker image prune --all. To remove an image docker image rm To delete all images docker rmi -f $(docker images -a -q)  The hard way:</description>
     </item>
     
   </channel>
